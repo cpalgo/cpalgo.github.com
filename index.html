@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>cpAlgo</title>
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <link href="style.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="highlight.css"> -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/xcode.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <!--Replace with your tailwind.css once created-->
+      <style>
+         @import url('https://fonts.googleapis.com/css?family=Lato');
+         html { font-family: 'Lato', sans-serif; }
+         .plain {
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+         }
+         .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+         }
+         .separator::before, .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #000;
+         }
+         .separator::before {
+            margin-right: .25em;
+         }
+         .separator::after {
+            margin-left: .25em;
+         }
+      </style>
+   </head>
+   <body class="bg-gray-100 tracking-wider tracking-normal">
+      <nav id="header" class="fixed w-full z-10 top-0 bg-gray-900">
+         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
+            <div class="pl-4 flex items-center">
+               <!-- <svg class="h-5 pr-3 fill-current text-purple-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M0 2C0 .9.9 0 2 0h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm14 14h4V2H2v14h4c0 1.1.9 2 2"/>
+               </svg> -->
+               <svg height="24" width="30">
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#a787ff"
+                  stroke-width="3" fill="none" />
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#a787ff"
+                  stroke-width="3" fill="none" />
+                </svg>
+               <a class="text-white text-base no-underline hover:no-underline font-extrabold text-xl"  href="#"> 
+               cpAlgo
+               </a>
+            </div>
+            <!-- <div class="w-full flex-grow lg:flex  lg:content-center lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
+               <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 lg:py-0">
+                  <div class="relative pull-right pl-4 pr-4 md:pr-0">
+                     <input type="search" placeholder="Search" class="w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-purple-500 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+                     <div class="absolute search-icon" style="top: 0.375rem;left: 1.75rem;">
+                        <svg class="fill-current pointer-events-none text-gray-800 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                           <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                        </svg>
+                     </div>
+                  </div>
+               </div>
+            </div> -->
+         </div>
+      </nav>
+      <!--Container-->
+      <table>
+         <tr>
+            <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-8">
+               <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+                  <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
+                     <ul class="list-reset">
+                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
+                           <a href="index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500">
+                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
+                        </li>
+                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
+                           <a href="alkalmazasok.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-400 border-l-4 border-transparent lg:hover:border-purple-300">
+                           <span class="pb-1 md:pb-0 text-sm">Alkalmazások</span>
+                           </a>
+                        </li>
+                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
+                           <a href="feladatok.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-400 border-l-4 border-transparent lg:hover:border-purple-300">
+                           <span class="pb-1 md:pb-0 text-sm">Feladatok</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="w-full lg:w-4/5 lg:mt-0">
+                  <div style="padding-left: 20px;">
+                     <nav class="text-gray-800 font-bold pb-5" aria-label="Breadcrumb">
+                        <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                           <a href="#" style="font-size: small;">Algebra</a>
+                           <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                        </li>
+                        <li class="flex items-center">
+                           <a href="#" class="text-gray-500" aria-current="page" style="font-size: small;">Gyorshatványozás</a>
+                        </li>
+                        </ol>
+                     </nav>
+                  </div>
+                  <div class="p-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border">
+                     <!--Title-->
+                     <div class="font-sans">
+                        <div class="separator"><h1 class="font-sans break-normal text-gray-700 text-xl" style="font-family: 'Roboto', sans-serif;"><b>Leírás</b></h1></div>
+                        <hr class="border-b border-gray-400 py-4" style="border:20px;">
+                     </div>
+                     <!--Post Content-->
+                     <!--Lead Para-->
+                     <p class="text-lg text-gray-700 plain">
+                        To be fair, you have to have a very high IQ to understand Rick and Morty. 
+                        <br><br>
+                        The humor is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer's head. There's also Rick's nihilistic outlook, which is deftly woven into his characterisation - his personal philosophy draws heavily from Narodnaya Volya literature, for instance. 
+                        <br><br>
+                        The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realize that they're not just funny- they say something deep about LIFE. As a consequence people who dislike Rick and Morty truly ARE idiots- of course they wouldn't appreciate, for instance, the humour in Rick's existencial catchphrase "Wubba Lubba Dub Dub," which itself is a cryptic reference to Turgenev's Russian epic Fathers and Sons I'm smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Dan Harmon's genius unfolds itself on their television screens. 
+                        <br><br>
+                        What fools... how I pity them. 😂 And yes by the way, I DO have a Rick and Morty tattoo. And no, you cannot see it. It's for the ladies' eyes only- And even they have to demonstrate that they're within 5 IQ points of my own (preferably lower) beforehand.
+                     </p>
+                     <br>
+                     <div class="border rounded border-purple-200 overflow-hidden shadow-sm border-b">
+                        <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
+   int res = 1;
+   int pow = b;
+   for(; p; p >>= 1) {
+      if(p & 1) {
+         res *= pow;
+      }
+      pow *= pow;
+   }
+   return res;
+}</code></pre>
+                     </div>
+                     <div class = "flex justify-center" style="text-align:center; padding-top:20px;">
+                        <!-- <a href="alkalmazasok.html"> -->
+                           <button class="cursor-not-allowed bg-transparent text-purple-700 font-semibold py-1 px-4 border border-r-0 border-purple-500 rounded-l-full">
+                              « Előző
+                           </button>
+                        <!-- </a> -->
+                        <a href="alkalmazasok.html">
+                           <button class="bg-transparent hover:bg-purple-100 text-purple-700 font-semibold py-1 px-4 border border-l-0 border-purple-500 rounded-r-full focus:outline-none focus:shadow-outline">
+                              Következő »
+                           </button>
+                        </a>
+                     </div>
+                     <!-- /Useful -->
+                  </div>
+                  <!--Back link -->
+               </div>
+            </tr>
+            <tr style="height:20px;">
+               <td style="width:87%;"></td>
+               <td>
+               </td>
+            </tr>
+         </table>
+      <!--/container-->
+   </body>
+</html>
