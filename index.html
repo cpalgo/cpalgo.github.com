@@ -7,8 +7,10 @@
       <title>cpAlgo</title>
       <meta name="description" content="">
       <meta name="keywords" content="">
-      <link href="style.css" rel="stylesheet">
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <link href="style.css" rel="stylesheet"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+      </script>
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/xcode.min.css">
@@ -181,14 +183,17 @@
                          </p>
                      </div>
                      <!-- <hr class="border-double"> -->
+                     <p class="text-gray-700 plain">
+                        A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(n \log{n})\) lesz:
+                     </p>
                      <div class="plain" style="font-size:13px;color: #525252;">
-                        <!-- \begin{equation}
+                        \begin{equation}
                         a^n=\begin{cases}
                            1 &\ \text{ha $n=0$}.\\[.8em]
                            \left(a^m\right)^2 &\ \text{ha } n > 0 \text{, } n \equiv 0 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\[.8em]
                            \left(a^m\right)^2\cdot a &\ \text{ha } n > 0 \text{, } n \equiv 1 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\
                         \end{cases}
-                        \end{equation} -->
+                        \end{equation}
                      </div>
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
                         <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
@@ -221,13 +226,9 @@
                      <p class="text-gray-700 plain">
                         Az iteratív algoritmus a kitevő bináris felírásán alapszik.
                         Fenntartunk egy segédváltozót, ami az alap aktuális bitnek megfelelő hatványát tárolja, és ha ez a bit aktív, az eredményt megszorozzuk a segédváltozóval.
-                        Például:
+                        <br>
+                        Például: \[3^{25}=3^{11001_{2}}=\left(3^2\right)^0\cdot\left(3^2\right)^3\cdot\left(3^2\right)^4\]
                      </p>
-                     <div class="plain" style="font-size:13px;color: #525252;">
-                        <!-- $$
-                           3^{25}=3^{11001_{2}}=\left(3^2\right)^0\cdot\left(3^2\right)^3\cdot\left(3^2\right)^4
-                        $$ -->
-                     </div>
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b">
                         <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
    int res = 1;
