@@ -25,6 +25,10 @@
             /* border-width:thin; */
             border-color:#ececec;
          }
+         a:hover {
+            color:#9587ff;
+            border-color:#d7d4ff;
+         }
          .plain {
             font-size: 14px;
             font-family: 'Roboto', sans-serif;
@@ -53,13 +57,13 @@
          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
             <div class="pl-4 flex items-center">
                <svg height="24" width="30">
-                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#a787ff"
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#9587ff"
                   stroke-width="3" fill="none" />
-                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#a787ff"
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#9587ff"
                   stroke-width="3" fill="none" />
                 </svg>
-               <a class="text-white text-base no-underline hover:no-underline font-extrabold text-xl"  href="#">
-               cpAlgo
+               <a class="text-white text-base no-underline hover:text-white font-extrabold text-xl"  href="#">
+                  cpAlgo
                </a>
             </div>
          </div>
@@ -71,16 +75,16 @@
                   <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
                      <ul class="list-reset">
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500">
+                           <a href="index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
                            <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
                         </li>
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="alkalmazasok.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-400 border-l-4 border-transparent lg:hover:border-purple-300">
+                           <a href="alkalmazasok.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
                            <span class="pb-1 md:pb-0 text-sm">Alkalmazások</span>
                            </a>
                         </li>
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="feladatok.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-400 border-l-4 border-transparent lg:hover:border-purple-300">
+                           <a href="feladatok.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
                            <span class="pb-1 md:pb-0 text-sm">Feladatok</span>
                            </a>
                         </li>
@@ -134,7 +138,7 @@
                         \end{cases}
                         \end{equation} -->
                      </div>
-                     <div class="border rounded border-purple-200 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
+                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
                         <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
    if(p == 0) {
       return 1;
@@ -172,7 +176,7 @@
                            3^{25}=3^{11001_{2}}=\left(3^2\right)^0\cdot\left(3^2\right)^3\cdot\left(3^2\right)^4
                         $$ -->
                      </div>
-                     <div class="border rounded border-purple-200 overflow-hidden shadow-sm border-b">
+                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b">
                         <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
    int res = 1;
    int pow = b;
@@ -186,11 +190,11 @@
 }</code></pre>
                      </div>
                      <div class = "flex justify-center" style="text-align:center; padding-top:20px;">
-                           <button class="cursor-not-allowed bg-transparent text-purple-700 font-semibold py-1 px-4 border border-r-0 border-purple-500 rounded-l-full">
+                           <button class="cursor-not-allowed bg-transparent text-purple-700 font-semibold py-1 px-4 border border-r-0 border-purple-500 rounded-l-full" style="color: #6240db; border-color: #6240db">
                               « Előző
                            </button>
                         <a href="alkalmazasok.html">
-                           <button class="bg-transparent hover:bg-purple-100 text-purple-700 font-semibold py-1 px-4 border border-l-0 border-purple-500 rounded-r-full focus:outline-none focus:shadow-outline">
+                           <button class="bg-transparent hover:bg-purple-100 text-purple-700 font-semibold py-1 px-4 border border-l-0 border-purple-500 rounded-r-full focus:outline-none focus:shadow-outline" style="color: #6240db; border-color: #6240db;">
                               Következő »
                            </button>
                         </a>
@@ -206,3 +210,7 @@
          </table>
    </body>
 </html>
+
+<!--
+   https://github.com/SuprDewd/AlgoWiki
+-->
