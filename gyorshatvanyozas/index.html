@@ -145,7 +145,7 @@
                   </div>
                </div>
                <div class="w-full lg:w-4/5 lg:mt-0">
-                  <div style="padding-left: 20px;">
+                  <div style="padding-left: 20px; padding-top:20px;">
                      <nav class="text-gray-700 font-bold pb-2" aria-label="Breadcrumb">
                         <ol class="list-none p-0 inline-flex">
                         <li class="flex items-center">
@@ -167,7 +167,7 @@
                      <!-- <hr class="border-double"> -->
                      <p class="text-gray-700 plain">
                         A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(\log{n})\) lesz:
-                        <div class="text-gray-700 plain" style="overflow-x:scroll">
+                        <div class="text-gray-700 plain" style="font-size:13px;">
                            \begin{equation}
                            a^n=\begin{cases}
                               1 &\ \text{ha $n=0$}.\\[.8em]
@@ -207,9 +207,13 @@
                      </div>
                      <p class="text-gray-700 plain">
                         Az iteratív algoritmus a kitevő bináris felírásán alapszik.
+                     </p>
+                     <p class="text-gray-700 plain">
                         Fenntartunk egy segédváltozót, ami az alap aktuális bitnek megfelelő hatványát tárolja, és ha ez a bit aktív, az eredményt megszorozzuk a segédváltozóval.
-                        <br>
-                        Például: \[3^{25}=3^1\cdot 3^8\cdot 3^{16}=3^\left(2^0\right)\cdot3^\left(2^3\right)\cdot3^\left(2^4\right)=3^{11001_{2}}\]
+                        Például: 
+                        <div class="text-gray-700 plain" style="font-size:13px;">
+                           \[3^{25}=3^1\cdot 3^8\cdot 3^{16}=3^\left(2^0\right)\cdot3^\left(2^3\right)\cdot3^\left(2^4\right)=3^{11001_{2}}\]
+                        </div>
                      </p>
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
                         <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
