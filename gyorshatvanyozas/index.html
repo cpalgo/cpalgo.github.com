@@ -209,7 +209,7 @@
                         Az iteratív algoritmus a kitevő bináris felírásán alapszik.
                         Fenntartunk egy segédváltozót, ami az alap aktuális bitnek megfelelő hatványát tárolja, és ha ez a bit aktív, az eredményt megszorozzuk a segédváltozóval.
                         <br>
-                        Például: \[3^{25}=3^{11001_{2}}=3^0\cdot 3^8\cdot 3^{16}=3^\left(2^0\right)\cdot3^\left(2^3\right)\cdot3^\left(2^4\right)\]
+                        Például: \[3^{25}=3^1\cdot 3^8\cdot 3^{16}=3^{11001_{2}}=3^\left(2^0\right)\cdot3^\left(2^3\right)\cdot3^\left(2^4\right)\]
                      </p>
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
                         <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
