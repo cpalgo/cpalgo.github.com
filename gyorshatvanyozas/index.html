@@ -167,16 +167,16 @@
                      <!-- <hr class="border-double"> -->
                      <p class="text-gray-700 plain">
                         A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(\log{n})\) lesz:
+                        <div class="text-gray-700 plain" style="overflow-x:scroll">
+                           \begin{equation}
+                           a^n=\begin{cases}
+                              1 &\ \text{ha $n=0$}.\\[.8em]
+                              \left(a^m\right)^2 &\ \text{ha } n > 0 \text{, } n \equiv 0 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\[.8em]
+                              \left(a^m\right)^2\cdot a &\ \text{ha } n > 0 \text{, } n \equiv 1 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\
+                           \end{cases}
+                           \end{equation}
+                        </div>
                      </p>
-                     <div style="overflow-x:scroll;">
-                        \begin{equation}
-                        a^n=\begin{cases}
-                           1 &\ \text{ha $n=0$}.\\[.8em]
-                           \left(a^m\right)^2 &\ \text{ha } n > 0 \text{, } n \equiv 0 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\[.8em]
-                           \left(a^m\right)^2\cdot a &\ \text{ha } n > 0 \text{, } n \equiv 1 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\
-                        \end{cases}
-                        \end{equation}
-                     </div>
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
                         <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
    if(p == 0) {
