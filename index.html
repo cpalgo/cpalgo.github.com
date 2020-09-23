@@ -75,19 +75,29 @@
             -webkit-transition: opacity 0.6s ease-out;
             transition: opacity 0.6s ease-out;
         }
-        
         #carousel-1:checked ~ .control-1,
         #carousel-2:checked ~ .control-2,
         #carousel-3:checked ~ .control-3,
-        #carousel-1:checked ~ .control-4,
-        #carousel-2:checked ~ .control-5,
-        #carousel-3:checked ~ .control-6,
-        #carousel-1:checked ~ .control-7,
-        #carousel-2:checked ~ .control-8,
-        #carousel-3:checked ~ .control-9 {
+        #carousel-4:checked ~ .control-4,
+        #carousel-5:checked ~ .control-5,
+        #carousel-6:checked ~ .control-6,
+        #carousel-7:checked ~ .control-7,
+        #carousel-8:checked ~ .control-8,
+        #carousel-9:checked ~ .control-9 {
             display: block;
         }
-        
+        #carousel-1:checked ~ .link-1,
+        #carousel-2:checked ~ .link-2,
+        #carousel-3:checked ~ .link-3,
+        #carousel-4:checked ~ .link-4,
+        #carousel-5:checked ~ .link-5,
+        #carousel-6:checked ~ .link-6,
+        #carousel-7:checked ~ .link-7,
+        #carousel-8:checked ~ .link-8,
+        #carousel-9:checked ~ .link-9 {
+            display: flex;
+            background-color:purple;
+        }
         .carousel-indicators {
             list-style: none;
             margin: 0;
@@ -99,12 +109,11 @@
             text-align: center;
             z-index: 10;
         }
-        
-        /* #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
         #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
         #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-            color: #000;
-        } */
+            color: #9587ff;
+        }
       </style>
    </head>
    <body class="bg-gray-100 tracking-wider tracking-normal">
@@ -132,134 +141,182 @@
                <div class="w-full lg:mt-0 shadow-sm">
                   <div class="carousel relative container mx-auto" style="max-width:1600px;">
                      <div class="carousel-inner relative overflow-hidden w-full">
-                        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-                        <div class="carousel-item absolute opacity-0">
-                           <div class="pl-24 pt-16 pb-16 pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border">
-                              <div style="margin-left:60px;margin-right:60px;">
-                                 <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                                    <p class="text-xl" style="text-align: center;">
-                                       Algebra és számelmélet
-                                    </p>
-                                 </div>
-                                 <div class="text-gray-700 plain">
-                                    <blockquote class="border-l-4 border-purple-500 italic my-8 pl-4 md:pl-6">
-                                       Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                                    </blockquote>
-                                 </div>
-                                 <div style="margin-left:20px;">
-                                    <p class="plain text-gray-600">Alapok</p>
-                                    <ul style="margin-left:15px;margin-bottom:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Gyorshatványozás</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Euklideszi algoritmus</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Kiterjesztett Euklideszi algoritmus</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Fibonacci-számok és lineáris rekurrenciák</a></li>
-                                    </ul>
-                                    <p class="plain text-gray-600">Prímszámok</p>
-                                    <ul style="margin-left:15px;margin-bottom:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Eratoszthenészi szita</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Euler-szita</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Miller-Rabin prímteszt</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Prímfaktorizáció</a></li>
-                                    </ul>
-                                    <p class="plain text-gray-600">Számelmélet</p>
-                                    <ul style="margin-left:15px;margin-bottom:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Számelméleti függvények</a></li>
-                                    </ul>
-                                    <p class="plain text-gray-600">Moduláris aritmetika</p>
-                                    <ul style="margin-left:15px;margin-bottom:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Moduláris inverz</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Kínai maradéktétel</a></li>
-                                    </ul>
-                                    <p class="plain text-gray-600">Egyéb témák</p>
-                                    <ul style="margin-left:15px;margin-bottom:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Bitmaszk részmaszkjai</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Gyors Fourier-transzformáció</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Gyors Walsh-Hadamard-transzformáció</a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <label for="carousel-2" class="prev control-1 w-12 h-10 inset-y-0 z-10 ml-2 md:ml-10 absolute cursor-pointer hidden leading-tight left-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-left:70px;">
+                        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="true">
+                        <label for="carousel-3" class="prev control-1 w-12 h-12 inset-y-0 z-10 ml-2 md:ml-10 absolute cursor-pointer hidden leading-tight left-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-left:70px;">
                            <svg height="24" width="16">
-                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 11 l 6 -6" stroke="#575366"
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 16 l 6 -6" stroke="#575366"
                               stroke-width="3" fill="none" />
-                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 11 l 6 6" stroke="#575366"
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 16 l 6 6" stroke="#575366"
                               stroke-width="3" fill="none" />
                            </svg>
                         </label>
-                        <label for="carousel-2" class="next control-1 w-12 h-10 inset-y-0 z-10 mr-2 md:mr-10 absolute cursor-pointer hidden leading-tight right-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-right:70px;">
+                        <label for="carousel-2" class="next control-1 w-12 h-12 inset-y-0 z-10 mr-2 md:mr-10 absolute cursor-pointer hidden leading-tight right-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-right:70px;">
                             <svg height="24" width="16">
-                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 11 l -6 -6" stroke="#575366"
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 16 l -6 -6" stroke="#575366"
                               stroke-width="3" fill="none" />
-                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 11 l -6 6" stroke="#575366"
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 16 l -6 6" stroke="#575366"
                               stroke-width="3" fill="none" />
                             </svg>
                         </label>
+                        <div class="control-1 hidden pl-6 pt-4 pb-4 pr-6 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border">
+                           <div style="margin-left:60px;margin-right:60px;">
+                              <div class="font-bold text-md mb-2 text-gray-600 items-center">
+                                 <p class="text-xl" style="text-align: center;">
+                                    Algebra és számelmélet
+                                 </p>
+                              </div>
+                              <div class="text-gray-500 plain">
+                                 <blockquote class="border-l-4 border-purple-500 italic my-8 pl-4 md:pl-6">
+                                    Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                                 </blockquote>
+                              </div>
+                              <div style="margin-left:20px;">
+                                 <p class="plain text-gray-600">Alapok</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Gyorshatványozás</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Euklideszi algoritmus</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Kiterjesztett Euklideszi algoritmus</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Fibonacci-számok és lineáris rekurrenciák</a></li>
+                                 </ul>
+                                 <p class="plain text-gray-600">Prímszámok</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Eratoszthenészi szita</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Euler-szita</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Miller-Rabin prímteszt</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Prímfaktorizáció</a></li>
+                                 </ul>
+                                 <p class="plain text-gray-600">Számelmélet</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Számelméleti függvények</a></li>
+                                 </ul>
+                                 <p class="plain text-gray-600">Moduláris aritmetika</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Moduláris inverz</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Kínai maradéktétel</a></li>
+                                 </ul>
+                                 <p class="plain text-gray-600">Egyéb témák</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Bitmaszk részmaszkjai</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Gyors Fourier-transzformáció</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Gyors Walsh-Hadamard-transzformáció</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
                         <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
                         <div class="carousel-item absolute opacity-0">
-                           <div class="pl-24 pt-16 pb-16 pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border">
-                              <div style="margin-left:60px;margin-right:60px;">
-                                 <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                                    <p class="text-xl" style="text-align: center;">
-                                       Algebra és számelmélet
-                                    </p>
-                                 </div>
-                                 <div class="text-gray-700 plain">
-                                    <blockquote class="border-l-4 border-purple-500 italic my-8 pl-4 md:pl-6">
-                                       Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                                    </blockquote>
-                                 </div>
-                                 <div style="margin-left:20px;">
-                                    <p class="plain text-gray-600">Alapok</p>
-                                    <ul style="margin-left:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Gyorshatványozás</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Euklideszi algoritmus</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Kiterjesztett Euklideszi algoritmus</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Fibonacci-számok és lineáris rekurrenciák</a></li>
-                                    </ul>
-                                    <p class="plain text-gray-600">Prímszámok</p>
-                                    <ul style="margin-left:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Eratoszthenészi szita</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Euler-szita</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Miller-Rabin prímteszt</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Prímfaktorizáció</a></li>
-                                    </ul>
-                                    <p class="plain text-gray-600">Számelmélet</p>
-                                    <ul style="margin-left:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Számelméleti függvények</a></li>
-                                    </ul>
-                                    <p class="plain text-gray-600">Moduláris aritmetika</p>
-                                    <ul style="margin-left:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Moduláris inverz</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Kínai maradéktétel</a></li>
-                                    </ul>
-                                    <p class="plain text-gray-600">Egyéb témák</p>
-                                    <ul style="margin-left:10px;">
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Bitmaszk részmaszkjai</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Gyors Fourier-transzformáció</a></li>
-                                       <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Gyors Walsh-Hadamard-transzformáció</a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
                         </div>
-                        <label for="carousel-1" class="prev control-2 w-12 h-10 inset-y-0 z-10 ml-2 md:ml-10 absolute cursor-pointer hidden leading-tight left-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-left:70px;">
+                        <label for="carousel-1" class="prev control-2 w-12 h-12 inset-y-0 z-10 ml-2 md:ml-10 absolute cursor-pointer hidden leading-tight left-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-left:70px;">
                            <svg height="24" width="16">
-                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 11 l 6 -6" stroke="#575366"
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 16 l 6 -6" stroke="#575366"
                               stroke-width="3" fill="none" />
-                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 11 l 6 6" stroke="#575366"
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 16 l 6 6" stroke="#575366"
                               stroke-width="3" fill="none" />
                            </svg>
                         </label>
-                        <label for="carousel-1" class="next control-2 w-12 h-10 inset-y-0 z-10 mr-2 md:mr-10 absolute cursor-pointer hidden leading-tight right-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-right:70px;">
+                        <label for="carousel-3" class="next control-2 w-12 h-12 inset-y-0 z-10 mr-2 md:mr-10 absolute cursor-pointer hidden leading-tight right-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-right:70px;">
                             <svg height="24" width="16">
-                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 11 l -6 -6" stroke="#575366"
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 16 l -6 -6" stroke="#575366"
                               stroke-width="3" fill="none" />
-                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 11 l -6 6" stroke="#575366"
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 16 l -6 6" stroke="#575366"
                               stroke-width="3" fill="none" />
                             </svg>
                         </label>
+                        <div class="control-2 hidden pl-6 pt-4 pb-4 pr-6 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border">
+                           <div style="margin-left:60px;margin-right:60px;">
+                              <div class="font-bold text-md mb-2 text-gray-600 items-center">
+                                 <p class="text-xl" style="text-align: center;">
+                                    Dinamikus programozás
+                                 </p>
+                              </div>
+                              <div class="text-gray-500 plain">
+                                 <blockquote class="border-l-4 border-purple-500 italic my-8 pl-4 md:pl-6">
+                                    Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                                 </blockquote>
+                              </div>
+                              <div class="link-2" style="margin-left:20px;">
+                                 <p class="plain text-gray-600">DP optimalizációk</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Oszd meg és uralkodj DP</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Knuth-optimalizáció</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Konvex burok trükk és Li Chao fa</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Aliens-féle optimalizáció</a></li>
+                                 </ul>
+                                 <p class="plain text-gray-600">Egyéb témák</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">DP fán</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Bitmaszk DP</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Intervallum DP</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Állapot-redukció</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                        <div class="carousel-item absolute opacity-0">
+                        </div>
+                        <label for="carousel-2" class="prev control-3 w-12 h-12 inset-y-0 z-10 ml-2 md:ml-10 absolute cursor-pointer hidden leading-tight left-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-left:70px;">
+                           <svg height="24" width="16">
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 16 l 6 -6" stroke="#575366"
+                              stroke-width="3" fill="none" />
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 3 16 l 6 6" stroke="#575366"
+                              stroke-width="3" fill="none" />
+                           </svg>
+                        </label>
+                        <label for="carousel-1" class="next control-3 w-12 h-12 inset-y-0 z-10 mr-2 md:mr-10 absolute cursor-pointer hidden leading-tight right-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-right:70px;">
+                            <svg height="24" width="16">
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 16 l -6 -6" stroke="#575366"
+                              stroke-width="3" fill="none" />
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 12 16 l -6 6" stroke="#575366"
+                              stroke-width="3" fill="none" />
+                            </svg>
+                        </label>
+                        <div class="control-3 hidden pl-6 pt-4 pb-4 pr-6 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border">
+                           <div style="margin-left:60px;margin-right:60px;">
+                              <div class="font-bold text-md mb-2 text-gray-600 items-center">
+                                 <p class="text-xl" style="text-align: center;">
+                                    Adatszerkezetek
+                                 </p>
+                              </div>
+                              <div class="text-gray-700 plain">
+                                 <blockquote class="border-l-4 border-purple-500 italic my-8 pl-4 md:pl-6 text-gray-500">
+                                    Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                                 </blockquote>
+                              </div>
+                              <div style="margin-left:20px;">
+                                 <p class="plain text-gray-600">Alapok</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Következő nagyobb elem</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Sliding window technika</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Sparse table</a></li>
+                                 </ul>
+                                 <p class="plain text-gray-600">Fa struktúrák</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Disjoint set union</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Fenwick-fa</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">SQRT-dekompozíció</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Szegmens-fa</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Treap</a></li>
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Wavelet-fa</a></li>
+                                 </ul>
+                                 <p class="plain text-gray-600">Haladó technikák</p>
+                                 <ul style="margin-left:15px;margin-bottom:10px;">
+                                    <li><a class="plain text-gray-700" href="gyorshatvanyozas/index.html">Dinamikus konnektivitás offline</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <ol class="carousel-indicators">
+                           <li class="inline-block mr-3">
+                              <label for="carousel-1" class="carousel-bullet cursor-pointer block text-xl text-gray-700 hover:text-gray-500">•</label>
+                           </li>
+                           <li class="inline-block mr-3">
+                              <label for="carousel-2" class="carousel-bullet cursor-pointer block text-xl text-gray-700 hover:text-gray-500">•</label>
+                           </li>
+                           <li class="inline-block mr-3">
+                              <label for="carousel-3" class="carousel-bullet cursor-pointer block text-xl text-gray-700 hover:text-gray-500">•</label>
+                           </li>
+                        </ol>
                      </div>
                   </div>
                </div>
