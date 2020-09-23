@@ -4,17 +4,15 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>cpAlgo</title>
       <meta name="description" content="">
       <meta name="keywords" content="">
+      <title>cpAlgo</title>
       <link href="style.css" rel="stylesheet"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-      </script>
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/xcode.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+      <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
       <style>
          @import url('https://fonts.googleapis.com/css?family=Lato');
@@ -24,7 +22,6 @@
             font-family: 'Roboto', sans-serif;
          }
          hr {
-            /* border-width:thin; */
             border-color:#ececec;
          }
          a:hover {
@@ -102,7 +99,6 @@
         #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
         #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
             color: #000;
-            /*Set to match the Tailwind colour you want the active one to be */
         }
       </style>
    </head>
@@ -115,7 +111,7 @@
                   stroke-width="3" fill="none" />
                   <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#9587ff"
                   stroke-width="3" fill="none" />
-                </svg>
+               </svg>
                <a class="text-white text-base no-underline hover:text-white font-extrabold text-xl"  href="#">
                   cpAlgo
                </a>
@@ -125,7 +121,7 @@
       <table>
          <tr>
             <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-8">
-               <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+               <div class="w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
                   <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
                      <ul class="list-reset">
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
@@ -145,7 +141,7 @@
                      </ul>
                   </div>
                </div>
-               <div class="w-full lg:w-4/5 lg:mt-0">
+               <div class="w-4/5 lg:mt-0">
                   <div style="padding-left: 20px;">
                      <nav class="text-gray-700 font-bold pb-2" aria-label="Breadcrumb">
                         <ol class="list-none p-0 inline-flex">
@@ -159,44 +155,37 @@
                         </ol>
                      </nav>
                   </div>
-                  <!-- <div class="p-8 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;"> -->
-                     <!-- <div class="font-sans">
-                        <div class="separator"><h1 class="font-sans break-normal text-gray-700 text-xl" style="font-family: 'Roboto', sans-serif;"><b>Leírás</b></h1></div>
-                        <hr class="border-b border-gray-400 py-4" style="border:20px;">
-                     </div> -->
-                     <!-- <p class="text-lg text-gray-700 plain">
-                        <blockquote class="border-l-4 text-gray-700 border-purple-600 italic my-6 pl-6 md:pl-8 plain">
-                           A gyorshatványozás/bináris hatványozás egy technika, aminek segítségével a hatványozást a kitevőre nézve logaritmikus időben is el tudjuk végezni.
-                        </blockquote>
-                     </p> -->
-                  <!-- </div> -->
-                  <div class="pl-8 pt-6 pb-6 pr-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
-                     <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
-                        <!-- <svg height="18" width="10"> -->
-                           <!-- <path id="lineAB" stroke-width="4" d="M 2 0 l 0 18" stroke="#b787ff"
-                           stroke-width="3" fill="none" /> -->
-                           <!-- <path id="lineAB" stroke-width="3" stroke-linecap="round" d="M 2 10 l 4 -4" stroke="#b787ff"
-                           stroke-width="3" fill="none" /> -->
-                         <!-- </svg> -->
-                         <p>
-                           Rekurzív algoritmus
-                         </p>
-                     </div>
-                     <!-- <hr class="border-double"> -->
-                     <p class="text-gray-700 plain">
-                        A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(n \log{n})\) lesz:
-                     </p>
-                     <div class="plain" style="font-size:13px;color: #525252;">
-                        \begin{equation}
-                        a^n=\begin{cases}
-                           1 &\ \text{ha $n=0$}.\\[.8em]
-                           \left(a^m\right)^2 &\ \text{ha } n > 0 \text{, } n \equiv 0 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\[.8em]
-                           \left(a^m\right)^2\cdot a &\ \text{ha } n > 0 \text{, } n \equiv 1 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\
-                        \end{cases}
-                        \end{equation}
-                     </div>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
-                        <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
+
+
+                  <div class="carousel relative container mx-auto" style="max-width:1600px;">
+                     <div class="carousel-inner relative overflow-hidden w-full">
+
+
+                        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+                        <div class="carousel-item absolute opacity-0">
+                        
+
+                           <div class="pl-20 pt-16 pb-16 pr-20 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
+                              <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
+                                    <p>
+                                       Rekurzív algoritmus
+                                    </p>
+                              </div>
+                              <!-- <hr class="border-double"> -->
+                              <p class="text-gray-700 plain">
+                                 A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(\log{n})\) lesz:
+                              </p>
+                              <div class="plain" style="font-size:13px;color: #525252;">
+                                 \begin{equation}
+                                 a^n=\begin{cases}
+                                    1 &\ \text{ha $n=0$}.\\[.8em]
+                                    \left(a^m\right)^2 &\ \text{ha } n > 0 \text{, } n \equiv 0 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\[.8em]
+                                    \left(a^m\right)^2\cdot a &\ \text{ha } n > 0 \text{, } n \equiv 1 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\
+                                 \end{cases}
+                                 \end{equation}
+                              </div>
+                              <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
+                                 <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
    if(p == 0) {
       return 1;
    }
@@ -207,30 +196,66 @@
       return res * res * a;
    }
 }</code></pre>
-                     </div>
-                  </div>
+                              </div>
+                              
+                              <!-- <div style="text-align:center; padding-top:20px;">
+                                 <button class="font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline"  style="margin-left:10px;">
+                                    <svg height="24" width="16">
+                                       <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 5 13 l 6 -6" stroke="#575366"
+                                       stroke-width="3" fill="none" />
+                                       <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 5 13 l 6 6" stroke="#575366"
+                                       stroke-width="3" fill="none" />
+                                    </svg>
+                                 </button>
+                                 <a href="alkalmazasok.html">
+                                    <button class="font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-left:10px;">
+                                       <svg height="24" width="16">
+                                          <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 11 13 l -6 -6" stroke="#575366"
+                                          stroke-width="3" fill="none" />
+                                          <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 11 13 l -6 6" stroke="#575366"
+                                          stroke-width="3" fill="none" />
+                                       </svg>
+                                    </button>
+                                 </a>
+                              </div> -->
+                           </div>
 
-                  <div class="pl-8 pt-6 pb-6 pr-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
-                     <!-- <hr style="margin-top:10px; margin-bottom:10px;"> -->
-                     <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
-                        <!-- <svg height="18" width="10"> -->
-                           <!-- <path id="lineAB" stroke-width="4" d="M 2 0 l 0 18" stroke="#b787ff"
-                           stroke-width="3" fill="none" /> -->
-                           <!-- <path id="lineAB" stroke-width="3" stroke-linecap="round" d="M 2 10 l 4 -4" stroke="#b787ff"
-                           stroke-width="3" fill="none" /> -->
-                         <!-- </svg> -->
-                         <p>
-                           Iteratív algoritmus
-                         </p>
-                     </div>
-                     <p class="text-gray-700 plain">
-                        Az iteratív algoritmus a kitevő bináris felírásán alapszik.
-                        Fenntartunk egy segédváltozót, ami az alap aktuális bitnek megfelelő hatványát tárolja, és ha ez a bit aktív, az eredményt megszorozzuk a segédváltozóval.
-                        <br>
-                        Például: \[3^{25}=3^{11001_{2}}=\left(3^2\right)^0\cdot\left(3^2\right)^3\cdot\left(3^2\right)^4\]
-                     </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b">
-                        <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
+
+                        </div>
+                        <!-- <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label> -->
+                        <label for="carousel-2" class="prev control-1 w-12 h-10 inset-y-0 z-10 ml-2 md:ml-10 absolute cursor-pointer hidden leading-tight left-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-left:10px;">
+                           <svg height="24" width="16">
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 5 13 l 6 -6" stroke="#575366"
+                              stroke-width="3" fill="none" />
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 5 13 l 6 6" stroke="#575366"
+                              stroke-width="3" fill="none" />
+                           </svg>
+                        </label>
+                        <label for="carousel-2" class="next control-1 w-12 h-10 inset-y-0 z-10 mr-2 md:mr-10 absolute cursor-pointer hidden leading-tight right-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-right:10px;">
+                            <svg height="24" width="16">
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 11 13 l -6 -6" stroke="#575366"
+                              stroke-width="3" fill="none" />
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 11 13 l -6 6" stroke="#575366"
+                              stroke-width="3" fill="none" />
+                            </svg>
+                        </label>
+                        
+                        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                        <div class="carousel-item absolute opacity-0">
+                           <div class="pl-20 pt-16 pb-16 pr-20 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
+                              <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
+                                 <p>
+                                    Iteratív algoritmus
+                                 </p>
+                              </div>
+                              <p class="text-gray-700 plain">
+                                 Az iteratív algoritmus a kitevő bináris felírásán alapszik.
+                                 Fenntartunk egy segédváltozót, ami az alap aktuális bitnek megfelelő hatványát tárolja, és ha ez a bit aktív, az eredményt megszorozzuk a segédváltozóval.
+                                 <br>
+                                 Például: \[3^{25}=3^{11001_{2}}=3^0\cdot 3^8\cdot 3^{16}=3^\left(2^0\right)\cdot3^\left(2^3\right)\cdot3^\left(2^4\right)\]
+                              </p>
+                              <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b">
+                                 <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
    int res = 1;
    int pow = b;
    for(; p; p >>= 1) {
@@ -241,36 +266,36 @@
    }
    return res;
 }</code></pre>
-                     </div>
-                     <div style="text-align:center; padding-top:20px;">
-                        <button class="font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline"  style="margin-left:10px;">
+                              </div>
+                           </div>
+                        </div>
+                        <label for="carousel-1" class="prev control-2 w-12 h-10 inset-y-0 z-10 ml-2 md:ml-10 absolute cursor-pointer hidden leading-tight left-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-left:10px;">
                            <svg height="24" width="16">
                               <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 5 13 l 6 -6" stroke="#575366"
                               stroke-width="3" fill="none" />
                               <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 5 13 l 6 6" stroke="#575366"
                               stroke-width="3" fill="none" />
+                           </svg>
+                        </label>
+                        <label for="carousel-1" class="next control-2 w-12 h-10 inset-y-0 z-10 mr-2 md:mr-10 absolute cursor-pointer hidden leading-tight right-0 my-auto font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-right:10px;">
+                            <svg height="24" width="16">
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 11 13 l -6 -6" stroke="#575366"
+                              stroke-width="3" fill="none" />
+                              <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 11 13 l -6 6" stroke="#575366"
+                              stroke-width="3" fill="none" />
                             </svg>
-                        </button>
-                        <a href="alkalmazasok.html">
-                           <button class="font-bold text-lg bg-white text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-200 shadow-md border border-gray-300 focus:outline-none focus:shadow-outline" style="margin-left:10px;">
-                              <svg height="24" width="16">
-                                 <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 11 13 l -6 -6" stroke="#575366"
-                                 stroke-width="3" fill="none" />
-                                 <path id="lineAB" stroke-width="4" stroke-linecap="round" d="M 11 13 l -6 6" stroke="#575366"
-                                 stroke-width="3" fill="none" />
-                               </svg>
-                           </button>
-                        </a>
+                        </label>
                      </div>
                   </div>
                </div>
-            </tr>
-            <tr style="height:20px;">
-               <td style="width:87%;"></td>
-               <td>
-               </td>
-            </tr>
-         </table>
+            </div>
+         </tr>
+         <tr style="height:20px;">
+            <td style="width:87%;"></td>
+            <td>
+            </td>
+         </tr>
+      </table>
    </body>
 </html>
 
