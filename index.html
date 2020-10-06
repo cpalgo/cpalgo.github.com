@@ -7,10 +7,11 @@
       <meta name="description" content="">
       <meta name="keywords" content="">
       <title>cpAlgo</title>
-      <link href="style.css" rel="stylesheet"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <link href="style.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/xcode.min.css">
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
       <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
@@ -48,72 +49,6 @@
          .separator::after {
             margin-left: .25em;
          }
-         
-        .worksans {
-            font-family: 'Work Sans', sans-serif;
-        }
-                
-        #menu-toggle:checked + #menu {
-            display: block;
-        }
-        
-        .hover\:grow {
-            transition: all 0.3s;
-            transform: scale(1);
-        }
-        
-        .hover\:grow:hover {
-            transform: scale(1.02);
-        }
-        
-        .carousel-open:checked + .carousel-item {
-            position: static;
-            opacity: 100;
-        }
-        
-        .carousel-item {
-            -webkit-transition: opacity 0.6s ease-out;
-            transition: opacity 0.6s ease-out;
-        }
-        #carousel-1:checked ~ .control-1,
-        #carousel-2:checked ~ .control-2,
-        #carousel-3:checked ~ .control-3,
-        #carousel-4:checked ~ .control-4,
-        #carousel-5:checked ~ .control-5,
-        #carousel-6:checked ~ .control-6,
-        #carousel-7:checked ~ .control-7,
-        #carousel-8:checked ~ .control-8,
-        #carousel-9:checked ~ .control-9 {
-            display: block;
-        }
-        #carousel-1:checked ~ .link-1,
-        #carousel-2:checked ~ .link-2,
-        #carousel-3:checked ~ .link-3,
-        #carousel-4:checked ~ .link-4,
-        #carousel-5:checked ~ .link-5,
-        #carousel-6:checked ~ .link-6,
-        #carousel-7:checked ~ .link-7,
-        #carousel-8:checked ~ .link-8,
-        #carousel-9:checked ~ .link-9 {
-            display: flex;
-            background-color:purple;
-        }
-        .carousel-indicators {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            bottom: 2%;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 10;
-        }
-        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-        #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-            color: #9587ff;
-        }
       </style>
    </head>
    <body class="bg-gray-100 tracking-wider tracking-normal" style="overflow-y:scroll;">
