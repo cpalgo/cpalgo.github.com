@@ -56,6 +56,57 @@
          .separator::after {
             margin-left: .25em;
          }
+         
+        .worksans {
+            font-family: 'Work Sans', sans-serif;
+        }
+                
+        #menu-toggle:checked + #menu {
+            display: block;
+        }
+        
+        .hover\:grow {
+            transition: all 0.3s;
+            transform: scale(1);
+        }
+        
+        .hover\:grow:hover {
+            transform: scale(1.02);
+        }
+        
+        .carousel-open:checked + .carousel-item {
+            position: static;
+            opacity: 100;
+        }
+        
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+        
+        #carousel-1:checked ~ .control-1,
+        #carousel-2:checked ~ .control-2,
+        #carousel-3:checked ~ .control-3 {
+            display: block;
+        }
+        
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+            color: #000;
+        }
       </style>
    </head>
    <body class="bg-gray-100 tracking-wider tracking-normal">
@@ -111,7 +162,7 @@
                         </ol>
                      </nav>
                   </div>
-                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
+                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                            <p>
                               Rekurzív algoritmus
@@ -144,7 +195,7 @@
                      </div>
                   </div>
 
-                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
+                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top:10px;margin-bottom:20px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                         <p>
                            Iteratív algoritmus
