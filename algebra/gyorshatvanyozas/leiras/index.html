@@ -38,6 +38,12 @@
             padding-top:10px;
             padding-bottom:10px;
          }
+         .plainsm {
+            font-size: 11px;
+            font-family: 'Roboto', sans-serif;
+            padding-top:10px;
+            padding-bottom:20px;
+         }
          .separator {
             display: flex;
             align-items: center;
@@ -159,7 +165,7 @@
                         </ol>
                      </nav>
                   </div>
-                  <div class="pl-12 pt-12 pb-12 pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
+                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                            <p>
                               Rekurzív algoritmus
@@ -167,7 +173,7 @@
                      </div>
                      <p class="text-gray-700 plain">
                         A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(\log{n})\) lesz:
-                        <div class="text-gray-700 plain" style="font-size:13px;overflow-x:scroll;">
+                        <div class="text-gray-700 plainsm overflow-x-auto">
                            \begin{equation}
                            a^n=\begin{cases}
                               1 &\ \text{ha $n=0$}.\\[.8em]
@@ -192,7 +198,7 @@
                      </div>
                   </div>
 
-                  <div class="pl-12 pt-12 pb-12 pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
+                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                         <p>
                            Iteratív algoritmus
@@ -204,7 +210,7 @@
                      <p class="text-gray-700 plain">
                         Fenntartunk egy segédváltozót, ami az alap aktuális bitnek megfelelő hatványát tárolja, és ha ez a bit aktív, az eredményt megszorozzuk a segédváltozóval.
                         Például: 
-                        <div class="text-gray-700 plain" style="font-size:13px;overflow-x:scroll;">
+                        <div class="text-gray-700 plainsm overflow-x-auto">
                            \[3^{25}=3^1\cdot 3^8\cdot 3^{16}=3^\left(2^0\right)\cdot3^\left(2^3\right)\cdot3^\left(2^4\right)=3^{11001_{2}}\]
                         </div>
                      </p>

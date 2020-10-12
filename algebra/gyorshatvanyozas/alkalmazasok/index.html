@@ -14,7 +14,6 @@
       <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous"> -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
       <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-      <!-- <script id="dsq-count-scr" src="//cpalgo.disqus.com/count.js" async></script> -->
       <script>hljs.initHighlightingOnLoad();</script>
       <style>
          @import url('https://fonts.googleapis.com/css?family=Lato');
@@ -38,6 +37,12 @@
             font-family: 'Roboto', sans-serif;
             padding-top:10px;
             padding-bottom:10px;
+         }
+         .plainsm {
+            font-size: 11px;
+            font-family: 'Roboto', sans-serif;
+            padding-top:10px;
+            padding-bottom:20px;
          }
          .separator {
             display: flex;
@@ -130,13 +135,13 @@
                   <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
                      <ul class="list-reset">
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
-                           <span class="pb-1 md:pb-0 text-sm">Leírás</span>
-                           </a>
+                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
+                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
                         </li>
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
-                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Alkalmazások</span>
+                           <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
+                           <span class="pb-1 md:pb-0 text-sm">Alkalmazások</span>
+                           </a>
                         </li>
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
                            <a href="../feladatok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
@@ -160,16 +165,15 @@
                         </ol>
                      </nav>
                   </div>
-                  <div class="pl-12 pt-12 pb-12 pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
+                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                            <p>
                               Rekurzív algoritmus
                            </p>
                      </div>
-                     <!-- <hr class="border-double"> -->
                      <p class="text-gray-700 plain">
                         A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(\log{n})\) lesz:
-                        <div class="text-gray-700 plain" style="font-size:13px;">
+                        <div class="text-gray-700 plainsm overflow-x-auto">
                            \begin{equation}
                            a^n=\begin{cases}
                               1 &\ \text{ha $n=0$}.\\[.8em]
@@ -194,15 +198,8 @@
                      </div>
                   </div>
 
-                  <div class="pl-12 pt-12 pb-12 pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
-                     <!-- <hr style="margin-top:10px; margin-bottom:10px;"> -->
+                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:10px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
-                        <!-- <svg height="18" width="10"> -->
-                           <!-- <path id="lineAB" stroke-width="4" d="M 2 0 l 0 18" stroke="#b787ff"
-                           stroke-width="3" fill="none" /> -->
-                           <!-- <path id="lineAB" stroke-width="3" stroke-linecap="round" d="M 2 10 l 4 -4" stroke="#b787ff"
-                           stroke-width="3" fill="none" /> -->
-                         <!-- </svg> -->
                         <p>
                            Iteratív algoritmus
                         </p>
@@ -213,7 +210,7 @@
                      <p class="text-gray-700 plain">
                         Fenntartunk egy segédváltozót, ami az alap aktuális bitnek megfelelő hatványát tárolja, és ha ez a bit aktív, az eredményt megszorozzuk a segédváltozóval.
                         Például: 
-                        <div class="text-gray-700 plain" style="font-size:13px;">
+                        <div class="text-gray-700 plainsm overflow-x-auto">
                            \[3^{25}=3^1\cdot 3^8\cdot 3^{16}=3^\left(2^0\right)\cdot3^\left(2^3\right)\cdot3^\left(2^4\right)=3^{11001_{2}}\]
                         </div>
                      </p>
