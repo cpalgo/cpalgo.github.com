@@ -30,7 +30,7 @@
             border-color:#d7d4ff;
          }
          .plain {
-            font-size: 14px;
+            /* font-size: 14px; */
             font-family: 'Roboto', sans-serif;
             padding-top:10px;
             padding-bottom:10px;
@@ -162,13 +162,13 @@
                         </ol>
                      </nav>
                   </div>
-                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
+                  <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                            <p>
                               Rekurzív algoritmus
                            </p>
                      </div>
-                     <p class="text-gray-700 plain">
+                     <p class="text-gray-700 plain text-sm lg:text-md">
                         A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(\log{n})\) lesz:
                         <div class="text-gray-700 plainsm overflow-x-auto">
                            \begin{equation}
@@ -181,7 +181,7 @@
                         </div>
                      </p>
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
-                        <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
+                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
    if(p == 0) {
       return 1;
    }
@@ -195,16 +195,16 @@
                      </div>
                   </div>
 
-                  <div class="pl-8 pt-8 pb-8 pr-8 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top:10px;margin-bottom:20px;">
+                  <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top:10px;margin-bottom:20px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                         <p>
                            Iteratív algoritmus
                         </p>
                      </div>
-                     <p class="text-gray-700 plain">
+                     <p class="text-gray-700 plain text-sm lg:text-md">
                         Az iteratív algoritmus a kitevő bináris felírásán alapszik.
                      </p>
-                     <p class="text-gray-700 plain">
+                     <p class="text-gray-700 plain text-sm lg:text-md">
                         Fenntartunk egy segédváltozót, ami az alap aktuális bitnek megfelelő hatványát tárolja, és ha ez a bit aktív, az eredményt megszorozzuk a segédváltozóval.
                         Például: 
                         <div class="text-gray-700 plainsm overflow-x-auto">
@@ -212,7 +212,7 @@
                         </div>
                      </p>
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
-                        <pre style="font-size: 13px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
+                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
    int res = 1;
    int pow = b;
    for(; p; p >>= 1) {
@@ -230,8 +230,8 @@
                      <script>
 
                      var disqus_config = function () {
-                     this.page.url = 'https://cpalgo.github.io/gyorshatvanyozas/leiras/';
-                     this.page.identifier = 'gyorshatvanyozas_lei';
+                     this.page.url = 'https://cpalgo.github.io/';
+                     this.page.identifier = 'euklideszi_alk';
                      };
                      (function() {
                      var d = document, s = d.createElement('script');
