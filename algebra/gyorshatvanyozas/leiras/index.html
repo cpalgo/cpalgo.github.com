@@ -195,9 +195,9 @@
    }
    int res = fpow(b, p >> 1);
    if(p % 2) {
-      return res * res;
-   } else {
       return res * res * a;
+   } else {
+      return res * res;
    }
 }</code></pre>
                      </div>
