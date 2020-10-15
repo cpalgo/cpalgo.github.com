@@ -40,8 +40,6 @@
          .plain {
             /* font-size: 14px; */
             font-family: 'Roboto', sans-serif;
-            padding-top:10px;
-            padding-bottom:10px;
          }
          .plainsm {
             font-size: 11px;
@@ -80,40 +78,6 @@
         
         .hover\:grow:hover {
             transform: scale(1.02);
-        }
-        
-        .carousel-open:checked + .carousel-item {
-            position: static;
-            opacity: 100;
-        }
-        
-        .carousel-item {
-            -webkit-transition: opacity 0.6s ease-out;
-            transition: opacity 0.6s ease-out;
-        }
-        
-        #carousel-1:checked ~ .control-1,
-        #carousel-2:checked ~ .control-2,
-        #carousel-3:checked ~ .control-3 {
-            display: block;
-        }
-        
-        .carousel-indicators {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            bottom: 2%;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 10;
-        }
-        
-        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-        #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-            color: #000;
         }
       </style>
    </head>
@@ -172,11 +136,11 @@
                   </div>
                   <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
-                           <p>
-                              Rekurzív algoritmus
-                           </p>
+                        <p>
+                           Rekurzív algoritmus
+                        </p>
                      </div>
-                     <p class="text-gray-700 plain text-sm lg:text-md">
+                     <p class="text-gray-700 plain text-sm">
                         A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(\log{n})\) lesz:
                         <div class="text-gray-700 plainsm overflow-x-auto ml-2 mr-2">
                            $$
@@ -253,9 +217,10 @@
                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                   </div> -->
                </div>
-            </tr>
-            <tr style="height:20px;">
-            </tr>
-         </table>
+            </div>
+         </tr>
+         <tr style="height:20px;">
+         </tr>
+      </table>
    </body>
 </html>
