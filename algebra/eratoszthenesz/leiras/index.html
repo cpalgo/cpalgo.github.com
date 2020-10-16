@@ -167,7 +167,7 @@ Komplexitás
                         </p>
                      </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Az algoritmus komplexitása \(\mathcal{O}(N\log\log N)\) lesz: világos, hogy a lépésszám
+Az algoritmus aszimptotikus futási ideje \(\mathcal{O}(N\log\log N)\) lesz: világos, hogy a lépésszám
                      </p>
                         <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
                            $$
@@ -181,11 +181,11 @@ Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\
                         <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
                            $$
 \sum_{i=2}^{\frac{N}{\ln N}}\left(\frac{1}{i\cdot{\ln i}}\right)\approx\int_{2}^{\frac{N}{\ln N}}\left(\frac{1}{x\cdot{\ln x}}\right)\,dx=
-\ln\ln\left(\frac{n}{\ln n}\right) - \ln\ln 2=\ln\left(\ln n-\ln\ln n\right)-\ln\ln 2=\mathcal{O}(\ln\ln n)
+\ln\ln\left(\frac{N}{\ln N}\right) - \ln\ln 2=\ln\left(\ln N-\ln\ln N\right)-\ln\ln 2=\mathcal{O}(\ln\ln N)
                            $$
                         </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Az algoritmus helyigénye értelemszerűen \(\mathcal{O}(N)\). 
+A helyigény értelemszerűen \(\mathcal{O}(N)\). <br>
 A konstans szorzón C++ nyelven javíthatunk <b>std::bitset</b> használatával egy statikus méretű logikai tömb helyett.
                      </p>
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2">
