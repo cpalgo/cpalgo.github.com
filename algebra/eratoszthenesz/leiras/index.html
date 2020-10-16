@@ -146,8 +146,10 @@ Az Eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, 
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2">
                         <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">void sieve(int n)
 {
-    bool isprime[n + 1];
-    fill(isprime + 2, isprime + n + 1, 1);
+    bool isprime[n + 1] = {0};
+    for (int i = 2; i <= n; ++i) {
+        isprime[i] = 1;
+    }
     for (int i = 2; i <= n; ++i) {
         if (!isprime[i]) {
             for (int j = i * i; j <= n; j += i) {
@@ -191,7 +193,7 @@ A konstans szorzón C++ nyelven javíthatunk <b>std::bitset</b> használatával 
 
 void sieve(int n)
 {
-    std::bitset &ltN&gt isprime;
+    std::bitset &ltN&gt isprime = 0;
     for (int i = 2; i <= n; ++i) {
         isprime[i] = 1;
     }
