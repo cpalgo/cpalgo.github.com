@@ -5,17 +5,17 @@
 #>title
 Példafeladat
 #<title
-<p class="text-gray-600 plain pt-2" style="font-size:15px;">Feladat:</p>
+<p class="text-gray-600 plain pt-6" style="font-size:15px;">Feladat:</p>
 #>text
 Adott egy \( 1 \leq l, r \leq 10^{12}\) egész számpár, amire teljesül, hogy \(r - l \leq 10^6\). 
 Határozd meg az \([l; r]\) intervallumban lévő prímek számát.
 #<text
-<p class="text-gray-600 plain pt-2" style="font-size:15px;">Megoldás:</p>
+<p class="text-gray-600 plain pt-6" style="font-size:15px;">Megoldás:</p>
 #>text
 Vegyük észre, hogy ha egy \(x \in [l; r] \) szám nem prím, akkor létezik \(\sqrt{x}\)-nél nemnagyobb osztója.
 Ezek szerint elég a \(2\dots \lfloor{\sqrt{r}}\rfloor)\) számok többszöröseit kizárnunk.
 #<text
-<p class="text-gray-600 plain pt-2" style="font-size:15px;">Komplexitás:</p> 
+<p class="text-gray-600 plain pt-6" style="font-size:15px;">Komplexitás:</p> 
 #>text
 \(\mathcal{O}(\sqrt{r}\log(r-l))\)
 #<text
@@ -23,7 +23,7 @@ Ezek szerint elég a \(2\dots \lfloor{\sqrt{r}}\rfloor)\) számok többszöröse
 
 int solve(int l, int r) 
 {
-     bitset <N> isprime;
+     bitset &ltN&gt isprime;
      for (int i = l; i <= r; ++i) {
           isprime[i - l] = 1;
      }
@@ -32,7 +32,9 @@ int solve(int l, int r)
      }
      for (int i = 2; i * i <= r; ++i) {
           for (int j = (l + i - 1) / i; j <= r / i; ++j) {
-               isprime[j * i - l] = 0;
+               if (j > 1) {
+                    isprime[j * i - l] = 0;
+               }
           }
      }
      int res = 0;

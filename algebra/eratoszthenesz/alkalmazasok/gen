@@ -37,7 +37,7 @@ A komplexitás vizsgálatából kiderült, hogy az \(1\dots N\) egészek összes
 Ezért a prímtényezőket általában explicite is eltárolhatjuk:
 #>code@void lowest_prime(int n)
 {
-     vec <int> primes[n + 1];
+     vec &ltint&gt primes[n + 1];
      for (int i = 2; i <= n; ++i) {
           if (primes[i].empty()) { 
                for (int j = i; j <= n; j += i) {

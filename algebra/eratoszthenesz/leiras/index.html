@@ -144,8 +144,7 @@ Algoritmusleírás
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
 Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, amivel hatékonyan ki lehet szűrni az első N természetes szám közül a prímeket.
                      </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
-                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">void sieve(int n)
+ sieve(int n)
 {
     bool isprime[n + 1] = {0};
     for (int i = 2; i <= n; ++i) {
@@ -158,7 +157,7 @@ Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, 
             }
         }
     }
-}</code></pre></div>
+}$#<code
                      </div>
                   <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
@@ -189,23 +188,22 @@ Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\
 A helyigény értelemszerűen \(\mathcal{O}(N)\). <br>
 A konstans szorzón C++ nyelven javíthatunk <b>std::bitset</b> használatával egy statikus méretű logikai tömb helyett.
                      </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
-                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">const int N = 1000001;
+ int N = 1000001;
 
 void sieve(int n)
 {
-    std::bitset &ltN&gt isprime = 0;
-    for (int i = 2; i <= n; ++i) {
-        isprime[i] = 1;
-    }
-    for (int i = 2; i <= n; ++i) {
-        if (isprime[i]) {
-            for (int j = i * i; j <= n; j += i) {
-                isprime[j] = 0;
-            }
-        }
-    }
-}</code></pre></div>
+     std::bitset &ltN&gt isprime = 0;
+     for (int i = 2; i <= n; ++i) {
+          isprime[i] = 1;
+     }
+     for (int i = 2; i <= n; ++i) {
+          if (isprime[i]) {
+               for (int j = i * i; j <= n; j += i) {
+                    isprime[j] = 0;
+               }
+          }
+     }
+}$#<code
                      </div>
                </div>
             </div>

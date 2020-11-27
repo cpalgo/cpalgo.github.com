@@ -161,7 +161,7 @@ Ezek szerint elég a \(2\dots \lfloor{\sqrt{r}}\rfloor)\) számok többszöröse
 
 int solve(int l, int r) 
 {
-     bitset <N> isprime;
+     bitset &ltN&gt isprime;
      for (int i = l; i <= r; ++i) {
           isprime[i - l] = 1;
      }

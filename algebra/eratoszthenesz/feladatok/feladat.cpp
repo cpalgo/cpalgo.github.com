@@ -40,30 +40,32 @@ const ll infll = numeric_limits <ll>::max() >> 1;
 const int inf = numeric_limits <int>::max() >> 1;
 const int N = 1e6 + 1;
 
-int solve(int l, int r) 
+int solve(int l, int r)
 {
-     bitset <N> isprime;
-     for (int i = l; i <= r; ++i) {
-          isprime[i - l] = 1;
-     }
-     if (l == 1) {
-          isprime[0] = 0;
-     }
-     for (int i = 2; i * i <= r; ++i) {
-          for (int j = (l + i - 1) / i; j <= r / i; ++j) {
-               isprime[j * i - l] = 0;
-          }
-     }
-     int res = 0;
-     for (int i = l; i <= r; ++i) {
-          res += isprime[i - l];
-     }
-     return res;
+    bitset<N> isprime;
+    for (int i = l; i <= r; ++i) {
+        isprime[i - l] = 1;
+    }
+    if (l == 1) {
+        isprime[0] = 0;
+    }
+    for (int i = 2; i * i <= r; ++i) {
+        for (int j = (l + i - 1) / i; j <= r / i; ++j) {
+            if (j > 1) {
+                isprime[j * i - l] = 0;
+            }
+        }
+    }
+    int res = 0;
+    for (int i = l; i <= r; ++i) {
+        res += isprime[i - l];
+    }
+    return res;
 }
 
 void input() 
 {
-     cout << solve(1, 10) << "\n";
+     cout << solve(100, 200) << "\n";
 }
 
 void solve()

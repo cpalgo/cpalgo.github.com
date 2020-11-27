@@ -178,7 +178,7 @@ Ezért a prímtényezőket általában explicite is eltárolhatjuk:
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
                         <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">void lowest_prime(int n)
 {
-     vec <int> primes[n + 1];
+     vec &ltint&gt primes[n + 1];
      for (int i = 2; i <= n; ++i) {
           if (primes[i].empty()) { 
                for (int j = i; j <= n; j += i) {
