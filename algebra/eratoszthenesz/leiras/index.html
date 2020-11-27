@@ -81,7 +81,7 @@
       }
    </style>
 </head>
-   <body class="bg-gray-100 tracking-wider tracking-normal">
+   <body class="bg-gray-100 tracking-wider tracking-normal overflow-y-scroll">
       <nav id="header" class="fixed w-full z-10 top-0 bg-gray-900" style="height:60px;">
          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
             <div class="pl-4 flex items-center">
@@ -142,9 +142,9 @@ Algoritmusleírás
                         </p>
                      </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Az Eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, amivel hatékonyan ki lehet szűrni az első N természetes szám közül a prímeket.
+Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, amivel hatékonyan ki lehet szűrni az első N természetes szám közül a prímeket.
                      </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2">
+                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
                         <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">void sieve(int n)
 {
     bool isprime[n + 1] = {0};
@@ -189,7 +189,7 @@ Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\
 A helyigény értelemszerűen \(\mathcal{O}(N)\). <br>
 A konstans szorzón C++ nyelven javíthatunk <b>std::bitset</b> használatával egy statikus méretű logikai tömb helyett.
                      </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2">
+                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
                         <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">const int N = 1000001;
 
 void sieve(int n)
