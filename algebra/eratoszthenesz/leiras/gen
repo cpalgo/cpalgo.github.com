@@ -8,20 +8,20 @@ Algoritmusleírás
 #>text
 Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, amivel hatékonyan ki lehet szűrni az első N természetes szám közül a prímeket.
 #<text
-#>code$void sieve(int n)
+#>code@void sieve(int n)
 {
-    bool isprime[n + 1] = {0};
-    for (int i = 2; i <= n; ++i) {
-        isprime[i] = 1;
-    }
-    for (int i = 2; i <= n; ++i) {
-        if (!isprime[i]) {
-            for (int j = i * i; j <= n; j += i) {
-                isprime[j] = 0;
-            }
-        }
-    }
-}$#<code
+     bool isprime[n + 1] = {0};
+     for (int i = 2; i <= n; ++i) {
+          isprime[i] = 1;
+     }
+     for (int i = 2; i <= n; ++i) {
+          if (!isprime[i]) {
+               for (int j = i * i; j <= n; j += i) {
+                    isprime[j] = 0;
+               }
+          }
+     }
+}@#<code
 #<block
 #>block
 #>title
@@ -45,7 +45,7 @@ Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\
 A helyigény értelemszerűen \(\mathcal{O}(N)\). <br>
 A konstans szorzón C++ nyelven javíthatunk <b>std::bitset</b> használatával egy statikus méretű logikai tömb helyett.
 #<text
-#>code$const int N = 1000001;
+#>code@const int N = 1000001;
 
 void sieve(int n)
 {
@@ -60,6 +60,6 @@ void sieve(int n)
                }
           }
      }
-}$#<code
+}@#<code
 #<block
 #<leiras
