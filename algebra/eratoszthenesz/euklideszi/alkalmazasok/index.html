@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="description" content="competitive programming tutorials in hungarian">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>cpAlgo</title>
+      <link href="../../../style.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/xcode.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+      <!-- To automatically render math in text elements, include the auto-render extension: -->
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <style>
+         @import url('https://fonts.googleapis.com/css?family=Lato');
+         html { font-family: 'Lato', sans-serif; }
+         h2 {
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+         }
+         hr {
+            border-color:#ececec;
+         }
+         tit:hover {
+            color:#d7d4ff;
+         }
+         a:hover {
+            color:#9587ff;
+            border-color:#d7d4ff;
+         }
+         .plain {
+            /* font-size: 14px; */
+            font-family: 'Roboto', sans-serif;
+            padding-top:10px;
+            padding-bottom:10px;
+         }
+         .plainsm {
+            font-size: 11px;
+            font-family: 'Roboto', sans-serif;
+            padding-top:10px;
+            padding-bottom:20px;
+         }
+         .separator {
+            display: flex;
+            align-items: center;
+         }
+         .separator::before, .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.572);
+         }
+         .separator::before {
+            margin-right: .25em;
+         }
+         .separator::after {
+            margin-left: .25em;
+         }
+         
+        .worksans {
+            font-family: 'Work Sans', sans-serif;
+        }
+                
+        #menu-toggle:checked + #menu {
+            display: block;
+        }
+        
+        .hover\:grow {
+            transition: all 0.3s;
+            transform: scale(1);
+        }
+        
+        .hover\:grow:hover {
+            transform: scale(1.02);
+        }
+        
+        .carousel-open:checked + .carousel-item {
+            position: static;
+            opacity: 100;
+        }
+        
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+        
+        #carousel-1:checked ~ .control-1,
+        #carousel-2:checked ~ .control-2,
+        #carousel-3:checked ~ .control-3 {
+            display: block;
+        }
+        
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+            color: #000;
+        }
+      </style>
+   </head>
+   <body class="bg-gray-100 tracking-wider tracking-normal">
+      <nav id="header" class="fixed w-full z-10 top-0 bg-gray-900" style="height:60px;">
+         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
+            <div class="pl-4 flex items-center">
+               <svg height="24" width="30">
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#9587ff"
+                  stroke-width="3" fill="none" />
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#9587ff"
+                  stroke-width="3" fill="none" />
+               </svg>
+               <a class="hover:text-white text-white font-extrabold text-xl"  href="../../../index.html">
+                  cpAlgo
+               </a>
+            </div>
+         </div>
+      </nav>
+      <table>
+         <tr>
+            <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-8">
+               <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+                  <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
+                     <ul class="list-reset">
+                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
+                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
+                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
+                        </li>
+                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
+                           <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
+                           <span class="pb-1 md:pb-0 text-sm">Alkalmazások</span>
+                           </a>
+                        </li>
+                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
+                           <a href="../feladatok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
+                           <span class="pb-1 md:pb-0 text-sm">Feladatok</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="w-full lg:w-4/5 lg:mt-0">
+                  <div style="padding-left: 20px; padding-top:20px;">
+                     <nav class="text-gray-700 font-bold pb-2" aria-label="Breadcrumb">
+                        <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                           <a href="../../../index.html#algebra" style="font-size: small;">Algebra</a>
+                           <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                        </li>
+                        <li class="flex items-center">
+                           <a href="index.html" class="text-gray-500" aria-current="page" style="font-size: small;">Gyorshatványozás</a>
+                        </li>
+                        </ol>
+                     </nav>
+                  </div>
+                  <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
+                     <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
+                           <p>
+                              Rekurzív algoritmus
+                           </p>
+                     </div>
+                     <p class="text-gray-700 plain text-sm lg:text-md">
+                        A rekurzív algoritmus minden lépésben felezi a kitevőt, így a komplexitás \(\mathcal{O}(\log{n})\) lesz:
+                        <div class="text-gray-700 plainsm overflow-x-auto ml-2 mr-2">
+                           $$
+                           a^n=\begin{cases}
+                              1 &\ \text{ha $n=0$}.\\[.8em]
+                              \left(a^m\right)^2 &\ \text{ha } n > 0 \text{, } n \equiv 0 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\[.8em]
+                              \left(a^m\right)^2\cdot a &\ \text{ha } n > 0 \text{, } n \equiv 1 \text{ (mod 2)} \text{, ahol }m = \lfloor\frac{n}{2}\rfloor\\
+                           \end{cases}
+                           $$
+                        </div>
+                     </p>
+                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
+                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
+   if(p == 0) {
+      return 1;
+   }
+   int res = fpow(b, p >> 1);
+   if(p % 2) {
+      return res * res * a;
+   } else {
+      return res * res;
+   }
+}</code></pre>
+                     </div>
+                  </div>
+
+                  <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-12 lg:pt-12 lg:pb-12 lg:pr-12 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top:10px;margin-bottom:20px;">
+                     <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
+                        <p>
+                           Iteratív algoritmus
+                        </p>
+                     </div>
+                     <p class="text-gray-700 plain text-sm lg:text-md">
+                        Az iteratív algoritmus a kitevő bináris felírásán alapszik.
+                     </p>
+                     <p class="text-gray-700 plain text-sm lg:text-md">
+                        Fenntartunk egy segédváltozót, ami az alap aktuális bitnek megfelelő hatványát tárolja, és ha ez a bit aktív, az eredményt megszorozzuk a segédváltozóval.
+                        Például: 
+                        <div class="text-gray-700 plainsm overflow-x-auto ml-2 mr-2">
+                           $$
+                              3^{25}=3^1\cdot 3^8\cdot 3^{16}=3^{\left(2^0 \right)}\cdot 3^{\left(2^3\right)}\cdot 3^{\left(2^4\right)}=3^{11001_{2}}
+                           $$
+                        </div>
+                     </p>
+                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b" style="margin-top:0; margin-bottom:10px;">
+                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p) {
+   int res = 1;
+   int pow = b;
+   for(; p; p >>= 1) {
+      if(p & 1) {
+         res *= pow;
+      }
+      pow *= pow;
+   }
+   return res;
+}</code></pre>
+                     </div>
+                  </div>
+                  <!-- <div class="pl-6 pt-6 pb-6 pr-6 mt-6 lg:mt-0 text-gray-900 leading-normal bg-transparent" style="margin-top: 10px;margin-bottom:10px;">
+                     <div id="disqus_thread"></div>
+                     <script>
+
+                     var disqus_config = function () {
+                     this.page.url = 'https://cpalgo.github.io/';
+                     this.page.identifier = 'euklideszi_alk';
+                     };
+                     (function() {
+                     var d = document, s = d.createElement('script');
+                     s.src = 'https://cpalgo.disqus.com/embed.js';
+                     s.setAttribute('data-timestamp', +new Date());
+                     (d.head || d.body).appendChild(s);
+                     })();
+                     </script>
+                     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                  </div> -->
+               </div>
+            </tr>
+            <tr style="height:20px;">
+            </tr>
+         </table>
+   </body>
+</html>

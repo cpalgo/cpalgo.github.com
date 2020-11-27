@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="description" content="competitive programming tutorials in hungarian">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>cpAlgo</title>
+   <link href="../../../style.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/xcode.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+
+   <!-- The loading of KaTeX is deferred to speed up page rendering -->
+   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+   <!-- To automatically render math in text elements, include the auto-render extension: -->
+   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+   <style>
+      @import url('https://fonts.googleapis.com/css?family=Lato');
+      html { font-family: 'Lato', sans-serif; }
+      h2 {
+         font-size: 16px;
+         font-family: 'Roboto', sans-serif;
+      }
+      hr {
+         border-color:#ececec;
+      }
+      tit:hover {
+         color:#d7d4ff;
+      }
+      a:hover {
+         color:#9587ff;
+         border-color:#d7d4ff;
+      }
+      .plain {
+         /* font-size: 14px; */
+         font-family: 'Roboto', sans-serif;
+      }
+      .plainsm {
+         font-size: 11px;
+         font-family: 'Roboto', sans-serif;
+         padding-top:10px;
+         padding-bottom:20px;
+      }
+      .separator {
+         display: flex;
+         align-items: center;
+      }
+      .separator::before, .separator::after {
+         content: '';
+         flex: 1;
+         border-bottom: 2px solid rgba(0, 0, 0, 0.572);
+      }
+      .separator::before {
+         margin-right: .25em;
+      }
+      .separator::after {
+         margin-left: .25em;
+      }
+      
+      .worksans {
+         font-family: 'Work Sans', sans-serif;
+      }
+               
+      #menu-toggle:checked + #menu {
+         display: block;
+      }
+      
+      .hover\:grow {
+         transition: all 0.3s;
+         transform: scale(1);
+      }
+      
+      .hover\:grow:hover {
+         transform: scale(1.02);
+      }
+   </style>
+</head>
+   <body class="bg-gray-100 tracking-wider tracking-normal overflow-y-scroll">
+      <nav id="header" class="fixed w-full z-10 top-0 bg-gray-900" style="height:60px;">
+         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
+            <div class="pl-4 flex items-center">
+               <svg height="24" width="30">
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#9587ff"
+                  stroke-width="3" fill="none" />
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#9587ff"
+                  stroke-width="3" fill="none" />
+               </svg>
+               <a class="hover:text-white text-white font-extrabold text-xl"  href="../../../index.html">
+                  cpAlgo
+               </a>
+            </div>
+         </div>
+      </nav>
+      <table>
+         <tr>
+            <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-8">
+               <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+                  <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
+                     <ul class="list-reset">
+                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
+                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
+                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
+                        </li>
+                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
+                           <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
+                           <span class="pb-1 md:pb-0 text-sm">Alkalmazások</span>
+                           </a>
+                        </li>
+                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
+                           <a href="../feladatok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
+                           <span class="pb-1 md:pb-0 text-sm">Feladatok</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="w-full lg:w-4/5 lg:mt-0">
+                  <div style="padding-left: 20px; padding-top:20px;">
+                     <nav class="text-gray-700 font-bold pb-2" aria-label="Breadcrumb">
+                        <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                           <a href="../../../index.html#algebra" style="font-size: small;">Algebra</a>
+                           <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                        </li>
+                        <li class="flex items-center">
+                           <a href="index.html" class="text-gray-500" aria-current="page" style="font-size: small;">Gyorshatványozás</a>
+                        </li>
+                        </ol>
+                     </nav>
+                  </div>
+                  <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
+                     <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
+                        <p>
+                           
+Algoritmusleírás
+                        </p>
+                     </div>
+                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, amivel hatékonyan ki lehet szűrni az első N természetes szám közül a prímeket.
+                     </p>
+                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
+                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">void sieve(int n)
+{
+    bool isprime[n + 1] = {0};
+    for (int i = 2; i <= n; ++i) {
+        isprime[i] = 1;
+    }
+    for (int i = 2; i <= n; ++i) {
+        if (!isprime[i]) {
+            for (int j = i * i; j <= n; j += i) {
+                isprime[j] = 0;
+            }
+        }
+    }
+}</code></pre></div>
+                     </div>
+                  <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
+                     <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
+                        <p>
+                           
+Komplexitás
+                        </p>
+                     </div>
+                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+Az algoritmus aszimptotikus futási ideje \(\mathcal{O}(N\log\log N)\) lesz: világos, hogy a lépésszám
+                     </p>
+                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
+                           $$
+\sum_{\text{p prím}}^{N}\left(\frac{N}{p}\right)=
+N\cdot\sum_{\text{p prím}}^{N}\left(\frac{1}{p}\right)
+                           $$
+                        </div>
+                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\ln N})\), amiből az is következik, hogy a k-adik prím \(k\geq 2\)-re \(\mathcal{O}(k\cdot{\ln k})\):
+                     </p>
+                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
+                           $$
+\sum_{i=2}^{\frac{N}{\ln N}}\left(\frac{1}{i\cdot{\ln i}}\right)\approx\int_{2}^{\frac{N}{\ln N}}\left(\frac{1}{x\cdot{\ln x}}\right)\,dx=
+\ln\ln\left(\frac{N}{\ln N}\right) - \ln\ln 2=\ln\left(\ln N-\ln\ln N\right)-\ln\ln 2=\mathcal{O}(\ln\ln N)
+                           $$
+                        </div>
+                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+A helyigény értelemszerűen \(\mathcal{O}(N)\). <br>
+A konstans szorzón C++ nyelven javíthatunk <b>std::bitset</b> használatával egy statikus méretű logikai tömb helyett.
+                     </p>
+                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
+                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">const int N = 1000001;
+
+void sieve(int n)
+{
+    std::bitset &ltN&gt isprime = 0;
+    for (int i = 2; i <= n; ++i) {
+        isprime[i] = 1;
+    }
+    for (int i = 2; i <= n; ++i) {
+        if (isprime[i]) {
+            for (int j = i * i; j <= n; j += i) {
+                isprime[j] = 0;
+            }
+        }
+    }
+}</code></pre></div>
+                     </div>
+               </div>
+            </div>
+         </tr>
+         <tr style="height:20px;">
+         </tr>
+      </table>
+   </body>
+</html>

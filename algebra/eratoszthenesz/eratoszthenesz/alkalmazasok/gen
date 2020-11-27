@@ -1,0 +1,51 @@
+#>head
+#<head
+#>alkalmazasok
+#>block
+#>title
+Legkisebb prímosztó meghatározása minden egészre 1-től N-ig
+#<title
+#>text
+Módosíthatjuk úgy az implementációt (a komplexitás változása nélkül), hogy egy adott egészt minden prímosztójával "látogatunk".
+Elég tehát fenntartani egy N méretű tömböt, aminek elemeit eleinte végtelenre állítjuk:
+#<text
+#>code@void lowest_prime(int n)
+{
+     int lprime[n + 1];
+     for (int i = 0; i <= n; ++i) {
+          lprime[i] = n + 1;
+     }
+     for (int i = 2; i <= n; ++i) {
+          if (lprime[i] == n + 1) {
+               for (int j = i; j <= n; j += i) {
+                    lprime[j] = min(lprime[j], i);
+               }
+          }
+     }
+}@#<code
+#>text
+A legkisebb prímosztó kiszámolása után meg tudjuk határozni egy adott \(1 \leq k \leq N\) szám prímtényezős felbontását \(\mathcal{O}(\log k)\) időben.
+#<text
+#<block
+#>block
+#>title
+Prímfelbontás meghatározása minden egészre 1-től N-ig
+#<title
+#>text
+A komplexitás vizsgálatából kiderült, hogy az \(1\dots N\) egészek összes prímosztóinak száma \(\mathcal{O}({N\log \log N})\).
+<br>
+Ezért a prímtényezőket általában explicite is eltárolhatjuk:
+#>code@void lowest_prime(int n)
+{
+     vec <int> primes[n + 1];
+     for (int i = 2; i <= n; ++i) {
+          if (primes[i].empty()) { 
+               for (int j = i; j <= n; j += i) {
+                    primes[j].pb(i);
+               }
+          }
+     }
+}@#<code
+#<text
+#<block
+#<alkalmazasok
