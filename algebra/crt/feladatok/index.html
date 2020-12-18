@@ -104,8 +104,9 @@
                   <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
                      <ul class="list-reset">
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
-                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
+                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
+                           <span class="pb-1 md:pb-0 text-sm">Leírás</span>
+                           </a>
                         </li>
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
                            <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
@@ -113,8 +114,8 @@
                            </a>
                         </li>
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="../feladatok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
-                           <span class="pb-1 md:pb-0 text-sm">Feladatok</span>
+                           <a href="../feladatok/index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
+                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Feladatok</span>
                            </a>
                         </li>
                      </ul>
@@ -138,82 +139,27 @@
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                         <p>
                            
-Algoritmusleírás
+Példafeladat
                         </p>
                      </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, amivel hatékonyan ki lehet szűrni az első N természetes szám közül a prímeket.
+todo
                      </p>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Eleinte \(2\dots N\) mindegyike potenciális prím. A \(2\dots N\) számokon növekvő sorrendben iterálunk, és ha \(2 \leq i \leq N\) nem lett még kihúzva, akkor az összes \(k \in [i; \lfloor{\frac{N}{i}}\rfloor]\)
-számra \(k\cdot i\)-t kihúzzuk a potenciális prímek közül.
-                     </p>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Könnyen belátható, hogy ha egy \(i\) számot nem zártunk ki a \(2\dots(i-1)\) számokat vizsgálva, akkor \(i\) prím.
-                     </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
-                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">void sieve(int n)
-{
-     bool isprime[n + 1] = {0};
-     for (int i = 2; i <= n; ++i) {
-          isprime[i] = 1;
-     }
-     for (int i = 2; i <= n; ++i) {
-          if (!isprime[i]) {
-               for (int j = i * i; j <= n; j += i) {
-                    isprime[j] = 0;
-               }
-          }
-     }
-}</code></pre></div>
                      </div>
                   <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                         <p>
                            
-Komplexitás
+Egyéb feladatok
                         </p>
                      </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Az algoritmus aszimptotikus futási ideje \(\mathcal{O}(N\log\log N)\) lesz: mivel minden megfelelő \(2 \leq i \leq n\)-re körülbelül \(\mathcal{O}(\frac{N}{i})\) műveletet hajtunk végre, az algoritmus lépésszáma
-                     </p>
-                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
-                           $$
-\sum_{\text{p prím}}^{N}\left(\frac{N}{p}\right)=
-N\cdot\sum_{\text{p prím}}^{N}\left(\frac{1}{p}\right)
-                           $$
-                        </div>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\ln N})\), amiből az is következik, hogy a k-adik prím \(k\geq 2\)-re \(\mathcal{O}(k\cdot{\ln k})\). <br>
-Ezt a becslést alkalmazva megkapjuk, hogy a komplexitás:
-                     </p>
-                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
-                           $$
-\sum_{i=2}^{\frac{N}{\ln N}}\left(\frac{1}{i\cdot{\ln i}}\right)\approx\int_{2}^{\frac{N}{\ln N}}\left(\frac{1}{x\cdot{\ln x}}\right)\,dx=
-\ln\ln\left(\frac{N}{\ln N}\right) - \ln\ln 2=\ln\left(\ln N-\ln\ln N\right)-\ln\ln 2=\mathcal{O}(\ln\ln N)
-                           $$
-                        </div>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-A helyigény értelemszerűen \(\mathcal{O}(N)\). <br>
-A konstans szorzón C++ nyelven javíthatunk <b>std::bitset</b> használatával egy statikus méretű logikai tömb helyett.
-                     </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
-                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">const int N = 1000001;
 
-void sieve(int n)
-{
-     std::bitset &ltN&gt isprime = 0;
-     for (int i = 2; i <= n; ++i) {
-          isprime[i] = 1;
-     }
-     for (int i = 2; i <= n; ++i) {
-          if (isprime[i]) {
-               for (int j = i * i; j <= n; j += i) {
-                    isprime[j] = 0;
-               }
-          }
-     }
-}</code></pre></div>
+<ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;">
+     <li><a class="text-gray-700" style="font-size:14px;" href="https://codeforces.com/problemset/problem/687/B">https://codeforces.com/problemset/problem/687/B</a></li>
+     <li><a class="text-gray-700" style="font-size:14px;" href="https://www.hackerrank.com/contests/w22/challenges/number-of-sequences">https://www.hackerrank.com/contests/w22/challenges/number-of-sequences</a></li>
+</ul>
+                     </p>
                      </div>
                </div>
             </div>

@@ -1,0 +1,39 @@
+#>head
+#<head
+#>alkalmazasok
+#>block
+#>title
+Nagy számok reprezentálása
+#<title
+#>text
+A kínai maradéktétel közvetlen következménye, hogy adott \(p_1, p_2, \dots, p_n\) prímek segítségével bármely \(0 \leq x < \prod_{i=1}^{n}{p_i}\) egész szám egyértelműen reprezentálható.
+Ehhez ismernünk kell \(x\)-nek a \(p_1, p_2, \dots, p_n\) számokkal vett osztási maradékát.
+#<text
+#>text
+Tegyük fel, hogy egy számítás eredménye \(x \approx 10^{100}\) nagyságrendű szám, amit 64 biten már nem tudunk ábrázolni.
+Könnyen ellenőrízhető, hogy n = 54 prím ekkor már elegendő (legyenek ezek \(p_1, p_2, \dots, p_{54} \text{, és } p = \prod_{i=1}^{n}{p_i}\)).
+<br>
+Írjuk fel a következő kongruenciarendszert:
+#<text
+#>text
+\(x \equiv r_1 \pmod {p_1}\)
+<br>
+\(x \equiv r_2 \pmod {p_2}\)
+<br>
+\(\dots \)
+<br>
+\(x \equiv r_{54} \pmod {p_{54}}\)
+#<text
+#>text
+Itt \(r_1, r_2, \dots, r_{54}\) a megfelelő osztási maradékokat jelölik.
+Az előzőekhez hasonlóan, használjuk a \(P_i = \frac{p}{p_i}\) és az \(y_i = P_i^{-1}\) jelölést.
+Ekkor a kínai maradéktétel szerint
+#<text
+#>math
+x \equiv \sum_{i=1}^{n}{y_i \cdot P_i \cdot r_i} \pmod{p} \leftrightarrow x = \left(\sum_{i=1}^{n}{y_i \cdot P_i \cdot r_i}\right) \mod p
+#<math
+#>text
+Ez az eljárás különösen hasznos lehet például a <a href="todo">Gyors Fourier-transzformáció</a> moduláris változatával, az NTT-vel kombinálva (így továbbra sem kell lebegőpontos számokkal dolgoznunk).
+#<text
+#<block
+#<alkalmazasok

@@ -1,0 +1,74 @@
+#>head
+#<head
+#>leiras
+#>block
+#>title
+Algoritmusleírás
+#<title
+#>text
+Legyen \(m=m_1\cdot m_2\cdot\dots\cdot m_n\), ahol fennáll, hogy \(\gcd(m_i, m_j)=1 \text{, ha } i \neq j\). <br>
+Tekintsük ekkor a következő szimultán kongruenciarendszert:
+#<text
+#>text
+\(x \equiv c_1 \pmod{m_1}\)
+<br>
+\(x \equiv c_2 \pmod{m_2}\)
+<br>
+\(\dots\)
+<br>
+\(x \equiv c_n \pmod{m_n}\)
+#<text
+#>text
+A kínai maradéktétel kimondja, hogy a kongruenciarendszernek pontosan egy megoldása van \(\pmod {m}\), és algoritmust is ad ennek kiszámítására.
+Ehhez először vezessük be az \(M_i = m / m_i\) jelölést. <br>
+#<text
+#>text
+Keressük meg \(M_i \cdot y_i \equiv 1 \pmod{m_i}\) megoldásait minden \(1 \leq i \leq n\)-re. <br>
+Értelemszerűen \(y_i = M_i^{-1}\) (\(M_i^{-1}\) alatt \(M_i\) <a href = "todo">moduláris inverzét</a> értjük az \(m_i\) maradékra).
+#<text
+#>text
+Az kongruenciarendszer megoldása ekkor:
+#<text
+#>math
+x\equiv y_1 \cdot M_1 \cdot c_1 + y_2 \cdot M_2 \cdot c_2 + \dots + y_n \cdot M_n \cdot c_n \equiv \sum_{i=1}^{n}{y_i \cdot M_i \cdot c_i} \pmod{m}
+#<math
+#>code@int fpow(int b, int p, int mod)
+{
+     int res = 1;
+     int pow = b;
+     for (; p; p >>= 1) {
+          if (p & 1) {
+               res = 1ll * res * pow % mod;
+          }
+          pow = 1ll * pow * pow % mod;
+     }
+     return res;
+}
+
+int crt(vec &ltint&gt &c, vec &ltint&gt &m) 
+{
+     int n = len(c);
+     int p = 1;
+     int ans = 0;
+     for (int e: m) {
+          p *= e;
+     }
+     for (int i = 0; i < n; ++i) {
+          int M = p / m[i];
+          int y = fpow(M, m[i] - 2, m[i]);
+          ans += y * M * c[i];
+          ans %= p;
+     }
+     return ans;
+}@#<code
+#<block
+#>block
+#>title
+Komplexitás
+#<title
+#>text
+A moduláris inverz kiszámítása \(\mathcal{O}(\log (m))\) időt vesz igénybe \(\pmod {m}\), tehát az aszimptotikus futási idő \(\mathcal{O}(n \cdot \log (m))\), 
+a helyigény pedig \(\mathcal{O}(n)\).
+#<text
+#<block
+#<leiras

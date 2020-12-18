@@ -81,7 +81,7 @@
       }
    </style>
 </head>
-   <body class="bg-gray-100 tracking-wider tracking-normal overflow-y-scroll">
+   <body class="bg-gray-100 tracking-wider tracking-normal overflow-y-scroll" style="overflow-y:scroll;">
       <nav id="header" class="fixed w-full z-10 top-0 bg-gray-900" style="height:60px;">
          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
             <div class="pl-4 flex items-center">
@@ -104,13 +104,13 @@
                   <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
                      <ul class="list-reset">
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
-                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
+                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
+                           <span class="pb-1 md:pb-0 text-sm">Leírás</span>
+                           </a>
                         </li>
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
-                           <span class="pb-1 md:pb-0 text-sm">Alkalmazások</span>
-                           </a>
+                           <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
+                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Alkalmazások</span>
                         </li>
                         <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
                            <a href="../feladatok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
@@ -138,82 +138,41 @@
                      <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
                         <p>
                            
-Algoritmusleírás
+Nagy számok reprezentálása
                         </p>
                      </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, amivel hatékonyan ki lehet szűrni az első N természetes szám közül a prímeket.
+A kínai maradéktétel közvetlen következménye, hogy adott \(p_1, p_2, \dots, p_n\) prímek segítségével bármely \(0 \leq x < \prod_{i=1}^{n}{p_i}\) egész szám egyértelműen reprezentálható.
+Ehhez ismernünk kell \(x\)-nek a \(p_1, p_2, \dots, p_n\) számokkal vett osztási maradékát.
                      </p>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Eleinte \(2\dots N\) mindegyike potenciális prím. A \(2\dots N\) számokon növekvő sorrendben iterálunk, és ha \(2 \leq i \leq N\) nem lett még kihúzva, akkor az összes \(k \in [i; \lfloor{\frac{N}{i}}\rfloor]\)
-számra \(k\cdot i\)-t kihúzzuk a potenciális prímek közül.
+Tegyük fel, hogy egy számítás eredménye \(x \approx 10^{100}\) nagyságrendű szám, amit 64 biten már nem tudunk ábrázolni.
+Könnyen ellenőrízhető, hogy n = 54 prím ekkor már elegendő (legyenek ezek \(p_1, p_2, \dots, p_{54} \text{, és } p = \prod_{i=1}^{n}{p_i}\)).
+<br>
+Írjuk fel a következő kongruenciarendszert:
                      </p>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Könnyen belátható, hogy ha egy \(i\) számot nem zártunk ki a \(2\dots(i-1)\) számokat vizsgálva, akkor \(i\) prím.
+\(x \equiv r_1 \pmod {p_1}\)
+<br>
+\(x \equiv r_2 \pmod {p_2}\)
+<br>
+\(\dots \)
+<br>
+\(x \equiv r_{54} \pmod {p_{54}}\)
                      </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
-                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">void sieve(int n)
-{
-     bool isprime[n + 1] = {0};
-     for (int i = 2; i <= n; ++i) {
-          isprime[i] = 1;
-     }
-     for (int i = 2; i <= n; ++i) {
-          if (!isprime[i]) {
-               for (int j = i * i; j <= n; j += i) {
-                    isprime[j] = 0;
-               }
-          }
-     }
-}</code></pre></div>
-                     </div>
-                  <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
-                     <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
-                        <p>
-                           
-Komplexitás
-                        </p>
-                     </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Az algoritmus aszimptotikus futási ideje \(\mathcal{O}(N\log\log N)\) lesz: mivel minden megfelelő \(2 \leq i \leq n\)-re körülbelül \(\mathcal{O}(\frac{N}{i})\) műveletet hajtunk végre, az algoritmus lépésszáma
+Itt \(r_1, r_2, \dots, r_{54}\) a megfelelő osztási maradékokat jelölik.
+Az előzőekhez hasonlóan, használjuk a \(P_i = \frac{p}{p_i}\) és az \(y_i = P_i^{-1}\) jelölést.
+Ekkor a kínai maradéktétel szerint
                      </p>
                         <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
                            $$
-\sum_{\text{p prím}}^{N}\left(\frac{N}{p}\right)=
-N\cdot\sum_{\text{p prím}}^{N}\left(\frac{1}{p}\right)
+x \equiv \sum_{i=1}^{n}{y_i \cdot P_i \cdot r_i} \pmod{p} \leftrightarrow x = \left(\sum_{i=1}^{n}{y_i \cdot P_i \cdot r_i}\right) \mod p
                            $$
                         </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\ln N})\), amiből az is következik, hogy a k-adik prím \(k\geq 2\)-re \(\mathcal{O}(k\cdot{\ln k})\). <br>
-Ezt a becslést alkalmazva megkapjuk, hogy a komplexitás:
+Ez az eljárás különösen hasznos lehet például a <a href="todo">Gyors Fourier-transzformáció</a> moduláris változatával, az NTT-vel kombinálva (így továbbra sem kell lebegőpontos számokkal dolgoznunk).
                      </p>
-                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
-                           $$
-\sum_{i=2}^{\frac{N}{\ln N}}\left(\frac{1}{i\cdot{\ln i}}\right)\approx\int_{2}^{\frac{N}{\ln N}}\left(\frac{1}{x\cdot{\ln x}}\right)\,dx=
-\ln\ln\left(\frac{N}{\ln N}\right) - \ln\ln 2=\ln\left(\ln N-\ln\ln N\right)-\ln\ln 2=\mathcal{O}(\ln\ln N)
-                           $$
-                        </div>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-A helyigény értelemszerűen \(\mathcal{O}(N)\). <br>
-A konstans szorzón C++ nyelven javíthatunk <b>std::bitset</b> használatával egy statikus méretű logikai tömb helyett.
-                     </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
-                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">const int N = 1000001;
-
-void sieve(int n)
-{
-     std::bitset &ltN&gt isprime = 0;
-     for (int i = 2; i <= n; ++i) {
-          isprime[i] = 1;
-     }
-     for (int i = 2; i <= n; ++i) {
-          if (isprime[i]) {
-               for (int j = i * i; j <= n; j += i) {
-                    isprime[j] = 0;
-               }
-          }
-     }
-}</code></pre></div>
                      </div>
                </div>
             </div>

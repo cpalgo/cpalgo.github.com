@@ -8,6 +8,13 @@ Algoritmusleírás
 #>text
 Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, amivel hatékonyan ki lehet szűrni az első N természetes szám közül a prímeket.
 #<text
+#>text
+Eleinte \(2\dots N\) mindegyike potenciális prím. A \(2\dots N\) számokon növekvő sorrendben iterálunk, és ha \(2 \leq i \leq N\) nem lett még kihúzva, akkor az összes \(k \in [i; \lfloor{\frac{N}{i}}\rfloor]\)
+számra \(k\cdot i\)-t kihúzzuk a potenciális prímek közül.
+#<text
+#>text
+Könnyen belátható, hogy ha egy \(i\) számot nem zártunk ki a \(2\dots(i-1)\) számokat vizsgálva, akkor \(i\) prím.
+#<text
 #>code@void sieve(int n)
 {
      bool isprime[n + 1] = {0};
@@ -28,14 +35,15 @@ Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, 
 Komplexitás
 #<title
 #>text
-Az algoritmus aszimptotikus futási ideje \(\mathcal{O}(N\log\log N)\) lesz: világos, hogy a lépésszám
+Az algoritmus aszimptotikus futási ideje \(\mathcal{O}(N\log\log N)\) lesz: mivel minden megfelelő \(2 \leq i \leq n\)-re körülbelül \(\mathcal{O}(\frac{N}{i})\) műveletet hajtunk végre, az algoritmus lépésszáma
 #<text
 #>math
 \sum_{\text{p prím}}^{N}\left(\frac{N}{p}\right)=
 N\cdot\sum_{\text{p prím}}^{N}\left(\frac{1}{p}\right)
 #<math
 #>text
-Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\ln N})\), amiből az is következik, hogy a k-adik prím \(k\geq 2\)-re \(\mathcal{O}(k\cdot{\ln k})\):
+Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\ln N})\), amiből az is következik, hogy a k-adik prím \(k\geq 2\)-re \(\mathcal{O}(k\cdot{\ln k})\). <br>
+Ezt a becslést alkalmazva megkapjuk, hogy a komplexitás:
 #<text
 #>math
 \sum_{i=2}^{\frac{N}{\ln N}}\left(\frac{1}{i\cdot{\ln i}}\right)\approx\int_{2}^{\frac{N}{\ln N}}\left(\frac{1}{x\cdot{\ln x}}\right)\,dx=

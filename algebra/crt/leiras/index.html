@@ -142,29 +142,63 @@ Algoritmusleírás
                         </p>
                      </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Az eratoszthenészi szita (vagy Eratoszthenész szitája) egy olyan algoritmus, amivel hatékonyan ki lehet szűrni az első N természetes szám közül a prímeket.
+Legyen \(m=m_1\cdot m_2\cdot\dots\cdot m_n\), ahol fennáll, hogy \(\gcd(m_i, m_j)=1 \text{, ha } i \neq j\). <br>
+Tekintsük ekkor a következő szimultán kongruenciarendszert:
                      </p>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Eleinte \(2\dots N\) mindegyike potenciális prím. A \(2\dots N\) számokon növekvő sorrendben iterálunk, és ha \(2 \leq i \leq N\) nem lett még kihúzva, akkor az összes \(k \in [i; \lfloor{\frac{N}{i}}\rfloor]\)
-számra \(k\cdot i\)-t kihúzzuk a potenciális prímek közül.
+\(x \equiv c_1 \pmod{m_1}\)
+<br>
+\(x \equiv c_2 \pmod{m_2}\)
+<br>
+\(\dots\)
+<br>
+\(x \equiv c_n \pmod{m_n}\)
                      </p>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Könnyen belátható, hogy ha egy \(i\) számot nem zártunk ki a \(2\dots(i-1)\) számokat vizsgálva, akkor \(i\) prím.
+A kínai maradéktétel kimondja, hogy a kongruenciarendszernek pontosan egy megoldása van \(\pmod {m}\), és algoritmust is ad ennek kiszámítására.
+Ehhez először vezessük be az \(M_i = m / m_i\) jelölést. <br>
                      </p>
+                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+Keressük meg \(M_i \cdot y_i \equiv 1 \pmod{m_i}\) megoldásait minden \(1 \leq i \leq n\)-re. <br>
+Értelemszerűen \(y_i = M_i^{-1}\) (\(M_i^{-1}\) alatt \(M_i\) <a href = "todo">moduláris inverzét</a> értjük az \(m_i\) maradékra).
+                     </p>
+                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+Az kongruenciarendszer megoldása ekkor:
+                     </p>
+                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
+                           $$
+x\equiv y_1 \cdot M_1 \cdot c_1 + y_2 \cdot M_2 \cdot c_2 + \dots + y_n \cdot M_n \cdot c_n \equiv \sum_{i=1}^{n}{y_i \cdot M_i \cdot c_i} \pmod{m}
+                           $$
+                        </div>
                      <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
-                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">void sieve(int n)
+                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p, int mod)
 {
-     bool isprime[n + 1] = {0};
-     for (int i = 2; i <= n; ++i) {
-          isprime[i] = 1;
-     }
-     for (int i = 2; i <= n; ++i) {
-          if (!isprime[i]) {
-               for (int j = i * i; j <= n; j += i) {
-                    isprime[j] = 0;
-               }
+     int res = 1;
+     int pow = b;
+     for (; p; p >>= 1) {
+          if (p & 1) {
+               res = 1ll * res * pow % mod;
           }
+          pow = 1ll * pow * pow % mod;
      }
+     return res;
+}
+
+int crt(vec &ltint&gt &c, vec &ltint&gt &m) 
+{
+     int n = len(c);
+     int p = 1;
+     int ans = 0;
+     for (int e: m) {
+          p *= e;
+     }
+     for (int i = 0; i < n; ++i) {
+          int M = p / m[i];
+          int y = fpow(M, m[i] - 2, m[i]);
+          ans += y * M * c[i];
+          ans %= p;
+     }
+     return ans;
 }</code></pre></div>
                      </div>
                   <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
@@ -175,45 +209,9 @@ Komplexitás
                         </p>
                      </div>
                      <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Az algoritmus aszimptotikus futási ideje \(\mathcal{O}(N\log\log N)\) lesz: mivel minden megfelelő \(2 \leq i \leq n\)-re körülbelül \(\mathcal{O}(\frac{N}{i})\) műveletet hajtunk végre, az algoritmus lépésszáma
+A moduláris inverz kiszámítása \(\mathcal{O}(\log (m))\) időt vesz igénybe \(\pmod {m}\), tehát az aszimptotikus futási idő \(\mathcal{O}(n \cdot \log (m))\), 
+a helyigény pedig \(\mathcal{O}(n)\).
                      </p>
-                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
-                           $$
-\sum_{\text{p prím}}^{N}\left(\frac{N}{p}\right)=
-N\cdot\sum_{\text{p prím}}^{N}\left(\frac{1}{p}\right)
-                           $$
-                        </div>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-Felhasználhatjuk, hogy az N-nél kisebb prímek száma \(\mathcal{O}(\frac{N}{\ln N})\), amiből az is következik, hogy a k-adik prím \(k\geq 2\)-re \(\mathcal{O}(k\cdot{\ln k})\). <br>
-Ezt a becslést alkalmazva megkapjuk, hogy a komplexitás:
-                     </p>
-                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
-                           $$
-\sum_{i=2}^{\frac{N}{\ln N}}\left(\frac{1}{i\cdot{\ln i}}\right)\approx\int_{2}^{\frac{N}{\ln N}}\left(\frac{1}{x\cdot{\ln x}}\right)\,dx=
-\ln\ln\left(\frac{N}{\ln N}\right) - \ln\ln 2=\ln\left(\ln N-\ln\ln N\right)-\ln\ln 2=\mathcal{O}(\ln\ln N)
-                           $$
-                        </div>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-A helyigény értelemszerűen \(\mathcal{O}(N)\). <br>
-A konstans szorzón C++ nyelven javíthatunk <b>std::bitset</b> használatával egy statikus méretű logikai tömb helyett.
-                     </p>
-                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
-                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">const int N = 1000001;
-
-void sieve(int n)
-{
-     std::bitset &ltN&gt isprime = 0;
-     for (int i = 2; i <= n; ++i) {
-          isprime[i] = 1;
-     }
-     for (int i = 2; i <= n; ++i) {
-          if (isprime[i]) {
-               for (int j = i * i; j <= n; j += i) {
-                    isprime[j] = 0;
-               }
-          }
-     }
-}</code></pre></div>
                      </div>
                </div>
             </div>

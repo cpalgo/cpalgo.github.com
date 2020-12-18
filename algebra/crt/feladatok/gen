@@ -1,0 +1,24 @@
+#>head
+#<head
+#>feladatok
+#>block
+#>title
+Példafeladat
+#<title
+#>text
+todo
+#<text
+#<block
+#>block
+#>title
+Egyéb feladatok
+#<title
+#>text
+
+<ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;">
+     <li><a class="text-gray-700" style="font-size:14px;" href="https://codeforces.com/problemset/problem/687/B">https://codeforces.com/problemset/problem/687/B</a></li>
+     <li><a class="text-gray-700" style="font-size:14px;" href="https://www.hackerrank.com/contests/w22/challenges/number-of-sequences">https://www.hackerrank.com/contests/w22/challenges/number-of-sequences</a></li>
+</ul>
+#<text
+#<block
+#<feladatok

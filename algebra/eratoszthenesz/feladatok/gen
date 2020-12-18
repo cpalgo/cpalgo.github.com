@@ -7,7 +7,7 @@ Példafeladat
 #<title
 <p class="text-gray-600 plain pt-6" style="font-size:15px;">Feladat:</p>
 #>text
-Adott egy \( 1 \leq l, r \leq 10^{12}\) egész számpár, amire teljesül, hogy \(r - l \leq 10^6\). 
+Adott egy \( 1 \leq l, r \leq 10^{12}\) egész számpár, amire teljesül, hogy \(r - l < 10^6\). 
 Határozd meg az \([l; r]\) intervallumban lévő prímek számát.
 #<text
 <p class="text-gray-600 plain pt-6" style="font-size:15px;">Megoldás:</p>
@@ -17,7 +17,7 @@ Ezek szerint elég a \(2\dots \lfloor{\sqrt{r}}\rfloor)\) számok többszöröse
 #<text
 <p class="text-gray-600 plain pt-6" style="font-size:15px;">Komplexitás:</p> 
 #>text
-\(\mathcal{O}(\sqrt{r}\log(r-l))\)
+\(\mathcal{O}(\sqrt{r}+(r-l)\log(r))\)
 #<text
 #>code@const int N = 1e6 + 1;
 
