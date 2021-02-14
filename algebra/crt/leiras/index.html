@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <meta name="description" content="competitive programming tutorials in hungarian">
+   <meta name="keywords" content="">
+   <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>cpAlgo</title>
-   <link href="../../../style.css" rel="stylesheet">
+   <link href="https://unpkg.com/tailwindcss@next/dist/tailwind.min.css" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/xcode.min.css">
@@ -30,19 +31,21 @@
       hr {
          border-color:#ececec;
       }
+      p {
+         line-height: 2;
+      }
       tit:hover {
          color:#d7d4ff;
       }
       a:hover {
          color:#9587ff;
-         border-color:#d7d4ff;
       }
       .plain {
          /* font-size: 14px; */
          font-family: 'Roboto', sans-serif;
       }
       .plainsm {
-         font-size: 11px;
+         font-size: 12px;
          font-family: 'Roboto', sans-serif;
          padding-top:10px;
          padding-bottom:20px;
@@ -86,9 +89,9 @@
          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
             <div class="pl-4 flex items-center">
                <svg height="24" width="30">
-                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#9587ff"
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#8476ee"
                   stroke-width="3" fill="none" />
-                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#9587ff"
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#8476ee"
                   stroke-width="3" fill="none" />
                </svg>
                <a class="hover:text-white text-white font-extrabold text-xl"  href="../../../index.html">
@@ -99,30 +102,55 @@
       </nav>
       <table>
          <tr>
-            <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-8">
-               <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
-                  <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
+            <!--Container-->
+            <div class="container w-full flex flex-wrap mx-auto px-2 mt-16 lg:mt-24">
+               <div class="w-full pt-6 lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+                  <p id = "menu-title" class="lg:hidden text-base font-bold py-2 px-2 lg:pb-4 text-gray-500">Lapok</p>
+
+                  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+                  <div class="w-full sticky inset-0 z-20">
+                    <div @click.away="open = false" class="lg:hidden w-full" x-data="{ open: false }">
+                        <button @click="open = !open" type="button" class="inline-flex justify-end w-full rounded-md border border-gray-300 shadow-sm px-4 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="options-menu" aria-haspopup="true" x-bind:aria-expanded="open" aria-expanded="true">
+                            <svg class="fill-current h-3 float-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                             </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-left">
+                            <div class="origin-top-left mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                    <a href="../leiras/index.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-500">Leírás</a>
+                                    <a href="../alkalmazasok/index.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-500">Alkalmazások</a>
+                                    <a href="../feladatok/index.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-500">Feladatok</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="w-full sticky inset-0 hidden h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
                      <ul class="list-reset">
-                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-600 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500" style="border-color: #9587ff;">
-                           <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
-                        </li>
-                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
-                           <span class="pb-1 md:pb-0 text-sm">Alkalmazások</span>
+                        <li class="py-2 md:my-0 lg:hover:bg-transparent">
+                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-600 no-underline border-l-4 border-transparent lg:border-indigo-400">
+                              <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
                            </a>
                         </li>
-                        <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                           <a href="../feladatok/index.html" class="block pl-4 align-middle text-gray-700 no-underline border-l-4 border-transparent">
-                           <span class="pb-1 md:pb-0 text-sm">Feladatok</span>
+                        <li class="py-2 md:my-0 lg:hover:bg-transparent">
+                           <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-600 no-underline border-l-4 border-transparent">
+                              <span class="pb-1 md:pb-0 text-sm">Alkalmazások</span>
+                           </a>
+                        </li>
+                        <li class="py-2 md:my-0 lg:hover:bg-transparent">
+                           <a href="../feladatok/index.html" class="block pl-4 align-middle text-gray-600 no-underline border-l-4 border-transparent">
+                              <span class="pb-1 md:pb-0 text-sm">Feladatok</span>
                            </a>
                         </li>
                      </ul>
                   </div>
                </div>
+               
                <div class="w-full lg:w-4/5 lg:mt-0">
                   <div style="padding-left: 20px; padding-top:20px;">
-                     <nav class="text-gray-700 font-bold pb-2" aria-label="Breadcrumb">
+                     <nav class="text-gray-600 font-bold pb-2" aria-label="Breadcrumb">
                         <ol class="list-none p-0 inline-flex">
                         <li class="flex items-center">
                            <a href="../../../index.html#algebra" style="font-size: small;">Algebra</a>
@@ -134,18 +162,18 @@
                         </ol>
                      </nav>
                   </div>
-                  <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
-                     <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
+                  <div class="border-gray-300 pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal border bg-white shadow-sm" style="margin-top: 10px;margin-bottom:20px;">
+                     <div class="font-bold text-md mb-2 text-gray-500 flex items-center">
                         <p>
                            
 Algoritmusleírás
                         </p>
                      </div>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
 Legyen \(m=m_1\cdot m_2\cdot\dots\cdot m_n\), ahol fennáll, hogy \(\gcd(m_i, m_j)=1 \text{, ha } i \neq j\). <br>
 Tekintsük ekkor a következő szimultán kongruenciarendszert:
                      </p>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
 \(x \equiv c_1 \pmod{m_1}\)
 <br>
 \(x \equiv c_2 \pmod{m_2}\)
@@ -154,15 +182,15 @@ Tekintsük ekkor a következő szimultán kongruenciarendszert:
 <br>
 \(x \equiv c_n \pmod{m_n}\)
                      </p>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-A kínai maradéktétel kimondja, hogy a kongruenciarendszernek pontosan egy megoldása van \(\pmod {m}\), és algoritmust is ad ennek kiszámítására.
-Ehhez először vezessük be az \(M_i = m / m_i\) jelölést. <br>
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+A kínai maradéktétel kimondja, hogy a kongruenciarendszernek pontosan egy megoldása van \(\pmod {m}\), és algoritmust is ad ennek kiszámítására. <br>
+Ehhez először vezessük be az \(M_i = m / m_i\) jelölést.
                      </p>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
 Keressük meg \(M_i \cdot y_i \equiv 1 \pmod{m_i}\) megoldásait minden \(1 \leq i \leq n\)-re. <br>
 Értelemszerűen \(y_i = M_i^{-1}\) (\(M_i^{-1}\) alatt \(M_i\) <a href = "todo">moduláris inverzét</a> értjük az \(m_i\) maradékra).
                      </p>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
 Az kongruenciarendszer megoldása ekkor:
                      </p>
                         <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
@@ -201,23 +229,76 @@ int crt(vec &ltint&gt &c, vec &ltint&gt &m)
      return ans;
 }</code></pre></div>
                      </div>
-                  <div class="pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-top: 10px;margin-bottom:20px;">
-                     <div class="font-bold text-md mb-2 text-gray-600 flex items-center">
+                  <div class="border-gray-300 pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal border bg-white shadow-sm" style="margin-top: 10px;margin-bottom:20px;">
+                     <div class="font-bold text-md mb-2 text-gray-500 flex items-center">
                         <p>
                            
 Komplexitás
                         </p>
                      </div>
-                     <p class="text-gray-700 plain pt-2 pb-2" style="font-size:13px;">
-A moduláris inverz kiszámítása \(\mathcal{O}(\log (m))\) időt vesz igénybe \(\pmod {m}\), tehát az aszimptotikus futási idő \(\mathcal{O}(n \cdot \log (m))\), 
-a helyigény pedig \(\mathcal{O}(n)\).
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+A moduláris inverz kiszámítása\(\pmod {m}\) a gyorshatványozás miatt \(\mathcal{O}(\log (m))\) időt vesz igénybe. <br>
+Mivel összesen \(n\) ilyen műveletet hajtunk végre, az aszimptotikus futási idő \(\mathcal{O}(n \cdot \log (m))\).
+                     </p>
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+                        Az algoritmus helyigénye a kongruenciarendszer méretével arányos, tehát \(\mathcal{O}(n)\).
                      </p>
                      </div>
+
+               <div class="pl-6 pt-6 pb-6 pr-6 mt-6 lg:mt-0 text-gray-900 leading-normal bg-transparent" style="margin-top: 10px;margin-bottom:10px;">
+                  <div id="disqus_thread"></div>
+                  <script>
+
+                  var disqus_config = function () {
+                  this.page.url = 'https://cpalgo.github.io/';
+                  this.page.identifier = 'gyorshatvanyozas_lei';
+                  };
+                  (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = 'https://cpalgo.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+                  })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
                </div>
             </div>
          </tr>
          <tr style="height:20px;">
          </tr>
       </table>
+      <script>
+         /*Toggle dropdown list*/
+         /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+                     
+         var helpMenuDiv = document.getElementById("menu-content");
+         var helpMenu = document.getElementById("menu-toggle");
+         
+         document.onclick = check;
+         
+         function check(e) {
+           var target = (e && e.target) || (event && event.srcElement);
+
+           if (!checkParent(target, helpMenuDiv)) {
+             if (checkParent(target, helpMenu)) {
+               if (helpMenuDiv.classList.contains("hidden")) {
+                 helpMenuDiv.classList.remove("hidden");
+               } else {helpMenuDiv.classList.add("hidden");}
+             } else {
+               helpMenuDiv.classList.add("hidden");
+             }
+           }
+           
+         }
+         
+         function checkParent(t, elm) {
+           while(t.parentNode) {
+             if( t == elm ) {return true;}
+             t = t.parentNode;
+           }
+           return false;
+         }
+     </script>
    </body>
 </html>
