@@ -85,7 +85,7 @@
    </style>
 </head>
    <body class="bg-gray-100 tracking-wider tracking-normal overflow-y-scroll">
-      <nav id="header" class="fixed w-full z-10 top-0 bg-gray-900" style="height:60px;">
+      <nav id="header" class="fixed w-full z-20 top-0 bg-gray-900" style="height:60px;">
          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
             <div class="pl-4 flex items-center">
                <svg height="24" width="30">
@@ -108,7 +108,7 @@
                   <p id = "menu-title" class="lg:hidden text-base font-bold py-2 px-2 lg:pb-4 text-gray-500">Lapok</p>
 
                   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-                  <div class="w-full sticky inset-0 z-20">
+                  <div class="w-full sticky inset-0 z-10">
                     <div @click.away="open = false" class="lg:hidden w-full" x-data="{ open: false }">
                         <button @click="open = !open" type="button" class="inline-flex justify-end w-full rounded-md border border-gray-300 shadow-sm px-4 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="options-menu" aria-haspopup="true" x-bind:aria-expanded="open" aria-expanded="true">
                             <svg class="fill-current h-3 float-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -118,9 +118,9 @@
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-left">
                             <div class="origin-top-left mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                                 <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                    <a href="../leiras/index.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-500">Leírás</a>
-                                    <a href="../alkalmazasok/index.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-500">Alkalmazások</a>
-                                    <a href="../feladatok/index.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-500">Feladatok</a>
+                                    <a href="../leiras/index.html" class="block px-6 py-4 text-sm text-gray-600 hover:text-indigo-500" role="menu-item">Leírás</a>
+                                    <a href="../alkalmazasok/index.html" class="block px-6 py-4 text-sm text-gray-600 hover:text-indigo-500" role="menu-item">Alkalmazások</a>
+                                    <a href="../feladatok/index.html" class="block px-6 py-4 text-sm text-gray-600 hover:text-indigo-500" role="menu-item">Feladatok</a>
                                 </div>
                             </div>
                         </div>
