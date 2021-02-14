@@ -1,61 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="description" content="competitive programming tutorials in hungarian">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>cpAlgo</title>
-      <link href="style.css" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-      <style>
-         @import url('https://fonts.googleapis.com/css?family=Lato');
-         html { font-family: 'Lato', sans-serif; }
-         h2 {
-            font-size: 16px;
-            font-family: 'Roboto', sans-serif;
-         }
-         hr {
-            border-color:#ececec;
-         }
-         a:hover {
-            color:#9587ff;
-            border-color:#d7d4ff;
-         }
-         .plain {
-            font-size: 14px;
-            font-family: 'Roboto', sans-serif;
-            padding-top:10px;
-         }
-         .separator {
-            display: flex;
-            align-items: center;
-         }
-         .separator::before, .separator::after {
-            content: '';
-            flex: 1;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.572);
-         }
-         .separator::before {
-            margin-right: .25em;
-         }
-         .separator::after {
-            margin-left: .25em;
-         }
-      </style>
-   </head>
-   <body class="bg-gray-100 tracking-wider tracking-normal">
-      <nav id="header" class="fixed w-full z-10 top-0 bg-gray-900" style="height:60px;">
+<head>
+   <meta charset="UTF-8">
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>cpAlgo</title>
+   <link href="https://unpkg.com/tailwindcss@next/dist/tailwind.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/xcode.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+
+   <!-- The loading of KaTeX is deferred to speed up page rendering -->
+   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+   <!-- To automatically render math in text elements, include the auto-render extension: -->
+   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+   <style>
+      @import url('https://fonts.googleapis.com/css?family=Lato');
+      html { font-family: 'Lato', sans-serif; }
+      h2 {
+         font-size: 16px;
+         font-family: 'Roboto', sans-serif;
+      }
+      hr {
+         border-color:#ececec;
+      }
+      p {
+         line-height: 2;
+      }
+      tit:hover {
+         color:#d7d4ff;
+      }
+      a:hover {
+         color:#9587ff;
+      }
+      .plain {
+         /* font-size: 14px; */
+         font-family: 'Roboto', sans-serif;
+      }
+      .plainsm {
+         font-size: 12px;
+         font-family: 'Roboto', sans-serif;
+         padding-top:10px;
+         padding-bottom:20px;
+      }
+      .separator {
+         display: flex;
+         align-items: center;
+      }
+      .separator::before, .separator::after {
+         content: '';
+         flex: 1;
+         border-bottom: 2px solid rgba(0, 0, 0, 0.572);
+      }
+      .separator::before {
+         margin-right: .25em;
+      }
+      .separator::after {
+         margin-left: .25em;
+      }
+      
+      .worksans {
+         font-family: 'Work Sans', sans-serif;
+      }
+               
+      #menu-toggle:checked + #menu {
+         display: block;
+      }
+      
+      .hover\:grow {
+         transition: all 0.3s;
+         transform: scale(1);
+      }
+      
+      .hover\:grow:hover {
+         transform: scale(1.02);
+      }
+   </style>
+</head>
+   <body class="bg-gray-100 tracking-wider tracking-normal overflow-y-scroll">
+      <nav id="header" class="fixed w-full z-20 top-0 bg-gray-900" style="height:60px;">
          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
             <div class="pl-4 flex items-center">
                <svg height="24" width="30">
-                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#9587ff"
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#8476ee"
                   stroke-width="3" fill="none" />
-                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#9587ff"
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#8476ee"
                   stroke-width="3" fill="none" />
                </svg>
-               <a class="hover:text-white text-white font-extrabold text-xl"  href="index.html">
+               <a class="hover:text-white text-white font-extrabold text-xl"  href="../../../index.html">
                   cpAlgo
                </a>
             </div>
@@ -63,356 +102,203 @@
       </nav>
       <table>
          <tr>
-            <div class="w-full lg:w-1/5 lg:px-0 text-xl text-gray-800 leading-normal">
+            <!--Container-->
+            <div class="container w-full flex flex-wrap mx-auto px-2 mt-16 lg:mt-24">
+               <div class="w-full pt-6 lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+                  <p id = "menu-title" class="lg:hidden text-base font-bold py-2 px-2 lg:pb-4 text-gray-500">Lapok</p>
+
+                  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+                  <div class="w-full sticky inset-0 z-10">
+                    <div @click.away="open = false" class="lg:hidden w-full" x-data="{ open: false }">
+                        <button @click="open = !open" type="button" class="inline-flex justify-end w-full rounded-md border border-gray-300 shadow-sm px-4 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="options-menu" aria-haspopup="true" x-bind:aria-expanded="open" aria-expanded="true">
+                            <svg class="fill-current h-3 float-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                             </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-left">
+                            <div class="origin-top-left mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                    <a href="../leiras/index.html" class="block px-6 py-4 text-sm text-gray-600 hover:text-indigo-500" role="menu-item">Leírás</a>
+                                    <a href="../alkalmazasok/index.html" class="block px-6 py-4 text-sm text-gray-600 hover:text-indigo-500" role="menu-item">Alkalmazások</a>
+                                    <a href="../feladatok/index.html" class="block px-6 py-4 text-sm text-gray-600 hover:text-indigo-500" role="menu-item">Feladatok</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="w-full sticky inset-0 hidden h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
+                     <ul class="list-reset">
+                        <li class="py-2 md:my-0 lg:hover:bg-transparent">
+                           <a href="../leiras/index.html" class="block pl-4 align-middle text-gray-600 no-underline border-l-4 border-transparent lg:border-indigo-400">
+                              <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Leírás</span>
+                           </a>
+                        </li>
+                        <li class="py-2 md:my-0 lg:hover:bg-transparent">
+                           <a href="../alkalmazasok/index.html" class="block pl-4 align-middle text-gray-600 no-underline border-l-4 border-transparent">
+                              <span class="pb-1 md:pb-0 text-sm">Alkalmazások</span>
+                           </a>
+                        </li>
+                        <li class="py-2 md:my-0 lg:hover:bg-transparent">
+                           <a href="../feladatok/index.html" class="block pl-4 align-middle text-gray-600 no-underline border-l-4 border-transparent">
+                              <span class="pb-1 md:pb-0 text-sm">Feladatok</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               
+               <div class="w-full lg:w-4/5 lg:mt-0">
+                  <div style="padding-left: 20px; padding-top:20px;">
+                     <nav class="text-gray-600 font-bold pb-2" aria-label="Breadcrumb">
+                        <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                           <a href="../../../index.html#algebra" style="font-size: small;">Algebra</a>
+                           <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                        </li>
+                        <li class="flex items-center">
+                           <a href="index.html" class="text-gray-500" aria-current="page" style="font-size: small;">Gyorshatványozás</a>
+                        </li>
+                        </ol>
+                     </nav>
+                  </div>
+                  <div class="border-gray-300 pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal border bg-white shadow-sm" style="margin-top: 10px;margin-bottom:20px;">
+                     <div class="font-bold text-md mb-2 text-gray-500 flex items-center">
+                        <p>
+                           
+Algoritmusleírás
+                        </p>
+                     </div>
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+Legyen \(m=m_1\cdot m_2\cdot\dots\cdot m_n\), ahol fennáll, hogy \(\gcd(m_i, m_j)=1 \text{, ha } i \neq j\). <br>
+Tekintsük ekkor a következő szimultán kongruenciarendszert:
+                     </p>
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+\(x \equiv c_1 \pmod{m_1}\)
+<br>
+\(x \equiv c_2 \pmod{m_2}\)
+<br>
+\(\dots\)
+<br>
+\(x \equiv c_n \pmod{m_n}\)
+                     </p>
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+A kínai maradéktétel kimondja, hogy a kongruenciarendszernek pontosan egy megoldása van \(\pmod {m}\), és algoritmust is ad ennek kiszámítására. <br>
+Ehhez először vezessük be az \(M_i = m / m_i\) jelölést.
+                     </p>
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+Keressük meg \(M_i \cdot y_i \equiv 1 \pmod{m_i}\) megoldásait minden \(1 \leq i \leq n\)-re. <br>
+Értelemszerűen \(y_i = M_i^{-1}\) (\(M_i^{-1}\) alatt \(M_i\) <a href = "todo">moduláris inverzét</a> értjük az \(m_i\) maradékra).
+                     </p>
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+Az kongruenciarendszer megoldása ekkor:
+                     </p>
+                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
+                           $$
+x\equiv y_1 \cdot M_1 \cdot c_1 + y_2 \cdot M_2 \cdot c_2 + \dots + y_n \cdot M_n \cdot c_n \equiv \sum_{i=1}^{n}{y_i \cdot M_i \cdot c_i} \pmod{m}
+                           $$
+                        </div>
+                     <div class="border rounded border-gray-300 overflow-hidden shadow-sm border-b mt-4 p-2 mb-2">
+                        <pre style="font-size: 12px; font-family: 'Fira Code', monospace;"><code class="bg-gray-100" style="font-family: 'Fira Code', monospace;font-weight: 500;">int fpow(int b, int p, int mod)
+{
+     int res = 1;
+     int pow = b;
+     for (; p; p >>= 1) {
+          if (p & 1) {
+               res = 1ll * res * pow % mod;
+          }
+          pow = 1ll * pow * pow % mod;
+     }
+     return res;
+}
+
+int crt(vec &ltint&gt &c, vec &ltint&gt &m) 
+{
+     int n = len(c);
+     int p = 1;
+     int ans = 0;
+     for (int e: m) {
+          p *= e;
+     }
+     for (int i = 0; i < n; ++i) {
+          int M = p / m[i];
+          int y = fpow(M, m[i] - 2, m[i]);
+          ans += y * M * c[i];
+          ans %= p;
+     }
+     return ans;
+}</code></pre></div>
+                     </div>
+                  <div class="border-gray-300 pl-10 pt-12 pb-10 pr-10 lg:pl-16 lg:pt-12 lg:pb-16 lg:pr-16 mt-6 lg:mt-0 text-gray-900 leading-normal border bg-white shadow-sm" style="margin-top: 10px;margin-bottom:20px;">
+                     <div class="font-bold text-md mb-2 text-gray-500 flex items-center">
+                        <p>
+                           
+Komplexitás
+                        </p>
+                     </div>
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+A moduláris inverz kiszámítása\(\pmod {m}\) a gyorshatványozás miatt \(\mathcal{O}(\log (m))\) időt vesz igénybe. <br>
+Mivel összesen \(n\) ilyen műveletet hajtunk végre, az aszimptotikus futási idő \(\mathcal{O}(n \cdot \log (m))\).
+                     </p>
+                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+                        Az algoritmus helyigénye a kongruenciarendszer méretével arányos, tehát \(\mathcal{O}(n)\).
+                     </p>
+                     </div>
+
+               <!-- <div class="pl-6 pt-6 pb-6 pr-6 mt-6 lg:mt-0 text-gray-900 leading-normal bg-transparent" style="margin-top: 10px;margin-bottom:10px;">
+                  <div id="disqus_thread"></div>
+                  <script>
+
+                  var disqus_config = function () {
+                  this.page.url = 'https://cpalgo.github.io/';
+                  this.page.identifier = 'gyorshatvanyozas_lei';
+                  };
+                  (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = 'https://cpalgo.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+                  })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
-            <div class="container w-full px-2 lg:w-3/5 mx-auto pt-8 lg:pt-16 mt-8">
-               <div class="text-gray-500 plain pt-4 lg:pt-8 mt-2">
-                  <p class="border-purple-500 pl-4 lg:pl-6 pr-4 lg:pr-6 pb-2" style="text-align: center;">
-                     A cpAlgo projekt célja fontosabb, versenyprogramozáshoz köthető algoritmikus ismeretek összefoglalása magyar nyelven.
-                  </p>
-                  <p class="border-purple-500 pl-4 lg:pl-6 pr-4 lg:pr-6 pb-4" style="text-align: center;">
-                     Források:
-                     <a href="http://www.e-maxx.ru">E-Maxx</a>, 
-                     <a href="http://www.cp-algorithms.com">CP-Algorithms</a>, 
-                     <a href="http://www.codeforces.com">Codeforces</a>, 
-                     <a href="http://usaco.guide">Usaco Guide</a>, 
-                     <a href="https://en.wikipedia.org/wiki/Introduction_to_Algorithms">Introduction to Algorithms</a>, 
-                     <a href="https://cpbook.net/">Competitive Programming 3</a>
-                  </p>
-                  <p class="border-purple-500 pl-4 lg:pl-6 pr-4 lg:pr-6 pb-4" style="text-align: center;">
-                     Témák:
-                     <a href="#algebra">algebra</a>, 
-                     <a href="#dp">dinamikus programozás</a>, 
-                     <a href="#ds">adatszerkezetek</a>,
-                     <a href="#comb">kombinatorika</a>,
-                     <a href="#string">string-algoritmusok</a>,
-                     <a href="#graph">gráfelmélet</a>,
-                     <a href="#geom">geometria</a>,
-                     <a href="#misc">egyebek</a>
-                  </p>
-               </div>
-               <div id="algebra" class="pl-12 pt-12 pb-12 pr-12 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-bottom:10px;margin-top:6px;">
-                  <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                     <p class="text-xl" style="text-align: center;margin-bottom:40px;">
-                        Algebra és számelmélet
-                     </p>
-                  </div>
-                  <div class="text-gray-500 plain" style="padding-bottom:20px;">
-                        Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                  </div>
-                  <div>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Alapok</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                        <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Gyorshatványozás</a></li>
-                        <li><a class="plain text-gray-700" href="algebra/euklideszi/leiras/index.html">Euklideszi algoritmus</a></li>
-                        <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Kiterjesztett Euklideszi algoritmus</a></li>
-                        <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Fibonacci-számok és lineáris rekurrenciák</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Prímszámok</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/eratoszthenesz/leiras/index.html">Eratoszthenészi szita</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Euler-szita</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Miller-Rabin prímteszt</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Prímfaktorizáció</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Számelmélet</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Számelméleti függvények</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Moduláris aritmetika</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Moduláris inverz</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/crt/leiras/index.html">Kínai maradéktétel</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Lineáris algebra</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Gauss-elimináció</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Egyéb témák</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Bitmaszk részmaszkjai</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Dilworth-tétel</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Polinom interpoláció</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Gyors Fourier-transzformáció</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Gyors Walsh-Hadamard-transzformáció</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div id="dp" class="pl-12 pt-12 pb-12 pr-12 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-bottom:10px;margin-top:10px;">
-                  <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                     <p class="text-xl" style="text-align: center;margin-bottom:40px;">
-                     Dinamikus programozás
-                     </p>
-                  </div>
-                  <div class="text-gray-500 plain" style="padding-bottom:20px;">
-                     Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                  </div>
-                  <div class="pl-4">
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">DP optimalizációk</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Oszd meg és uralkodj DP</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Knuth-optimalizáció</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Konvex burok trükk és Li Chao fa</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Aliens-féle optimalizáció</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Bináris névértékek</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Egyéb témák</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Leghosszabb növekvő részsorozat</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">DP fán</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Bitmaszk DP</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Intervallum DP</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Állapot-redukció</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div id="ds" class="pl-12 pt-12 pb-12 pr-12 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-bottom:5px;margin-top:10px;">
-                  <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                     <p class="text-xl" style="text-align: center;margin-bottom:40px;">
-                     Adatszerkezetek
-                     </p>
-                  </div>
-                  <div class="text-gray-500 plain" style="padding-bottom:20px;">
-                     Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                  </div>
-                  <div class="pl-4">
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Alapok</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Következő nagyobb elem</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Sliding window technika</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Sparse table</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Fa struktúrák</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Disjoint set union</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Fenwick-fa</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">SQRT-dekompozíció</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Szegmens-fa</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Treap</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Wavelet-fa</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Haladó technikák</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Dinamikus konnektivitás offline</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div id="comb" class="pl-12 pt-12 pb-12 pr-12 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-bottom:5px;margin-top:10px;">
-                  <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                     <p class="text-xl" style="text-align: center;margin-bottom:40px;">
-                     Kombinatorika
-                     </p>
-                  </div>
-                  <div class="text-gray-500 plain" style="padding-bottom:20px;">
-                     Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                  </div>
-                  <div class="pl-4">
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Nevezetes sorozatok</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Binomiális együtthatók</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Catalan-számok</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Stirling-számok</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Bell-számok</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Valószínűségszámítás</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Várható érték linearitása</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Egyéb témák</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Logikai szita</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Burnside-lemma</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Szabályos zárójelsorozatok</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div id="string" class="pl-12 pt-12 pb-12 pr-12 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-bottom:5px;margin-top:10px;">
-                  <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                     <p class="text-xl" style="text-align: center;margin-bottom:40px;">
-                     String-algoritmusok
-                     </p>
-                  </div>
-                  <div class="text-gray-500 plain" style="padding-bottom:20px;">
-                     Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                  </div>
-                  <div class="pl-4">
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Alapok</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Rolling hash / Rabin-Karp algoritmus</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Knuth-Morris-Pratt algoritmus</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Z-függvény</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Szuffix tömb</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Haladó</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Aho-Corasick algoritmus</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Szuffix automata</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Manacher-algoritmus</a></li>
-                     </ul>
-                     <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Kifejezések</p>
-                     <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Shunting-yard algoritmus</a></li>
-                     <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Kifejezésfa</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div id="graph" class="pl-12 pt-12 pb-12 pr-12 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-bottom:5px;margin-top:10px;">
-                    <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                       <p class="text-xl" style="text-align: center;margin-bottom:40px;">
-                       Gráfelmélet
-                       </p>
-                    </div>
-                    <div class="text-gray-500 plain" style="padding-bottom:20px;">
-                       Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                    </div>
-                    <div class="pl-4">
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Alapok</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Szélességi bejárás</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Mélységi bejárás</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Topologikus rendezés</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Bikonnektivitás</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Elvágópontok</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Hidak</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Hidak keresése online</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Erősen összefüggő komponensek</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Kétszeresen összefüggő komponensek</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Legrövidebb utak</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Dijkstra-algoritmus</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Dijkstra ritka gráfokon</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Bellman-Ford algoritmus és SPFA</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">0-1 BFS</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Dial-algoritmus</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Legrövidebb utak minden csúcsból</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Floyd-Warshall algoritmus</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Johnson-algoritmus</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Feszítőfák</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Kruskal-algoritmus</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Prim-algoritmus</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Második legjobb minimális feszítőfa</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Kirchhoff-tétel</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Körök</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Körkeresés</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Negatív kör keresése</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Euler-vonal</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Fagráfok</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Legmélyebb közös ős</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Euler-túra</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Folyamok</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Edmonds-Karp algoritmus</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Dinic-algoritmus</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Minimális költségű folyam</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Páros gráfok</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Maximális párosítás</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Kőnig-tétel</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Maximális út-lefedés</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Egyéb témák</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">2-SAT</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Heavy-light dekompozíció</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Centroid dekompozíció</a></li>
-                       </ul>
-                    </div>
-               </div>
-               <div id="geom" class="pl-12 pt-12 pb-12 pr-12 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-bottom:5px;margin-top:10px;">
-                    <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                       <p class="text-xl" style="text-align: center;margin-bottom:40px;">
-                       Geometria
-                       </p>
-                    </div>
-                    <div class="text-gray-500 plain" style="padding-bottom:20px;">
-                       Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                    </div>
-                    <div class="pl-4">
-                         <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Alapok</p>
-                         <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                         <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Counterclockwise turn függvény</a></li>
-                         <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Metszi-e egymást két szakasz</a></li>
-                         <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Cipőfűző-formula</a></li>
-                         <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Tetszőleges sokszög tartalmaz-e egy pontot</a></li>
-                         </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Konvex sokszögek</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Graham-scan</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Konvex sokszög tartalmaz-e egy pontot</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Minkowski-összeg</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Egyéb témák</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Bentley-Ottmann algoritmus</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Legközelebbi pontpár</a></li>
-                       </ul>
-                    </div>
-               </div>
-               <div id="misc" class="pl-12 pt-12 pb-12 pr-12 lg:pl-24 lg:pt-16 lg:pb-16 lg:pr-24 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white shadow-lg border" style="margin-bottom:5px;margin-top:10px;">
-                    <div class="font-bold text-md mb-2 text-gray-600 items-center">
-                       <p class="text-xl" style="text-align: center;margin-bottom:40px;">
-                       Egyebek
-                       </p>
-                    </div>
-                    <div class="text-gray-500 plain" style="padding-bottom:20px;">
-                       Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                    </div>
-                    <div class="pl-4">
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Rendezőalgoritmusok</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Összefésülő rendezés</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Gyorsrendezés</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Számláló rendezés</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Számjegyes rendezés</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">K-adik legkisebb elem meghatározása</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Játékelmélet</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Sprague-Grundy tétel</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Játék irányított körmentes gráfon</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Játék irányítatlan gráfon</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Ütemezés</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Ütemezés egy gépen</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Ütemezés két gépen</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Ütemezés határidők és időtartamok alapján</a></li>
-                       </ul>
-                       <p class="plain text-gray-600 lg:pl-2" style="padding-bottom:5px;">Egyéb témák</p>
-                       <ul class="border-l-4 ml-4 pl-4 lg:ml-8" style="margin-bottom:10px;border-color:#ac9fff;">
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Meet in the middle</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Josephus-probléma</a></li>
-                       <li><a class="plain text-gray-700" href="algebra/gyorshatvanyozas/leiras/index.html">Lánctörtek és Stern-Brocot fa</a></li>
-                       </ul>
-                    </div>
-               </div>
-               <p class="text-gray-500 text-sm pl-4 lg:pl-6" style="font-family: 'Roboto', sans-serif;padding-top:2px;">
-                  Utolsó módosítás: 2020. 10. 16.
-               </p>
+               </div> -->
             </div>
-            <div class="container w-full lg:w-1/5"></div>
          </tr>
          <tr style="height:20px;">
-            <td>
-            </td>
          </tr>
       </table>
+      <script>
+         /*Toggle dropdown list*/
+         /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+                     
+         var helpMenuDiv = document.getElementById("menu-content");
+         var helpMenu = document.getElementById("menu-toggle");
+         
+         document.onclick = check;
+         
+         function check(e) {
+           var target = (e && e.target) || (event && event.srcElement);
+
+           if (!checkParent(target, helpMenuDiv)) {
+             if (checkParent(target, helpMenu)) {
+               if (helpMenuDiv.classList.contains("hidden")) {
+                 helpMenuDiv.classList.remove("hidden");
+               } else {helpMenuDiv.classList.add("hidden");}
+             } else {
+               helpMenuDiv.classList.add("hidden");
+             }
+           }
+           
+         }
+         
+         function checkParent(t, elm) {
+           while(t.parentNode) {
+             if( t == elm ) {return true;}
+             t = t.parentNode;
+           }
+           return false;
+         }
+     </script>
    </body>
 </html>
-
-<!--
-   https://github.com/SuprDewd/AlgoWiki
--->
