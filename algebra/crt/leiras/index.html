@@ -13,11 +13,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/xcode.min.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
-
-   <!-- The loading of KaTeX is deferred to speed up page rendering -->
    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
-
-   <!-- To automatically render math in text elements, include the auto-render extension: -->
    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
       onload="renderMathInElement(document.body);"></script>
    <script>hljs.initHighlightingOnLoad();</script>
@@ -34,64 +30,29 @@
       p {
          line-height: 2;
       }
-      tit:hover {
-         color:#d7d4ff;
-      }
       a:hover {
          color:#9587ff;
       }
       .plain {
-         /* font-size: 14px; */
+         font-size: 13px;
          font-family: 'Roboto', sans-serif;
       }
       .plainsm {
-         font-size: 12px;
+         font-size: 13px;
          font-family: 'Roboto', sans-serif;
          padding-top:10px;
          padding-bottom:20px;
       }
-      .separator {
-         display: flex;
-         align-items: center;
-      }
-      .separator::before, .separator::after {
-         content: '';
-         flex: 1;
-         border-bottom: 2px solid rgba(0, 0, 0, 0.572);
-      }
-      .separator::before {
-         margin-right: .25em;
-      }
-      .separator::after {
-         margin-left: .25em;
-      }
-      
-      .worksans {
-         font-family: 'Work Sans', sans-serif;
-      }
-               
-      #menu-toggle:checked + #menu {
-         display: block;
-      }
-      
-      .hover\:grow {
-         transition: all 0.3s;
-         transform: scale(1);
-      }
-      
-      .hover\:grow:hover {
-         transform: scale(1.02);
-      }
    </style>
 </head>
    <body class="bg-gray-100 tracking-wider tracking-normal overflow-y-scroll">
-      <nav id="header" class="fixed w-full z-20 top-0 bg-gray-900" style="height:60px;">
+      <nav id="header" class="fixed w-full z-20 top-0 bg-gray-900" style="height:60px;" aria-label="cpAlgo">
          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
             <div class="pl-4 flex items-center">
                <svg height="24" width="30">
-                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#8476ee"
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 4 l 8 8" stroke="#9587ff"
                   stroke-width="3" fill="none" />
-                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#8476ee"
+                  <path id="lineAB" stroke-width="6" stroke-linecap="round" d="M 4 20 l 8 -8" stroke="#9587ff"
                   stroke-width="3" fill="none" />
                </svg>
                <a class="hover:text-white text-white font-extrabold text-xl"  href="../../../index.html">
@@ -102,7 +63,6 @@
       </nav>
       <table>
          <tr>
-            <!--Container-->
             <div class="container w-full flex flex-wrap mx-auto px-2 mt-16 lg:mt-24">
                <div class="w-full pt-6 lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
                   <p id = "menu-title" class="lg:hidden text-base font-bold py-2 px-2 lg:pb-4 text-gray-500">Lapok</p>
@@ -157,7 +117,7 @@
                            <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
                         </li>
                         <li class="flex items-center">
-                           <a href="index.html" class="text-gray-500" aria-current="page" style="font-size: small;">Gyorshatványozás</a>
+                           <a href="index.html" class="text-gray-400" aria-current="page" style="font-size: small;">Gyorshatványozás</a>
                         </li>
                         </ol>
                      </nav>
@@ -169,11 +129,11 @@
 Algoritmusleírás
                         </p>
                      </div>
-                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2">
 Legyen \(m=m_1\cdot m_2\cdot\dots\cdot m_n\), ahol fennáll, hogy \(\gcd(m_i, m_j)=1 \text{, ha } i \neq j\). <br>
 Tekintsük ekkor a következő szimultán kongruenciarendszert:
                      </p>
-                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2">
 \(x \equiv c_1 \pmod{m_1}\)
 <br>
 \(x \equiv c_2 \pmod{m_2}\)
@@ -182,18 +142,18 @@ Tekintsük ekkor a következő szimultán kongruenciarendszert:
 <br>
 \(x \equiv c_n \pmod{m_n}\)
                      </p>
-                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2">
 A kínai maradéktétel kimondja, hogy a kongruenciarendszernek pontosan egy megoldása van \(\pmod {m}\), és algoritmust is ad ennek kiszámítására. <br>
 Ehhez először vezessük be az \(M_i = m / m_i\) jelölést.
                      </p>
-                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2">
 Keressük meg \(M_i \cdot y_i \equiv 1 \pmod{m_i}\) megoldásait minden \(1 \leq i \leq n\)-re. <br>
 Értelemszerűen \(y_i = M_i^{-1}\) (\(M_i^{-1}\) alatt \(M_i\) <a href = "todo">moduláris inverzét</a> értjük az \(m_i\) maradékra).
                      </p>
-                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2">
 Az kongruenciarendszer megoldása ekkor:
                      </p>
-                        <div class="text-700 plainsm overflow-x-auto ml-2 mr-2">
+                        <div class="text-gray-700 plainsm overflow-x-auto ml-2 mr-2">
                            $$
 x\equiv y_1 \cdot M_1 \cdot c_1 + y_2 \cdot M_2 \cdot c_2 + \dots + y_n \cdot M_n \cdot c_n \equiv \sum_{i=1}^{n}{y_i \cdot M_i \cdot c_i} \pmod{m}
                            $$
@@ -236,16 +196,16 @@ int crt(vec &ltint&gt &c, vec &ltint&gt &m)
 Komplexitás
                         </p>
                      </div>
-                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2">
 A moduláris inverz kiszámítása\(\pmod {m}\) a gyorshatványozás miatt \(\mathcal{O}(\log (m))\) időt vesz igénybe. <br>
 Mivel összesen \(n\) ilyen műveletet hajtunk végre, az aszimptotikus futási idő \(\mathcal{O}(n \cdot \log (m))\).
                      </p>
-                     <p class="text-gray-600 plain pt-2 pb-2" style="font-size:13px;">
+                     <p class="text-gray-600 plain pt-2 pb-2">
                         Az algoritmus helyigénye a kongruenciarendszer méretével arányos, tehát \(\mathcal{O}(n)\).
                      </p>
-                     </div>
+                  </div>
 
-               <!-- <div class="pl-6 pt-6 pb-6 pr-6 mt-6 lg:mt-0 text-gray-900 leading-normal bg-transparent" style="margin-top: 10px;margin-bottom:10px;">
+               <div class="pl-6 pt-6 pb-6 pr-6 mt-6 lg:mt-0 text-gray-900 leading-normal bg-transparent" style="margin-top: 10px;margin-bottom:10px;">
                   <div id="disqus_thread"></div>
                   <script>
 
@@ -261,16 +221,13 @@ Mivel összesen \(n\) ilyen műveletet hajtunk végre, az aszimptotikus futási 
                   })();
                   </script>
                   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </div>
-               </div> -->
+               </div>
             </div>
          </tr>
          <tr style="height:20px;">
          </tr>
       </table>
       <script>
-         /*Toggle dropdown list*/
-         /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
                      
          var helpMenuDiv = document.getElementById("menu-content");
          var helpMenu = document.getElementById("menu-toggle");
