@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <link href="normal.css" rel="stylesheet" title="normal">
+        <link href="bigger.css" rel="stylesheet" title="bigger">
+        <script type="text/javascript" src="styleswitcher.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <title>Bead - Tanulás</title>
+    </head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Bead</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="index.html">Főoldal</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link active" aria-current="page" href="#">Tanulás</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="gyakorlas.html">Gyakorlás</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="esemenyek.html">Események</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="btn-group ms-auto">
+                    <button id="gomb_normal" class="btn btn-dark my-2 my-sm-0 disabled" type="submit" onclick="setActiveStyleSheet('normal'); return false;">Normál</button>
+                    <button id="gomb_bigger" class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="setActiveStyleSheet('bigger'); return false;">Nagybetűs</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main id="tartalom">
+    <div class="container">
+        <h1 class="text-center display-1 fw-light cim">Tanulás</h1>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center m-2">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 m-2">
+            <div class="card">
+                <article class="cikk">
+                    <div class="card-body p-5">
+                        <div class="mb-4">
+                            <h2 class="card-title fw-normal">
+                                Kínai maradéktétel
+                            </h2>
+                            <span class="badge bg-secondary">matematika</span>
+                            <span class="badge bg-secondary">számelmélet</span>
+                            <span class="badge bg-secondary">algebra</span>
+                        </div>
+                        <div>
+                            <p class="card-text text-dark fw-light">
+                                Legyen \(m\) és \(m_1, m_2, \dots, m_n\) olyan pozitív egész számok, amikre fennáll, hogy \(m=\prod_{i=1}^{n}m_i\), illetve hogy \( \forall (i \neq j): \gcd(m_i, m_j)=1 \).
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                Tekintsük a következő <a href="https://regi.tankonyvtar.hu/hu/tartalom/tamop425/2011_0001_519_Szamelmelet/ch02s06.html">szimultán kongruenciarendszert</a>
+                            </p>
+                            <p>
+                                \(x \equiv c_1 \pmod{m_1}\) <br>
+                                \(x \equiv c_2 \pmod{m_2}\) <br>
+                                \(\dots\) <br>
+                                \(x \equiv c_n \pmod{m_n}\) <br>
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                A kínai maradéktétel kimondja, hogy a kongruenciarendszernek pontosan egy megoldása van \(\pmod {m}\), és algoritmust is ad ennek kiszámítására. 
+                                Az egyszerűség kedvéért vezessük be az \(M_i = m / m_i\) jelölést.
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                Első lépésként keressük meg \(M_i \cdot y_i \equiv 1 \pmod{m_i}\) megoldásait minden \(1 \leq i \leq n\)-re. Ezt átalakíthatjuk a következőképpen: \(y_i = M_i^{-1}\) (\(M_i^{-1}\) alatt \(M_i\) <a href="https://en.wikipedia.org/wiki/Modular_multiplicative_inverse">moduláris inverzét</a> értjük az \(m_i\) modulusra).
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                Az kongruenciarendszer megoldása ekkor \(x\equiv \sum_{i=1}^{n}{y_i \cdot M_i \cdot c_i} \pmod{m}\).
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                Az algoritmus helyigénye - mindannyiunk meglepetésére - a kongruenciarendszer méretével arányos.
+                            </p>
+                            <p class="card-text text-dark fw-light formula">
+                                A moduláris inverz kiszámítása\(\pmod {m}\) a szubrutinként felhasznált <a href="https://en.wikipedia.org/wiki/Exponentiation_by_squaring">gyorshatványozás</a> miatt \(\mathcal{O}(\log (m))\) időt vesz igénybe.
+                                Ezt összesen \(n\)-szer hajtjuk végre, tehát a teljes algoritmus aszimptotikus futási ideje \(\mathcal{O}(n \cdot \log (m))\) lesz.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center m-2">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 m-2">
+            <div class="card">
+                <article class="cikk">
+                    <div class="card-body p-5">
+                        <div class="mb-4">
+                            <h2 class="card-title fw-normal">
+                                Fenwick-fa
+                            </h2>
+                            <span class="badge bg-secondary">adatszerkezetek</span>
+                            <span class="badge bg-secondary">bitműveletek</span>
+                        </div>
+                        <div class="mb-4 mx-2">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <caption class="caption-top">
+                                        <strong>Komplexitás</strong>
+                                        <details>
+                                            <summary>Súgó</summary>
+                                            <p>A táblázatban a tömb, a prefix tömb és a Fenwick-fa különböző műveleteinek komplexitását vetjük össze.</p>
+                                        </details>
+                                    </caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Egyszerű tömb</th>
+                                            <th scope="col">Prefix tömb</th>
+                                            <th scope="col">Fenwick-fa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Inicializálás</th>
+                                            <td>\(\mathcal{O}(n)\)</td>
+                                            <td>\(\mathcal{O}(n)\)</td>
+                                            <td>\(\mathcal{O}(n)\)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Elérés</th>
+                                            <td>\(\mathcal{O}(1)\)</td>
+                                            <td>\(\mathcal{O}(1)\)</td>
+                                            <td>\(\mathcal{O}(\log(n))\)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Prefix lekérés</th>
+                                            <td>\(\mathcal{O}(n)\)</td>
+                                            <td>\(\mathcal{O}(1)\)</td>
+                                            <td>\(\mathcal{O}(\log(n))\)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Módosítás</th>
+                                            <td>\(\mathcal{O}(1)\)</td>
+                                            <td>\(\mathcal{O}(n)\)</td>
+                                            <td>\(\mathcal{O}(\log(n))\)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="card-text text-dark fw-light">
+                                A Fenwick-fa (vagy binárisan indexelt fa) olyan statikus adatszerkezet, ami egyszerre támogat különböző pont-módosításokat és prefix-lekéréseket \(\mathcal{O}(\log(n))\) futási időben.
+                                Leggyakoribb alkalmazása a pont-értékmódosítás és az intervallum-összeglekérés.
+                            </p>
+                            <p class="card-text text-dark fw-light formula">
+                                
+                                A magyarázathoz először vezessük be a <a href="https://www.computerhope.com/jargon/l/leastsb.htm">legjelentéktelenebb bit</a> fogalmát.
+                                Egy adott szám legjelentéktelenebb bitje (rövidítve <abbr lang="en" title="Least Significant Bit">LSB</abbr>) a szám bináris alakjában a legkisebb helyi értéken álló akív bit.
+                            </p>
+                            <p class="card-text text-dark fw-light formula">
+                                A binárisan indexelt fa működési elvének alapja, hogy az implementáció során használt tömb egy adott i indexénél a reprezentált tömb 
+                                [i - lsb(i) + 1; i] intervallum-összegét tároljuk. Ez teszi lehetővé a módosítás és a lekérés műveletek hatékony végrehajtását.
+                            </p>
+                            <p class="card-text text-dark fw-light formula">
+                                A pont-módosítás ekkor a következő algoritmus szerint zajlik:
+                            </p>
+                            <pre class="text-light p-2 rounded"><code>void update(int index, int value) {
+    for (int i = index; i &lt; fenwick_tree.size; i += LSB(i)) {
+        fenwick_tree.array[i] += value;
+    }
+}</code></pre>
+                            <p class="card-text text-dark fw-light formula">
+                                A prefix-lekérés pedig:
+                            </p>
+                            <pre class="text-light p-2 rounded"><code>int query(int index) {
+    int result = 0;
+    for (int i = index; i; i -= LSB(i)) {
+        result += fenwick_tree.array[i];
+    }
+    return result;
+}</code></pre>
+                                
+                            <p class="card-text text-dark fw-light formula">
+                                A prefix-lekérésből rögtön adódik az intervallum-lekérés implementációja, felhasználva hogy bármely intervallum-összeg felírható két prefix-összeg különbségeként.
+                            </p>
+                            <p class="card-text text-dark fw-light formula">
+                                Könnyen látható, hogy a Fenwick-fa kompatibilis minden, az összeadással analóg művelettel, sőt prefix-maximum/minimumlekérésekre is használható. De ne legyünk mohók, feleim; ezekről csak a későbbiekben!
+                            </p>
+                            <div class="text-center m-4">
+                                <figure>
+                                    <img src="fenwick_fa.png" class="p-2 img-fluid img-thumbnail" alt="A Fenwick-fa ábrázolása">
+                                    <figcaption class="figure-caption">A fenwick-fa működési elve</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark p-4 mt-5 fixed">
+    <div class="row mx-4">
+        <div class="col-6">
+            <p class="fw-normal text-light lablec">E-mail:</p>
+        </div>
+        <div class="col-6">
+            <p class="fw-normal text-light text-end lablec">Telefon:</p>
+        </div>
+    </div>
+    <div class="row mx-4">
+        <div class="col-6">
+            <p class="fw-light text-light lablec">deakbence2002@gmail.com</p>
+        </div>
+        <div class="col-6">
+            <p class="fw-light text-light text-end lablec">+36-20-342-3458</p>
+        </div>
+    </div>
+    <div class="row mx-4">
+        <div class="col-6">
+            <p class="fw-light text-light lablec">raeiyv@inf.elte.hu</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+</footer>
+</body>

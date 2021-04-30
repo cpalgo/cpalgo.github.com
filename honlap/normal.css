@@ -1,0 +1,77 @@
+body {
+    padding-top: 80px;
+    font-size: 1em;
+}
+
+pre {
+    background-color: #444444;
+}
+
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.nav-link.active {
+    font-weight: 500;
+}
+
+.lablec {
+    margin: 0px;
+    font-size: 0.75em;
+}
+
+.cim {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333333;
+    font-variant: small-caps;
+}
+
+.menu {
+    background-image: url("hatter.png");
+}
+
+.alcim {
+    text-align: center;
+    color: #555555;
+    font-size: 1.5em;
+    margin-bottom: 1.1em;
+}
+
+.cikkcim {
+    text-align: center;
+    color: #555555;
+    font-size: 1.5em;
+}
+
+.katex {
+    font-size: 1.1em;
+}
+
+.cikk {
+    line-height: 1.8em;
+    font-size: 0.9em;
+}
+
+.cimke {
+    font-size: 0.9em;
+}
+
+.bemenet {
+    font-size: 0.8em;
+}
+
+.magyarazat {
+    font-size: 1.15em;
+}
+
+.leiras {
+    line-height: 1.6em;
+    font-size: 0.9em;
+}
+
+.kisbetu {
+    font-size: 0.75em;
+    color: #444444;
+}

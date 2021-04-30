@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link href="normal.css" rel="stylesheet" title="normal">
+        <link href="bigger.css" rel="stylesheet" title="bigger">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <script type="text/javascript" src="styleswitcher.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <title>Bead - Gyakorlás</title>
+    </head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Bead</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="index.html">Főoldal</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="tanulas.html">Tanulás</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link active" aria-current="page" href="#">Gyakorlás</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="esemenyek.html">Események</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="btn-group ms-auto">
+                    <button id="gomb_normal" class="btn btn-dark my-2 my-sm-0 disabled" type="submit" onclick="setActiveStyleSheet('normal'); return false;">Normál</button>
+                    <button id="gomb_bigger" class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="setActiveStyleSheet('bigger'); return false;">Nagybetűs</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="container">
+        <h1 class="text-center display-1 fw-light cim">Gyakorlás</h1>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center m-2">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 m-2">
+            <div class="card">
+                <div class="card-body p-4">
+                    <div class="mb-4">
+                        <h2 class="card-title fw-normal alcim">
+                            Feladat beküldése
+                        </h2>
+                    </div>
+                    <form method="POST" action="mailto:deakbence2002@gmail.com?subject=Bead-Feladatjavaslat" enctype="text/plain">
+                        <fieldset class="mb-4">
+                            <legend class="fw-light magyarazat mb-3">Alapadatok</legend>
+                            <div class="mb-3">
+                                <label for="feladatcim" class="form-label fw-light cimke">Feladatcím</label>
+                                <input type="text" class="form-control bemenet" id="feladatcim" name="feladatcim">
+                            </div>
+                            <div class="mb-3">
+                                <label for="feladatleiras" class="form-label fw-light cimke">Feladatleírás</label>
+                                <textarea class="form-control bemenet" rows="4" id="feladatleiras" name="feladatleiras"></textarea>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="sajat_feladat" name="sajat_feladat">
+                                <label class="form-check-label fw-light cimke" for="sajat_feladat">Saját feladat</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="mb-4">
+                            <legend class="fw-light magyarazat mb-3">Témakör</legend>
+                            <div class="mb-3 form-check">
+                                <input class="form-check-input" type="radio" id="algebra" value="algebra" name="tema">
+                                <label class="form-check-label fw-light cimke" for="algebra">Algebra</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input class="form-check-input" type="radio" id="szamelmelet" value="Számelmélet" name="tema">
+                                <label class="form-check-label fw-light cimke" for="szamelmelet">String-algoritmusok</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input class="form-check-input" type="radio" id="string_algoritmusok" value="String-algoritmusok" name="tema">
+                                <label class="form-check-label fw-light cimke" for="string_algoritmusok">String-algoritmusok</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input class="form-check-input" type="radio" id="dinamikus_programozas" value="Dinamikus programozás" name="tema">
+                                <label class="form-check-label fw-light cimke" for="dinamikus_programozas">Dinamikus programozás</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input class="form-check-input" type="radio" id="kombinatorika" value="Kombinatorika" name="tema">
+                                <label class="form-check-label fw-light cimke" for="kombinatorika">Kombinatorika</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input class="form-check-input" type="radio" id="adatszerkezetek" value="Adatszerkezetek" name="tema">
+                                <label class="form-check-label fw-light cimke" for="adatszerkezetek">Adatszerkezetek</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input class="form-check-input" type="radio" id="grafelmelet" value="Gráfelmélet" name="tema">
+                                <label class="form-check-label fw-light cimke" for="grafelmelet">Gráfelmélet</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input class="form-check-input" type="radio" id="geometria" value="Geometria" name="tema">
+                                <label class="form-check-label fw-light cimke" for="geometria">Geometria</label>
+                            </div>
+                        </fieldset>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-secondary">Elküldés</button>
+                            <button type="reset" class="btn btn-secondary">Visszaállítás</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center m-2">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 m-2">
+            <article class="cikk">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <div class="mb-4">
+                            <h2 class="card-title fw-normal">
+                                Szigetek és hidak
+                            </h2>
+                            <span class="badge bg-secondary">gráfelmélet</span>
+                        </div>
+                        <div>
+                            <p class="card-text text-dark fw-light">
+                                A gráfelmélet egyik legklasszikusabb feladványa a <a href="https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja">Königsbergi hidak problémája</a>.
+                                A probléma története, hogy a poroszországi Königsberg városban hét híd ívelt át a várost átszelő Prégel folyón úgy, hogy ezek a folyó két szigetét is érintették. A königsbergiek azzal a kérdéssel fordultak <a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Eulerhez</a>, vajon végig lehet-e menni az összes hídon úgy, hogy mindegyiken csak egyszer haladjanak át, és egyúttal visszaérjenek a kiindulópontba.
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                Gazsika most hallott először a problémáról, és nagyon izgatottá vált; szorgalmas diák lévén egyből továbbgondolta azt.
+                                A következőt találta ki: 
+                                Adott egy képzeletbeli város, annak \(N\) szigetével és \(M\) hídjával. Legalább hány további hidat kell építeni ahhoz, hogy lehetséges legyen olyan utazás tenni a városban, mely során tetszőleges szigetről indulva minden hídon pontosan egyszer haladunk át?
+                                Segíts Gazsikának megoldani a feladatot!
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                A bemenet első sorában az \(N\) és az \(M\) egész számok szerepelnek.
+                                Az ezt követő \(M\) darab sor közül az \(i\)-edikben két különböző, \(1 \leq u_i, v_i \leq N\) egész szám szerepel.
+                                Ez azt jelenti, hogy az  \(i\)-edik híd az \(u_i\) és a \(v_i\) sorszámú szigeteket köti össze.
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                A kimenet egyetlen sorába az építendő hidak minimális száma kerüljön.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="row justify-content-center m-2">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 m-2">
+            <article class="cikk">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <div class="mb-4">
+                            <h2 class="card-title fw-normal">
+                                XOR-fa
+                            </h2>
+                            <span class="badge bg-secondary">gráfelmélet</span>
+                            <span class="badge bg-secondary">adatszerkezetek</span>
+                            <span class="badge bg-secondary">bitműveletek</span>
+                        </div>
+                        <div>
+                            <p class="card-text text-dark fw-light">
+                                Kukutyin úthálozata, mint minden valamire való falué, modellezhető egy körmentes egyszerű gráffal, vagyis egy <a href="https://hu.wikipedia.org/wiki/Fa_(gr%C3%A1felm%C3%A9let)">fagráffal</a>.
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                Nagy Alekosz, Kukutyin lángeszű tudósa feltalálta a multiplikátoros telebabrátort, aminek segítségével a lakók sokkal költséghatékonyabban tudnak közlekedni.
+                                Formálisan: ha az u és v csomópontokat összekötő egyszerű úton szereplő élek \(e_1, e_2, \dots, e_k\), akkor a két csúcs távolsága immár \(dist(u, v) = w_{e_1} \oplus w_{e_2} \oplus \dots \oplus w_{e_k}\). (Itt \(w_{e_i}\) az \(e_i\) út hosszát jelöli.)                
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                Az emberek bizalmatlanok a találmánnyal kapcsolatban: sarlatánnak nevezik Alekoszt, aki most kétségbeesetten fordul hozzád segítségül. 
+                                Bizonyítsd be, hogy működik a multiplikátoros telebabrátor: az \(1, 2, \dots, N\) csomópontok mindegyikéből határozd meg a tőle legtávolabbi csomópont távolságát.
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                A bemenet első sora egy \(N\) egész számot tartalmaz: a falu csomópontjainak számát.
+                                A következő \(N-1\) sor közül az \(i\)-edik egy \(u_i, v_i, w_i\) számhármast tartalmaz, ami egy, az \(u_i\) és \(v_i\) csomópontok közötti \(w_i\) hosszú utat jelent.
+                            </p>
+                            <p class="card-text text-dark fw-light">
+                                A kimenet egyetlen sorába \(N\) darab egész számot kell kiírni: rendre az \(1, 2, \dots, N\) scsomópontoktól legmesszebb lévő csúcs távolságát.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark p-4 mt-5 fixed">
+    <div class="row mx-4">
+        <div class="col-6">
+            <p class="fw-normal text-light lablec">E-mail:</p>
+        </div>
+        <div class="col-6">
+            <p class="fw-normal text-light text-end lablec">Telefon:</p>
+        </div>
+    </div>
+    <div class="row mx-4">
+        <div class="col-6">
+            <p class="fw-light text-light lablec">deakbence2002@gmail.com</p>
+        </div>
+        <div class="col-6">
+            <p class="fw-light text-light text-end lablec">+36-20-342-3458</p>
+        </div>
+    </div>
+    <div class="row mx-4">
+        <div class="col-6">
+            <p class="fw-light text-light lablec">raeiyv@inf.elte.hu</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+</footer>
+</body>

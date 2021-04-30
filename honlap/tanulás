@@ -1,0 +1,49 @@
+kínai maradéktétel:
+
+Legyen \(m=m_1\cdot m_2\cdot\dots\cdot m_n\), ahol fennáll, hogy \(\gcd(m_i, m_j)=1 \text{, ha } i \neq j\):
+Tekintsük ekkor a következő szimultán kongruenciarendszert:
+\(x \equiv c_1 \pmod{m_1}\)
+\(x \equiv c_2 \pmod{m_2}\)
+\(\dots\)
+\(x \equiv c_n \pmod{m_n}\)
+A kínai maradéktétel kimondja, hogy a kongruenciarendszernek pontosan egy megoldása van \(\pmod {m}\), és algoritmust is ad ennek kiszámítására.
+Ehhez először vezessük be az \(M_i = m / m_i\) jelölést.
+Keressük meg \(M_i \cdot y_i \equiv 1 \pmod{m_i}\) megoldásait minden \(1 \leq i \leq n\)-re.
+Értelemszerűen \(y_i = M_i^{-1}\) (\(M_i^{-1}\) alatt \(M_i\) moduláris inverzét értjük az \(m_i\) modulusra).
+Az kongruenciarendszer megoldása ekkor:
+$$x\equiv y_1 \cdot M_1 \cdot c_1 + y_2 \cdot M_2 \cdot c_2 + \dots + y_n \cdot M_n \cdot c_n \equiv \sum_{i=1}^{n}{y_i \cdot M_i \cdot c_i} \pmod{m}$$
+Az algoritmus helyigénye - mindannyiunk meglepetésére - a kongruenciarendszer méretével arányos.
+A moduláris inverz kiszámítása\(\pmod {m}\) a gyorshatványozás miatt \(\mathcal{O}(\log (m))\) időt vesz igénybe.
+Mivel összesen \(n\) ilyen műveletet hajtunk végre, a végső komplexitás \(\mathcal{O}(n \cdot \log (m))\) lesz.
+
+fenwick-fa:
+A Fenwick-fa (vagy binárisan indexelt fa) olyan statikus adatszerkezet, ami egyszerre támogat különböző pont-módosításokat és prefix-lekéréseket \(\mathcal{O}(log n)\) aszimptotikus futási időben.
+Leggyakoribb alkalmazása a pont-értékmódosítás és az intervallum-összeglekérés.
+
+A magyarázathoz először vezessük be a legjelentéktelenebb bit fogalmát.
+Egy x szám legjelentéktelenebb bitje (rövidítve: LSB ~ least significant bit) x bináris reprezentációjában legkisebb helyi értéken álló akív bit.
+A binárisan indexelt fa működési elve, hogy az implementáció során használt tömb egy adott i indexénél a reprezentált tömb 
+[i - lsb(i) + 1; i] intervallum-összegét tároljuk. Ez teszi lehetővé a módosítás és a lekérés műveletek hatékony végrehajtását.
+
+A pont-módosítás ekkor a következő algoritmus szerint zajlik:
+
+void update(int index, int value) {
+    for (int i = index; i < fenwick_tree.size; i += LSB(i)) {
+        fenwick_tree.array[i] += value;
+    }
+}
+
+A prefix-lekérés pedig:
+
+int query(int index) {
+    int result = 0;
+    for (int i = index; i; i -= LSB(i)) {
+        result += fenwick_tree.array[i];
+    }
+    return result;
+}
+
+A prefix-lekérésből rögtön adódik az intervallum-lekérés implementációja, felhasználva hogy:
+$$\sum_{i=l}{r}{A_i}\) = \(\sum_{i=1}{r}{A_i}\) - \(\sum_{i=l}{l - 1}{A_i}$$
+
+Könnyen látható, hogy a Fenwick-fa kompatibilis minden, az összeadással analóg művelettel, sőt prefix-maximum/minimumlekérésekre is használható. De ne legyünk mohók, feleim; ezekről csak a későbbiekben!
