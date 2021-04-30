@@ -50,7 +50,7 @@
 </header>
 <main id="tartalom">
     <div class="container">
-        <h1 class="text-center display-1 fw-light cim">Tanulás</h1>
+        <h1 class="text-center display-1 fw-normal cim">Tanulás</h1>
         <div class="row justify-content-center">
             <div class="col-6">
                 <hr>
@@ -71,10 +71,10 @@
                             <span class="badge bg-secondary">algebra</span>
                         </div>
                         <div>
-                            <p class="card-text text-dark fw-light">
+                            <p class="card-text text-dark fw-normal">
                                 Legyen \(m\) és \(m_1, m_2, \dots, m_n\) olyan pozitív egész számok, amikre fennáll, hogy \(m=\prod_{i=1}^{n}m_i\), illetve hogy \( \forall (i \neq j): \gcd(m_i, m_j)=1 \).
                             </p>
-                            <p class="card-text text-dark fw-light">
+                            <p class="card-text text-dark fw-normal">
                                 Tekintsük a következő <a href="https://regi.tankonyvtar.hu/hu/tartalom/tamop425/2011_0001_519_Szamelmelet/ch02s06.html">szimultán kongruenciarendszert</a>
                             </p>
                             <p>
@@ -83,20 +83,20 @@
                                 \(\dots\) <br>
                                 \(x \equiv c_n \pmod{m_n}\) <br>
                             </p>
-                            <p class="card-text text-dark fw-light">
+                            <p class="card-text text-dark fw-normal">
                                 A kínai maradéktétel kimondja, hogy a kongruenciarendszernek pontosan egy megoldása van \(\pmod {m}\), és algoritmust is ad ennek kiszámítására. 
                                 Az egyszerűség kedvéért vezessük be az \(M_i = m / m_i\) jelölést.
                             </p>
-                            <p class="card-text text-dark fw-light">
+                            <p class="card-text text-dark fw-normal">
                                 Első lépésként keressük meg \(M_i \cdot y_i \equiv 1 \pmod{m_i}\) megoldásait minden \(1 \leq i \leq n\)-re. Ezt átalakíthatjuk a következőképpen: \(y_i = M_i^{-1}\) (\(M_i^{-1}\) alatt \(M_i\) <a href="https://en.wikipedia.org/wiki/Modular_multiplicative_inverse">moduláris inverzét</a> értjük az \(m_i\) modulusra).
                             </p>
-                            <p class="card-text text-dark fw-light">
+                            <p class="card-text text-dark fw-normal">
                                 Az kongruenciarendszer megoldása ekkor \(x\equiv \sum_{i=1}^{n}{y_i \cdot M_i \cdot c_i} \pmod{m}\).
                             </p>
-                            <p class="card-text text-dark fw-light">
+                            <p class="card-text text-dark fw-normal">
                                 Az algoritmus helyigénye - mindannyiunk meglepetésére - a kongruenciarendszer méretével arányos.
                             </p>
-                            <p class="card-text text-dark fw-light formula">
+                            <p class="card-text text-dark fw-normal formula">
                                 A moduláris inverz kiszámítása\(\pmod {m}\) a szubrutinként felhasznált <a href="https://en.wikipedia.org/wiki/Exponentiation_by_squaring">gyorshatványozás</a> miatt \(\mathcal{O}(\log (m))\) időt vesz igénybe.
                                 Ezt összesen \(n\)-szer hajtjuk végre, tehát a teljes algoritmus aszimptotikus futási ideje \(\mathcal{O}(n \cdot \log (m))\) lesz.
                             </p>
@@ -166,20 +166,20 @@
                             </div>
                         </div>
                         <div>
-                            <p class="card-text text-dark fw-light">
+                            <p class="card-text text-dark fw-normal">
                                 A Fenwick-fa (vagy binárisan indexelt fa) olyan statikus adatszerkezet, ami egyszerre támogat különböző pont-módosításokat és prefix-lekéréseket \(\mathcal{O}(\log(n))\) futási időben.
                                 Leggyakoribb alkalmazása a pont-értékmódosítás és az intervallum-összeglekérés.
                             </p>
-                            <p class="card-text text-dark fw-light formula">
+                            <p class="card-text text-dark fw-normal formula">
                                 
                                 A magyarázathoz először vezessük be a <a href="https://www.computerhope.com/jargon/l/leastsb.htm">legjelentéktelenebb bit</a> fogalmát.
                                 Egy adott szám legjelentéktelenebb bitje (rövidítve <abbr lang="en" title="Least Significant Bit">LSB</abbr>) a szám bináris alakjában a legkisebb helyi értéken álló akív bit.
                             </p>
-                            <p class="card-text text-dark fw-light formula">
+                            <p class="card-text text-dark fw-normal formula">
                                 A binárisan indexelt fa működési elvének alapja, hogy az implementáció során használt tömb egy adott i indexénél a reprezentált tömb 
                                 [i - lsb(i) + 1; i] intervallum-összegét tároljuk. Ez teszi lehetővé a módosítás és a lekérés műveletek hatékony végrehajtását.
                             </p>
-                            <p class="card-text text-dark fw-light formula">
+                            <p class="card-text text-dark fw-normal formula">
                                 A pont-módosítás ekkor a következő algoritmus szerint zajlik:
                             </p>
                             <pre class="text-light p-2 rounded"><code>void update(int index, int value) {
@@ -187,7 +187,7 @@
         fenwick_tree.array[i] += value;
     }
 }</code></pre>
-                            <p class="card-text text-dark fw-light formula">
+                            <p class="card-text text-dark fw-normal formula">
                                 A prefix-lekérés pedig:
                             </p>
                             <pre class="text-light p-2 rounded"><code>int query(int index) {
@@ -198,10 +198,10 @@
     return result;
 }</code></pre>
                                 
-                            <p class="card-text text-dark fw-light formula">
+                            <p class="card-text text-dark fw-normal formula">
                                 A prefix-lekérésből rögtön adódik az intervallum-lekérés implementációja, felhasználva hogy bármely intervallum-összeg felírható két prefix-összeg különbségeként.
                             </p>
-                            <p class="card-text text-dark fw-light formula">
+                            <p class="card-text text-dark fw-normal formula">
                                 Könnyen látható, hogy a Fenwick-fa kompatibilis minden, az összeadással analóg művelettel, sőt prefix-maximum/minimumlekérésekre is használható. De ne legyünk mohók, feleim; ezekről csak a későbbiekben!
                             </p>
                             <div class="text-center m-4">
@@ -228,15 +228,15 @@
     </div>
     <div class="row mx-4">
         <div class="col-6">
-            <p class="fw-light text-light lablec">deakbence2002@gmail.com</p>
+            <p class="fw-normal text-light lablec">deakbence2002@gmail.com</p>
         </div>
         <div class="col-6">
-            <p class="fw-light text-light text-end lablec">+36-20-342-3458</p>
+            <p class="fw-normal text-light text-end lablec">+36-20-342-3458</p>
         </div>
     </div>
     <div class="row mx-4">
         <div class="col-6">
-            <p class="fw-light text-light lablec">raeiyv@inf.elte.hu</p>
+            <p class="fw-normal text-light lablec">raeiyv@inf.elte.hu</p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
