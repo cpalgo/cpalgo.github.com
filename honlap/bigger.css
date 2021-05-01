@@ -8,28 +8,39 @@ pre {
     background-color: #000000;
 }
 
+a {
+    color: #1122AA;
+}
+
+a:visited {
+    color: #7755BB;
+}
+
+a:hover {
+    color: #3344BB;
+}
+
+a:active {
+    color: #5566CC;
+}
+
+.idezet {
+    border: 1px solid #555555;
+    border-left: 10px solid #555555;
+}
+
 .kisbetu {
-    font-size: 0.75em;
     color: #000000;
 }
 
-
 .cikkcim {
-    text-align: center;
     color: #000000;
-    font-size: 1.5em;
 }
 
 .alcim {
-    text-align: center;
     color: #000000;
-    font-size: 1.5em;
-    margin-bottom: 1.1em;
 }
 
 .cim {
-    text-align: center;
-    font-size: 2.5em;
     color: #000000;
-    font-variant: small-caps;
 }

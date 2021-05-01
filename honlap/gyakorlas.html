@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link href="normal.css" rel="stylesheet" title="normal">
-        <link href="bigger.css" rel="stylesheet" title="bigger">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
-        <script type="text/javascript" src="styleswitcher.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <title>Bead - Gyakorlás</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+    <link href="normal.css" rel="stylesheet" title="normal">
+    <link href="bigger.css" rel="stylesheet" title="bigger">
+    <script src="styleswitcher.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <title>Bead - Gyakorlás</title>
+</head>
 <body>
-<header>
+<header id="fejlec">
+    <nav class="kipozicional">
+        <a href="#tartalom">Ugrás a tartalomra</a>
+    </nav>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Bead</a>
@@ -38,8 +41,6 @@
                         <a class="nav-link" href="esemenyek.html">Események</a>
                     </li>
                 </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="btn-group ms-auto">
                     <button id="gomb_normal" class="btn btn-dark my-2 my-sm-0 disabled" type="submit" onclick="setActiveStyleSheet('normal'); return false;">Normál</button>
                     <button id="gomb_bigger" class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="setActiveStyleSheet('bigger'); return false;">Nagybetűs</button>
@@ -48,7 +49,7 @@
         </div>
     </nav>
 </header>
-<main>
+<main id="tartalom">
     <div class="container">
         <h1 class="text-center display-1 fw-normal cim">Gyakorlás</h1>
         <div class="row justify-content-center">
@@ -57,7 +58,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center m-2">
+    <div class="egyseg row justify-content-center m-2">
         <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 m-2">
             <div class="card">
                 <div class="card-body p-4">
@@ -71,11 +72,11 @@
                             <legend class="fw-normal magyarazat mb-3">Alapadatok</legend>
                             <div class="mb-3">
                                 <label for="feladatcim" class="form-label fw-normal cimke">Feladatcím</label>
-                                <input type="text" class="form-control bemenet" id="feladatcim" name="feladatcim">
+                                <input type="text" class="form-control form-control-sm bemenet feladatcim" id="feladatcim" name="feladatcim" maxlength="32">
                             </div>
                             <div class="mb-3">
                                 <label for="feladatleiras" class="form-label fw-normal cimke">Feladatleírás</label>
-                                <textarea class="form-control bemenet" rows="4" id="feladatleiras" name="feladatleiras"></textarea>
+                                <textarea class="form-control form-control-sm bemenet feladatleiras" id="feladatleiras" name="feladatleiras" maxlength="4096" rows="5" cols="64"></textarea>
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="sajat_feladat" name="sajat_feladat">
@@ -90,11 +91,11 @@
                             </div>
                             <div class="mb-3 form-check">
                                 <input class="form-check-input" type="radio" id="szamelmelet" value="Számelmélet" name="tema">
-                                <label class="form-check-label fw-normal cimke" for="szamelmelet">String-algoritmusok</label>
+                                <label class="form-check-label fw-normal cimke" for="szamelmelet">Számelmélet</label>
                             </div>
                             <div class="mb-3 form-check">
-                                <input class="form-check-input" type="radio" id="string_algoritmusok" value="String-algoritmusok" name="tema">
-                                <label class="form-check-label fw-normal cimke" for="string_algoritmusok">String-algoritmusok</label>
+                                <input class="form-check-input" type="radio" id="sztring_algoritmusok" value="Sztring-algoritmusok" name="tema">
+                                <label class="form-check-label fw-normal cimke" for="sztring_algoritmusok">Sztring-algoritmusok</label>
                             </div>
                             <div class="mb-3 form-check">
                                 <input class="form-check-input" type="radio" id="dinamikus_programozas" value="Dinamikus programozás" name="tema">
@@ -126,7 +127,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center m-2">
+    <div class="egyseg row justify-content-center m-2">
         <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 m-2">
             <article class="cikk">
                 <div class="card">
@@ -135,16 +136,18 @@
                             <h2 class="card-title fw-normal">
                                 Szigetek és hidak
                             </h2>
-                            <span class="badge bg-secondary">gráfelmélet</span>
+                            <span class="badge bg-secondary kategoria">gráfelmélet</span>
                         </div>
                         <div>
                             <p class="card-text text-dark fw-normal">
-                                A gráfelmélet egyik legklasszikusabb feladványa a <a href="https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja">Königsbergi hidak problémája</a>.
-                                A probléma története, hogy a poroszországi Königsberg városban hét híd ívelt át a várost átszelő Prégel folyón úgy, hogy ezek a folyó két szigetét is érintették. A königsbergiek azzal a kérdéssel fordultak <a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Eulerhez</a>, vajon végig lehet-e menni az összes hídon úgy, hogy mindegyiken csak egyszer haladjanak át, és egyúttal visszaérjenek a kiindulópontba.
+                                A gráfelmélet egyik legklasszikusabb feladványa a <a target="_blank" href="https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja">Königsbergi hidak problémája</a>.
+                                A probléma története, hogy a poroszországi <em>Königsberg</em> városban hét híd ívelt át a várost átszelő Prégel folyón úgy, hogy ezek a folyó két szigetét is érintették. A königsbergiek azzal a kérdéssel fordultak <a target="_blank" href="https://en.wikipedia.org/wiki/Leonhard_Euler">Eulerhez</a>, vajon végig lehet-e menni az összes hídon úgy, hogy mindegyiken csak egyszer haladjanak át, és egyúttal visszaérjenek a kiindulópontba.
                             </p>
                             <p class="card-text text-dark fw-normal">
                                 Gazsika most hallott először a problémáról, és nagyon izgatottá vált; szorgalmas diák lévén egyből továbbgondolta azt.
-                                A következőt találta ki: 
+                                A következőt találta ki:
+                            </p>
+                            <p class="card-text text-dark fw-normal">
                                 Adott egy képzeletbeli város, annak \(N\) szigetével és \(M\) hídjával. Legalább hány további hidat kell építeni ahhoz, hogy lehetséges legyen olyan utazás tenni a városban, mely során tetszőleges szigetről indulva minden hídon pontosan egyszer haladunk át?
                                 Segíts Gazsikának megoldani a feladatot!
                             </p>
@@ -162,7 +165,7 @@
             </article>
         </div>
     </div>
-    <div class="row justify-content-center m-2">
+    <div class="egyseg row justify-content-center m-2">
         <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 m-2">
             <article class="cikk">
                 <div class="card">
@@ -171,16 +174,16 @@
                             <h2 class="card-title fw-normal">
                                 XOR-fa
                             </h2>
-                            <span class="badge bg-secondary">gráfelmélet</span>
-                            <span class="badge bg-secondary">adatszerkezetek</span>
-                            <span class="badge bg-secondary">bitműveletek</span>
+                            <span class="badge bg-secondary kategoria">gráfelmélet</span>
+                            <span class="badge bg-secondary kategoria">adatszerkezetek</span>
+                            <span class="badge bg-secondary kategoria">bitműveletek</span>
                         </div>
                         <div>
                             <p class="card-text text-dark fw-normal">
-                                Kukutyin úthálozata, mint minden valamire való falué, modellezhető egy körmentes egyszerű gráffal, vagyis egy <a href="https://hu.wikipedia.org/wiki/Fa_(gr%C3%A1felm%C3%A9let)">fagráffal</a>.
+                                Kukutyin úthálozata, mint minden valamire való falué, modellezhető egy körmentes egyszerű gráffal, vagyis egy <a target="_blank" href="https://hu.wikipedia.org/wiki/Fa_(gr%C3%A1felm%C3%A9let)">fagráffal</a>.
                             </p>
                             <p class="card-text text-dark fw-normal">
-                                Nagy Alekosz, Kukutyin lángeszű tudósa feltalálta a multiplikátoros telebabrátort, aminek segítségével a lakók sokkal költséghatékonyabban tudnak közlekedni.
+                                Nagy Alekosz, Kukutyin lángeszű tudósa feltalálta a <em>multiplikátoros telebabrátort</em>, aminek segítségével a lakók sokkal költséghatékonyabban tudnak közlekedni.
                                 Formálisan: ha az u és v csomópontokat összekötő egyszerű úton szereplő élek \(e_1, e_2, \dots, e_k\), akkor a két csúcs távolsága immár \(dist(u, v) = w_{e_1} \oplus w_{e_2} \oplus \dots \oplus w_{e_k}\). (Itt \(w_{e_i}\) az \(e_i\) út hosszát jelöli.)                
                             </p>
                             <p class="card-text text-dark fw-normal">
@@ -192,7 +195,7 @@
                                 A következő \(N-1\) sor közül az \(i\)-edik egy \(u_i, v_i, w_i\) számhármast tartalmaz, ami egy, az \(u_i\) és \(v_i\) csomópontok közötti \(w_i\) hosszú utat jelent.
                             </p>
                             <p class="card-text text-dark fw-normal">
-                                A kimenet egyetlen sorába \(N\) darab egész számot kell kiírni: rendre az \(1, 2, \dots, N\) scsomópontoktól legmesszebb lévő csúcs távolságát.
+                                A kimenet egyetlen sorába \(N\) darab egész számot kell kiírni: rendre az \(1, 2, \dots, N\) csomópontoktól legmesszebb lévő csúcs távolságát.
                             </p>
                         </div>
                     </div>
@@ -201,26 +204,26 @@
         </div>
     </div>
 </main>
-<footer class="bg-dark p-4 mt-5 fixed">
+<footer id="lablec" class="bg-dark p-4 mt-5 fixed">
     <div class="row mx-4">
         <div class="col-6">
-            <p class="fw-normal text-light lablec">E-mail:</p>
+            <p class="fw-normal text-light">E-mail:</span>
         </div>
         <div class="col-6">
-            <p class="fw-normal text-light text-end lablec">Telefon:</p>
+            <p class="fw-normal text-light text-end">Telefon:</p>
         </div>
     </div>
     <div class="row mx-4">
         <div class="col-6">
-            <p class="fw-normal text-light lablec">deakbence2002@gmail.com</p>
+            <p class="fw-normal text-light">deakbence2002@gmail.com</p>
         </div>
         <div class="col-6">
-            <p class="fw-normal text-light text-end lablec">+36-20-342-3458</p>
+            <p class="fw-normal text-light text-end">+36-20-342-3458</p>
         </div>
     </div>
     <div class="row mx-4">
         <div class="col-6">
-            <p class="fw-normal text-light lablec">raeiyv@inf.elte.hu</p>
+            <p class="fw-normal text-light">raeiyv@inf.elte.hu</p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
