@@ -1,6 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+
 body {
     padding-top: 80px;
     font-size: 1em;
+}
+
+a {
+    color: #2233CC;
+}
+
+a:visited {
+    color: #8866CC;
+}
+
+a:hover {
+    color: #4455EE;
+}
+
+a:active {
+    color: #7788FF;
 }
 
 pre {
@@ -14,6 +32,16 @@ pre {
 
 .nav-link.active {
     font-weight: 500;
+    font-size: 1.05em;
+}
+
+.idezet {
+    border: 1px solid #bbbbbb;
+    border-left: 10px solid #bbbbbb;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2em;
+    margin: 0.5em;
+    padding: 0.5em 1em;
 }
 
 .lablec {
