@@ -4,6 +4,14 @@ main {
     font-size: 1.3em;
 }
 
+header, header .navbar-brand, header .btn {
+    font-size: 1.15em;
+}
+
+footer {
+    font-size: 1.35em;
+}
+
 pre {
     background-color: #000000;
 }

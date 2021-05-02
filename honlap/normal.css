@@ -1,6 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap');
 
+html {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 140px;
+}
+
 body {
     padding-top: 80px;
     font-size: 1.04em;
@@ -122,7 +128,13 @@ pre {
     max-width: 600px;
 }
 
-#lablec p {
+#lablec {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#lablec p, #lablec a {
     margin: 0px;
     font-size: 0.75em;
 }
