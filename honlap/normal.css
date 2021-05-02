@@ -39,7 +39,7 @@ pre {
 }
 
 .nav-link.active {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.08em;
 }
 
@@ -77,12 +77,6 @@ pre {
     color: #555555;
     font-size: 1.5em;
     margin-bottom: 1.1em;
-}
-
-.cikkcim {
-    text-align: center;
-    color: #555555;
-    font-size: 1.5em;
 }
 
 .kategoria {
@@ -139,24 +133,39 @@ pre {
     font-size: 0.75em;
 }
 
-@media print {
-    a:after {
-        content: " (" attr(href) ")";
+@media only screen and (max-width: 992px) {
+    .sor {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
     }
-    img, pre, blockquote, video {
+    .card-body {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+@media print {
+    .card {
+        border: none !important;
+    }
+    img, pre, blockquote, video, fieldset, .cim, .alcim {
+        page-break-before: auto;
+        page-break-after: auto;
         page-break-inside: avoid;
     }
-    pre, .badge {
-        border: 1px solid grey;
+    form .btn, pre, .badge {
+        background-color: #FFFFFF;
+        border: 1px solid #333333;
+        color: #333333;
+    }
+    code {
+        color: #333333 !important;
     }
     video::-webkit-media-controls {
         display: none;
     }
-    .row, .col, section {
+    section, article, .row, .col {
         display: block;
-    }
-    .egyseg {
-        page-break-after: always;
     }
     #fejlec, #lablec {
         display: none;
