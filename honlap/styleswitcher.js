@@ -68,7 +68,7 @@ function readCookie(name) {
     for (var token in tokens) {
 
         while (token.charAt(0) == ' ') {
-            token = token.substring(1, c.length);
+            token = token.substring(1, token.length);
         }
         if (token.indexOf(nameEQ) == 0) {
             return token.substring(nameEQ.length, token.length);
