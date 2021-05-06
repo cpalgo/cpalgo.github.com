@@ -63,7 +63,7 @@ function readCookie(name) {
     var nameEQ = name + "=";
     var tokens = document.cookie.split(';');
 
-    for (var token in tokens) {
+    for (var token of tokens) {
 
         while (token.charAt(0) == ' ') {
             token = token.substring(1, token.length);
@@ -80,7 +80,6 @@ window.onload = function() {
     var cookie = readCookie("style");
     var title = cookie? cookie: getPreferredStyleSheet();
     setActiveStyleSheet(title);
-    document.getElementById('cim').innerHTML=cookie;
 }
   
 window.onunload = function() {
