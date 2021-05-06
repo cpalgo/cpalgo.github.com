@@ -60,8 +60,6 @@ function createCookie(name, value, days) {
   
 function readCookie(name) {
 
-    document.getElementById('cim').innerHTML=document.cookie;
-
     var nameEQ = name + "=";
     var tokens = document.cookie.split(';');
 
@@ -82,7 +80,7 @@ window.onload = function() {
     var cookie = readCookie("style");
     var title = cookie? cookie: getPreferredStyleSheet();
     setActiveStyleSheet(title);
-    // document.getElementById('cim').innerHTML=cookie;
+    document.getElementById('cim').innerHTML=cookie;
 }
   
 window.onunload = function() {
