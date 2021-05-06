@@ -1,0 +1,37 @@
+@import url('normal_xhtml.css');
+
+html {
+    padding-bottom: 240px;
+}
+
+.main {
+    font-size: 1.3em;
+}
+
+.header, .header .navbar-brand, header .btn {
+    font-size: 1.15em;
+}
+
+.footer {
+    font-size: 1.35em;
+}
+
+a {
+    color: #1122AA;
+}
+
+a:visited {
+    color: #7755BB;
+}
+
+a:hover {
+    color: #3344BB;
+}
+
+a:active {
+    color: #5566CC;
+}
+
+.kisbetu {
+    color: #000000;
+}

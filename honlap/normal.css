@@ -4,13 +4,17 @@
 html {
     position: relative;
     min-height: 100%;
-    padding-bottom: 140px;
+    padding-bottom: 180px;
 }
 
 body {
     padding-top: 80px;
     font-size: 1.04em;
     font-family: 'Titillium Web', sans-serif;
+}
+
+figure {
+    max-width: 500px;
 }
 
 a {
@@ -36,6 +40,10 @@ pre {
 .btn:focus, .btn:active {
     outline: none !important;
     box-shadow: none;
+}
+
+#fejlec button, #fejlec button.disabled {
+    color: #FFFFFF;
 }
 
 .nav-link.active {
@@ -114,13 +122,13 @@ pre {
     color: #444444;
 }
 
-.feladatcim {
-    max-width: 600px;
+/* .feladatcim {
+    max-width: 300px;
 }
 
 .feladatleiras {
     max-width: 600px;
-}
+} */
 
 #lablec {
     position: absolute;
@@ -145,18 +153,13 @@ pre {
 }
 
 @media print {
-    .card {
-        border: none !important;
+    html, body {
+        height: 100%;
     }
-    img, pre, blockquote, video, fieldset, .cim, .alcim {
+    img, pre, blockquote, video, fieldset, .cim, .alcim, .table {
         page-break-before: auto;
         page-break-after: auto;
         page-break-inside: avoid;
-    }
-    form .btn, pre, .badge {
-        background-color: #FFFFFF;
-        border: 1px solid #333333;
-        color: #333333;
     }
     code {
         color: #333333 !important;
@@ -166,6 +169,14 @@ pre {
     }
     section, article, .row, .col {
         display: block;
+    }
+    form .btn, pre, .badge {
+        background-color: #FFFFFF;
+        border: 1px solid #333333;
+        color: #333333;
+    }
+    .card {
+        border: none !important;
     }
     #fejlec, #lablec {
         display: none;

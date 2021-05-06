@@ -12,12 +12,12 @@ function setActiveStyleSheet(title) {
         }
     }
     if (title == "normal") {
-        document.getElementById("gomb_normal").className = "btn btn-dark my-2 my-sm-0 disabled"
-        document.getElementById("gomb_bigger").className = "btn btn-secondary my-2 my-sm-0"
+        document.getElementById("gomb_bigger").style.display = "inline";
+        document.getElementById("gomb_normal").style.display = "none";
     } else {
 
-        document.getElementById("gomb_normal").className = "btn btn-secondary my-2 my-sm-0"
-        document.getElementById("gomb_bigger").className = "btn btn-dark my-2 my-sm-0 disabled"
+        document.getElementById("gomb_normal").style.display = "inline";
+        document.getElementById("gomb_bigger").style.display = "none";
     }
 }
   

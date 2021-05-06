@@ -22,7 +22,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse text-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item me-2">
                         <a class="nav-link" href="index.html">Főoldal</a>
@@ -38,8 +38,8 @@
                     </li>
                 </ul>
                 <div class="btn-group ms-auto">
-                    <button id="gomb_normal" class="btn btn-dark my-2 my-sm-0 disabled" type="submit" onclick="setActiveStyleSheet('normal'); return false;">Normál</button>
-                    <button id="gomb_bigger" class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="setActiveStyleSheet('bigger'); return false;">Nagybetűs</button>
+                    <button id="gomb_normal" class="btn btn-primary my-2 my-sm-0" type="submit" onclick="setActiveStyleSheet('normal'); return false;">Normál</button>
+                    <button id="gomb_bigger" class="btn btn-primary my-2 my-sm-0" type="submit" onclick="setActiveStyleSheet('bigger'); return false;">Nagybetűs</button>
                 </div>
             </div>
         </div>
@@ -54,94 +54,84 @@
             </div>
         </div>
     </div>
-    <div class="row m-2 justify-content-center">
-        <div class="egyseg col-12 col-md-10 col-lg-6 col-xl-4 my-2">
+    <div class="sor row m-2 justify-content-center">
+        <div class="col-12 col-md-10 col-lg-6 col-xl-4 my-2">
             <section>
                 <div class="card">
-                        <a href="egoi.png" target="_blank">
-                            <img class="card-img-top rounded-top" src="egoi.png" alt="Nemzetközi Informatikai Lánydiákolimpia">
-                        </a>
-                        <div class="card-body p-5">
-                            <h2 class="card-title fw-normal alcim">EGOI - Nemzetközi Informatikai Diákolimpia Lányoknak</h2>
-                            <p class="card-text text-dark fw-normal align-center leiras">
-                                Jól tudsz programozni, és még lány is vagy? Itt az idő, ne habozz! Az EGMO (European Girls' Mathematical Olympiad) mintájára létrejött nemzetközi diákolimpia keretei között próbára teheted magad!
-                            </p>
-                            <p class="card-text text-dark fw-normal align-center leiras">
-                                Az újonnan beharangozott verseny először idén, Svájcban kerül megrendezésre. Az alapítók között Magyarország is szerepel, így hamarosan megkezdődik a online olimpiai felkészítő kurzus.                        
-                            </p>
-                        </div>
+                    <a href="egoi.png" target="_blank">
+                        <img class="card-img-top rounded-top" src="egoi.png" alt="Nemzetközi Informatikai Lánydiákolimpia">
+                    </a>
+                    <div class="card-body p-5">
+                        <h2 class="card-title fw-normal alcim">EGOI - Nemzetközi Informatikai Diákolimpia Lányoknak</h2>
+                        <p class="card-text text-dark fw-normal align-center leiras">
+                            Jól tudsz programozni, és még lány is vagy? Itt az idő, ne habozz! Az EGMO (European Girls' Mathematical Olympiad) mintájára létrejött nemzetközi diákolimpia keretei között próbára teheted magad!
+                        </p>
+                        <p class="card-text text-dark fw-normal align-center leiras">
+                            Az újonnan beharangozott verseny először idén, Svájcban kerül megrendezésre. Az alapítók között Magyarország is szerepel, így hamarosan megkezdődik a online olimpiai felkészítő kurzus.                        
+                        </p>
+                    </div>
                 </div>
             </section>
         </div>
-        <div class="egyseg col-12 col-md-10 col-lg-6 col-xl-4 my-2">
+        <div class="col-12 col-md-10 col-lg-6 col-xl-4 my-2">
             <section>
                 <div class="card">
-                        <a href="ntiv.png" target="_blank">
-                            <img class="card-img-top" src="ntiv.png" alt="Archív fotó Nemes Tihamérről">
-                        </a>
-                        <div class="card-body p-5 rounded-top">
-                            <h2 class="card-title fw-normal alcim">Nemes Tihamér Informatikai Tanulmányi Verseny Döntő</h2>
-                            <p class="card-text text-dark fw-normal align-center leiras">
-                                Figyelem, figyelem! Hamarosan elérkezik a 2021-es Nemes Tihamér Nemzetközi Informatikai Tanulmányi Verseny utolsó fordulója!                        
-                            </p>
-                            <p class="card-text text-dark fw-normal align-center leiras">
-                                A szervezők ismét remekebbnél remekebb feladatokkal várják a döntőbe jutott diákokat. Titkos informátoraim beszámolói alapján ezúttal a tesztesetek is hibátlanok lesznek!                        
-                            </p>
-                            <p class="card-text fw-normal align-center kisbetu">
-                                A verseny időpontja: <time datetime="2021-03-04T09:00"> 2021. március 4. 9:00 </time>
-                            </p>
-                        </div>
+                    <a href="ntiv.png" target="_blank">
+                        <img class="card-img-top" src="ntiv.png" alt="Archív fotó Nemes Tihamérről">
+                    </a>
+                    <div class="card-body p-5 rounded-top">
+                        <h2 class="card-title fw-normal alcim">Nemes Tihamér Informatikai Tanulmányi Verseny Döntő</h2>
+                        <p class="card-text text-dark fw-normal align-center leiras">
+                            Figyelem, figyelem! Hamarosan elérkezik a 2021-es Nemes Tihamér Nemzetközi Informatikai Tanulmányi Verseny utolsó fordulója!                        
+                        </p>
+                        <p class="card-text text-dark fw-normal align-center leiras">
+                            A szervezők ismét remekebbnél remekebb feladatokkal várják a döntőbe jutott diákokat. Titkos informátoraim beszámolói alapján ezúttal a tesztesetek is hibátlanok lesznek!                        
+                        </p>
+                        <p class="card-text fw-normal align-center kisbetu">
+                            A verseny időpontja: <time datetime="2021-03-04T09:00"> 2021. március 4. 9:00 </time>
+                        </p>
+                    </div>
                 </div>
             </section>
         </div>
-        <div class="egyseg col-12 col-md-10 col-lg-12 col-xl-4 my-2">
+        <div class="col-12 col-md-10 col-lg-12 col-xl-4 my-2">
             <section>
                 <div class="card">
-                        <a href="innopolis.jpg" target="_blank">
-                            <img class="card-img-top rounded-top" src="innopolis.jpg" alt="Az Innopolisi Egyetem">
-                        </a>
-                        <div class="card-body p-5">
-                            <h2 class="card-title fw-normal alcim"><span lang="en">Innopolis Open 2021</span></h2>
-                            <p class="card-text text-dark fw-normal align-center leiras">
-                                A híres-neves <a target="_blank" href="https://innopolis.university/en/">Innopolisi Egyetem</a> 2021-ben is megrendezi az <span lang="en">Innopolis Open</span> nemzetközi diákolimpiát, amely most újabb két kategóriával bővül: a résztvevők immár a robotika és a mesterséges intelligencia területén is összemérhetik tudásukat.                         
-                            </p>
-                            <div class="text-center my-4">
-                                <div class="ratio ratio-16x9">
-                                    <video controls poster="innopolis_poster.png">
-                                        <source src="Innopolis.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <a href="tartalom.html">Videó leírása</a>
+                    <a href="innopolis.jpg" target="_blank">
+                        <img class="card-img-top rounded-top" src="innopolis.jpg" alt="Az Innopolisi Egyetem">
+                    </a>
+                    <div class="card-body p-5">
+                        <h2 class="card-title fw-normal alcim"><span lang="en">Innopolis Open 2021</span></h2>
+                        <p class="card-text text-dark fw-normal align-center leiras">
+                            A híres-neves <a target="_blank" href="https://innopolis.university/en/">Innopolisi Egyetem</a> 2021-ben is megrendezi az <span lang="en">Innopolis Open</span> nemzetközi diákolimpiát, amely most újabb két kategóriával bővül: a résztvevők immár a robotika és a mesterséges intelligencia területén is összemérhetik tudásukat.                         
+                        </p>
+                        <div class="text-center my-4">
+                            <div class="ratio ratio-16x9">
+                                <video controls poster="innopolis_poster.png">
+                                    <source src="Innopolis.mp4" type="video/mp4">
+                                </video>
                             </div>
-                            <p class="card-text text-dark fw-normal align-center leiras">
-                                A járványhelyzetre való tekintettel a verseny idén a PCMS2 értékelőrendszer segítségével, online formában fog lezajlani.                        
-                            </p>
+                            <a href="tartalom.html">Videó leírása</a>
                         </div>
+                        <p class="card-text text-dark fw-normal align-center leiras">
+                            A járványhelyzetre való tekintettel a verseny idén a PCMS2 értékelőrendszer segítségével, online formában fog lezajlani.                        
+                        </p>
+                    </div>
                 </div>
             </section>
         </div>
     </div>
 </main>
 <footer id="lablec" class="bg-dark p-4 mt-5">
-    <div class="row mx-4">
-        <div class="col-6">
-            <p class="fw-normal text-light">E-mail:</span>
+    <div class="row mx-4 my-2">
+        <div class="col-12 col-sm-6">
+            <p class="fw-normal text-light">E-mail:</p>
+            <a class="fw-normal text-light" href="mailto:deakbence2002@gmail.com">deakbence2002@gmail.com</a> <br>
+            <a class="fw-normal text-light" href="mailto:raeiyv@inf.elte.hu">raeiyv@inf.elte.hu</a> <br>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-sm-6">
             <p class="fw-normal text-light text-end">Telefon:</p>
-        </div>
-    </div>
-    <div class="row mx-4">
-        <div class="col-6">
-            <a class="fw-normal text-light" href="mailto: deakbence2002@gmail.com">deakbence2002@gmail.com</a>
-        </div>
-        <div class="col-6">
             <p class="fw-normal text-light text-end">+36-20-342-3458</p>
-        </div>
-    </div>
-    <div class="row mx-4">
-        <div class="col-6">
-            <a class="fw-normal text-light" href="mailto: raeiyv@inf.elte.hu">raeiyv@inf.elte.hu</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>

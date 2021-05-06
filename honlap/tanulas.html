@@ -16,7 +16,7 @@
     <title>Bead - Tanulás</title>
 </head>
 <body>
-    <header id="fejlec">
+<header id="fejlec">
     <nav class="kipozicional">
         <a href="#tartalom">Ugrás a tartalomra</a>
     </nav>
@@ -26,7 +26,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse text-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item me-2">
                         <a class="nav-link" href="index.html">Főoldal</a>
@@ -42,8 +42,8 @@
                     </li>
                 </ul>
                 <div class="btn-group ms-auto">
-                    <button id="gomb_normal" class="btn btn-dark my-2 my-sm-0 disabled" type="submit" onclick="setActiveStyleSheet('normal'); return false;">Normál</button>
-                    <button id="gomb_bigger" class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="setActiveStyleSheet('bigger'); return false;">Nagybetűs</button>
+                    <button id="gomb_normal" class="btn btn-primary my-2 my-sm-0" type="submit" onclick="setActiveStyleSheet('normal'); return false;">Normál</button>
+                    <button id="gomb_bigger" class="btn btn-primary my-2 my-sm-0" type="submit" onclick="setActiveStyleSheet('bigger'); return false;">Nagybetűs</button>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
                                 \(x \equiv c_n \pmod{m_n}\) <br>
                             </p>
                             <p class="card-text text-dark fw-normal">
-                                A kínai maradéktétel kimondja, hogy a <em>kongruenciarendszernek</em> pontosan egy megoldása van\(\pmod {m}\), és algoritmust is ad ennek kiszámítására. 
+                                A kínai maradéktétel kimondja, hogy a <i>kongruenciarendszernek</i> pontosan egy megoldása van\(\pmod {m}\), és algoritmust is ad ennek kiszámítására. 
                                 Az egyszerűség kedvéért vezessük be az \(M_i = m / m_i\) jelölést.
                             </p>
                             <p class="card-text text-dark fw-normal">
@@ -123,10 +123,10 @@
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered">
                                     <caption class="caption-top">
-                                        <strong>Komplexitás</strong>
+                                        <b>Komplexitás</b>
                                         <details>
                                             <summary>Súgó</summary>
-                                            <p>A táblázatban a<em>tömb</em>, a <em>prefix tömb</em> és a Fenwick-fa különböző műveleteinek komplexitását vetjük össze.</p>
+                                            <p>A táblázatban a<i>tömb</i>, a <i>prefix tömb</i> és a Fenwick-fa különböző műveleteinek komplexitását vetjük össze.</p>
                                         </details>
                                     </caption>
                                     <thead>
@@ -174,13 +174,13 @@
                                 <blockquote class="idezet">Programozó, küzdj, és bízva bízzál! Minden megoldásod helyes, ha Fenwick-fát használsz.</blockquote>
                             </aside>
                             <p class="card-text text-dark fw-normal">
-                                Egy olyan <strong>statikus adatszerkezetről</strong> van szó, ami egyszerre támogat különböző <strong>pont-módosításokat</strong> és <strong>prefix-lekéréseket</strong> \(\mathcal{O}(\log(n))\) futási időben.
+                                Egy olyan <b>statikus adatszerkezetről</b> van szó, ami egyszerre támogat különböző <b>pont-módosításokat</b> és <b>prefix-lekéréseket</b> \(\mathcal{O}(\log(n))\) futási időben.
                                 Leggyakoribb alkalmazása a pont-értékmódosítás és az intervallum-összeglekérés.
                             </p>
                             <p class="card-text text-dark fw-normal formula">
                                 
                                 A magyarázathoz először vezessük be a <a target="_blank" href="https://www.computerhope.com/jargon/l/leastsb.htm">legjelentéktelenebb bit</a> fogalmát.
-                                Egy adott szám <em>legjelentéktelenebb bitje</em> (rövidítve <abbr lang="en" title="Least Significant Bit">LSB</abbr>) a szám bináris alakjában a legkisebb helyi értéken álló akív bit.
+                                Egy adott szám <i>legjelentéktelenebb bitje</i> (rövidítve <abbr lang="en" title="Least Significant Bit">LSB</abbr>) a szám bináris alakjában a legkisebb helyi értéken álló akív bit.
                             </p>
                             <p class="card-text text-dark fw-normal formula">
                                 A binárisan indexelt fa működési elvének alapja, hogy az implementáció során használt tömb egy adott \(i\) indexénél a reprezentált tömb 
@@ -206,16 +206,28 @@
 }</code></pre>
                                 
                             <p class="card-text text-dark fw-normal formula">
-                                A prefix-lekérésből rögtön adódik az <strong>intervallum-lekérés</strong> implementációja, felhasználva hogy bármely intervallum-összeg felírható két prefix-összeg különbségeként.
+                                A prefix-lekérésből rögtön adódik az <b>intervallum-lekérés</b> implementációja, felhasználva hogy bármely intervallum-összeg felírható két prefix-összeg különbségeként.
                             </p>
                             <p class="card-text text-dark fw-normal formula">
-                                Könnyen látható, hogy a Fenwick-fa kompatibilis minden, az összeadással analóg művelettel, sőt <strong>prefix-maximum/minimumlekérésekre</strong> is használható. De ne legyünk mohók, feleim; ezekről csak a későbbiekben!
+                                Könnyen látható, hogy a Fenwick-fa kompatibilis minden, az összeadással analóg művelettel, sőt <b>prefix-maximum/minimumlekérésekre</b> is használható. De ne legyünk mohók, feleim; ezekről csak a későbbiekben!
                             </p>
-                            <div class="text-center m-4">
-                                <figure>
-                                    <img src="fenwick_fa.png" class="p-2 img-fluid img-thumbnail" alt="A Fenwick-fa ábrázolása">
-                                    <figcaption class="figure-caption">A fenwick-fa működési elve</figcaption>
-                                </figure>
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mt-4">
+                                    <figure class="text-center">
+                                        <a href="fenwick_fa_nagy.png" target="_blank">
+                                            <img src="fenwick_fa_kicsi.png" class="p-2 img-fluid img-thumbnail" alt="Fenwick-fa szülő-gyermek kapcsolatainak ábrázolása">
+                                        </a>
+                                        <figcaption class="figure-caption">Fenwick-fa szülő-gyermek kapcsolatai</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4">
+                                    <figure class="text-center">
+                                        <a href="interval_nagy.png" target="_blank">
+                                            <img src="interval_kicsi.png" class="p-2 img-fluid img-thumbnail" alt="Az indexekhez tartozó intervallumok ábrázolása">
+                                        </a>
+                                        <figcaption class="figure-caption">Az indexekhez tartozó intervallumok</figcaption>
+                                    </figure>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -225,25 +237,15 @@
     </div>
 </main>
 <footer id="lablec" class="bg-dark p-4 mt-5">
-    <div class="row mx-4">
-        <div class="col-6">
+    <div class="row mx-4 my-2">
+        <div class="col-12 col-sm-6">
             <p class="fw-normal text-light">E-mail:</p>
+            <a class="fw-normal text-light" href="mailto:deakbence2002@gmail.com">deakbence2002@gmail.com</a> <br>
+            <a class="fw-normal text-light" href="mailto:raeiyv@inf.elte.hu">raeiyv@inf.elte.hu</a> <br>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-sm-6">
             <p class="fw-normal text-light text-end">Telefon:</p>
-        </div>
-    </div>
-    <div class="row mx-4">
-        <div class="col-6">
-            <a class="fw-normal text-light" href="mailto:deakbence2002@gmail.com">deakbence2002@gmail.com</a>
-        </div>
-        <div class="col-6">
             <p class="fw-normal text-light text-end">+36-20-342-3458</p>
-        </div>
-    </div>
-    <div class="row mx-4">
-        <div class="col-6">
-            <a class="fw-normal text-light" href="mailto:raeiyv@inf.elte.hu">raeiyv@inf.elte.hu</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
