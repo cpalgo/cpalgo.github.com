@@ -15,7 +15,6 @@ function setActiveStyleSheet(title) {
         document.getElementById("gomb_bigger").style.display = "inline";
         document.getElementById("gomb_normal").style.display = "none";
     } else {
-
         document.getElementById("gomb_normal").style.display = "inline";
         document.getElementById("gomb_bigger").style.display = "none";
     }
@@ -61,6 +60,8 @@ function createCookie(name, value, days) {
   
 function readCookie(name) {
 
+    document.getElementById('cim').innerHTML=document.cookie;
+
     var nameEQ = name + "=";
     var tokens = document.cookie.split(';');
 
@@ -79,8 +80,9 @@ function readCookie(name) {
 window.onload = function() {
 
     var cookie = readCookie("style");
-    var title = cookie? cookie : getPreferredStyleSheet();
+    var title = cookie? cookie: getPreferredStyleSheet();
     setActiveStyleSheet(title);
+    // document.getElementById('cim').innerHTML=cookie;
 }
   
 window.onunload = function() {
